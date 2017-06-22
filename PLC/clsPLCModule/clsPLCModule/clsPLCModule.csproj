@@ -210,7 +210,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\NewFunction_VS2010_FW4\AppAuth\AppAuth.csproj">
+    <ProjectReference Include="..\..\..\Function\AppAuth\AppAuth.csproj">
       <Project>{78c34a59-0d62-46f6-93c1-ebb0d59af147}</Project>
       <Name>AppAuth</Name>
     </ProjectReference>
