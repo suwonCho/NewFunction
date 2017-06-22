@@ -1,0 +1,4 @@
+﻿EncryptManager에서 생성 할것
+
+KGC_INSPECT_ALARM:;QL					kecF+sv+LgOjEMbslLSy8op/cbZfvDqQ
+KGC_IMPURITIES_MNG:;clsPLCModule		E5fsv7jsUJi0W5+MZE6PI+sldptZq8q6ARX9+58mq3iwG4+xsOzSaA==

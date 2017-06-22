@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EEF55A24-2E3C-4847-94ED-79A4560A13B4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_integrate_FW4._0</RootNamespace>
+    <AssemblyName>_integrate_FW4.0</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\_Compiled_DLL\FW4.0\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\_Compiled_DLL\FW4.0\Release\_integrate_FW4.0.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\_Compiled_DLL\FW4.0\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\_Compiled_DLL\FW4.0\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_integrate_FW4.0.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AutoUpdater_KGC\AutoUpdater\AutoUpdateClient\AutoUpdateClient.csproj">
+      <Project>{d3cd5dd4-9b41-4751-9060-96ed915fcc0f}</Project>
+      <Name>AutoUpdateClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AutoUpdater_KGC\AutoUpdater\AutoUpdateUploader\AutoUpdateUploader.csproj">
+      <Project>{70f6ae58-eb7a-438d-b767-58b998bc021f}</Project>
+      <Name>AutoUpdateUploader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AutoUpdater_KGC\AutoUpdater\prjFileMover\FileMover.csproj">
+      <Project>{fa288a9e-9779-40da-b72c-73b7a7e8ba2f}</Project>
+      <Name>FileMover</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ref.Proj\clsPLCModule_2010\clsPLCModule\clsPLCModule.csproj">
+      <Project>{863982ca-29cb-4ff7-b338-f770b85bc3c2}</Project>
+      <Name>clsPLCModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Telegram\Telegram.Bot\Telegram.Bot.csproj">
+      <Project>{75580747-f7ca-44eb-9fcc-4e6a41c9a10e}</Project>
+      <Name>Telegram.Bot</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppAuth\AppAuth.csproj">
+      <Project>{78c34a59-0d62-46f6-93c1-ebb0d59af147}</Project>
+      <Name>AppAuth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AutoUpdateServer_WEB\AutoUpdateServer_WEB.csproj">
+      <Project>{389f6fb7-4f92-43b9-b50d-57c5b73d5171}</Project>
+      <Name>AutoUpdateServer_WEB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Function.Advenced\Function.Advenced.csproj">
+      <Project>{73a519c1-5bec-4c59-9359-70cfba5edfc9}</Project>
+      <Name>Function.Advenced</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Function.api\Function.api.csproj">
+      <Project>{cbfcb375-b8ee-456b-b46e-934695c2a58a}</Project>
+      <Name>Function.api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Function.Archive\Function.Archive.csproj">
+      <Project>{18348d28-2612-4eb1-a192-48db0cd4e92c}</Project>
+      <Name>Function.Archive</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Function.Component.DevExp\Function.Component.DevExp.csproj">
+      <Project>{9ae620b2-bdd3-4005-b964-c730215137c6}</Project>
+      <Name>Function.Component.DevExp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Function.Device\Function.Device.csproj">
+      <Project>{3af7ccd6-30b0-4212-b59e-3944bf04e38d}</Project>
+      <Name>Function.Device</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Function.form\Function.form.csproj">
+      <Project>{d92b5672-4f0d-407a-ac14-d97dca94e803}</Project>
+      <Name>Function.form</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Function\Function.csproj">
+      <Project>{5843ebc1-ffab-4d2d-a61b-e53cdcf1d625}</Project>
+      <Name>Function</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IconHelper\IconHelper.csproj">
+      <Project>{7d3bc97c-82dc-4541-bd01-cbdc5981f307}</Project>
+      <Name>IconHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLight\Function.Device.QLight.csproj">
+      <Project>{36a1a0c5-752d-44d9-be49-2d17dd4b1530}</Project>
+      <Name>Function.Device.QLight</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\USB.Printing\USB.Printing.csproj">
+      <Project>{03008f6f-25c1-449e-af31-8a1289ddc432}</Project>
+      <Name>USB.Printing</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

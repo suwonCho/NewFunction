@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="euc-kr" standalone="no"?>
+<UPDATECLIENT>
+	<UPDATETYPE>KGC_WG_IMP</UPDATETYPE>
+	<SERVER>
+		<SERVERTYPE>ORACLE</SERVERTYPE>
+		<!--ORACLE-->
+		<ORACLE>
+			<TNS>(DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=210.100.77.225)
+      (PORT=1524)
+    )
+    (CONNECT_DATA=
+      (SID=WMES)
+    )
+  )</TNS>
+			<ID>bgwms</ID>
+			<PASS>bgwms</PASS>
+		</ORACLE>
+	</SERVER>
+	<ICON_Path>ICON.ico</ICON_Path>
+	<BackgroundImgae_Path>.\update.jpg</BackgroundImgae_Path>
+	<LogoImgae_Path>.\logo.bmp</LogoImgae_Path>
+	<TARGETFOLDER>.\</TARGETFOLDER>
+	<STARTUPFILE>.\KGC_IMPURITIES_MNG.exe</STARTUPFILE>
+</UPDATECLIENT>

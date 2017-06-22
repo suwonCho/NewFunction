@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="euc-kr" standalone="no"?>
+<UPDATECLIENT>
+  <UPDATETYPE>UpdateUploader</UPDATETYPE>
+  <SERVER>
+    <SERVERTYPE>WEB</SERVERTYPE>
+    <!--ORACLE-->
+    <ORACLE>
+      <TNS>
+        (DESCRIPTION=
+        (ADDRESS=
+        (PROTOCOL=TCP)
+        (HOST=210.100.77.225)
+        (PORT=1524)
+        )
+        (CONNECT_DATA=
+        (SID=WMES)
+        )
+        )
+      </TNS>
+      <ID>3aDcU9Aia4Q=</ID>
+      <PASS>3aDcU9Aia4Q=</PASS>
+    </ORACLE>
+    <WEB>
+      <URL>g46j/ldO0OBYzxmal0GlK7OSCqQGSOgMMgxtjIdYxZmBQPlolb1hzaC/D22Lh0/j</URL>
+      <PASS>08C7uh4iwhY=</PASS>
+    </WEB>
+  </SERVER>
+  <ICON_Path>KGC_CI.ico</ICON_Path>
+  <BackgroundImgae_Path>update.jpg</BackgroundImgae_Path>
+  <LogoImgae_Path>KGC_CI.PNG</LogoImgae_Path>
+  <TARGETFOLDER></TARGETFOLDER>
+  <STARTUPFILE>AUTOUPDATER.exe</STARTUPFILE>
+  <USE_ENCRYPTO>Y</USE_ENCRYPTO>
+</UPDATECLIENT>

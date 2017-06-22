@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="urn:upn:tdt:wsdl:1" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tdt="urn:upn:tdt:xsd:1" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:upn:tdt:wsdl:1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:tns="urn:upn:tdt:xsd:1" elementFormDefault="qualified" targetNamespace="urn:upn:tdt:xsd:1">
+      <xsd:element name="ResponseCode" type="tns:CodeResultListType" />
+      <xsd:element name="RequestBinCode" type="tns:CodeSpecListType" />
+      <xsd:element name="RequestHexaCode" type="tns:CodeSpecListType" />
+      <xsd:element name="RequestTagIdBCode" type="tns:CodeSpecListType" />
+      <xsd:element name="RequestTagIdHCode" type="tns:CodeSpecListType" />
+      <xsd:complexType name="CodeResultListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="CodeResult" type="tns:CodeResultType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CodeSpecListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="CodeSpec" type="tns:CodeSpecType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CodeResultType">
+        <xsd:sequence>
+          <xsd:element name="OriginalString" type="xsd:string" />
+          <xsd:element name="ResultString" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CodeSpecType">
+        <xsd:sequence>
+          <xsd:element name="TagLength" type="xsd:integer" />
+          <xsd:element name="CodeString" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="TDTException" type="tns:TDTExceptionType" />
+      <xsd:complexType name="TDTExceptionType">
+        <xsd:sequence>
+          <xsd:element name="reason" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="translateBinToCodeRequest">
+    <wsdl:part name="parms" element="tdt:RequestBinCode" />
+  </wsdl:message>
+  <wsdl:message name="translateBinToCodeResponse">
+    <wsdl:part name="returnCode" element="tdt:ResponseCode" />
+  </wsdl:message>
+  <wsdl:message name="translateHexaToCodeRequest">
+    <wsdl:part name="parms" element="tdt:RequestHexaCode" />
+  </wsdl:message>
+  <wsdl:message name="translateHexaToCodeResponse">
+    <wsdl:part name="returnCode" element="tdt:ResponseCode" />
+  </wsdl:message>
+  <wsdl:message name="translateTagIdToBinRequest">
+    <wsdl:part name="parms" element="tdt:RequestTagIdBCode" />
+  </wsdl:message>
+  <wsdl:message name="translateTagIdToBinResponse">
+    <wsdl:part name="returnCode" element="tdt:ResponseCode" />
+  </wsdl:message>
+  <wsdl:message name="translateTagIdToHexaRequest">
+    <wsdl:part name="parms" element="tdt:RequestTagIdHCode" />
+  </wsdl:message>
+  <wsdl:message name="translateTagIdToHexaResponse">
+    <wsdl:part name="returnCode" element="tdt:ResponseCode" />
+  </wsdl:message>
+  <wsdl:message name="TDTExceptionResponse">
+    <wsdl:part name="fault" element="tdt:TDTException" />
+  </wsdl:message>
+  <wsdl:portType name="UPNTDTPortType">
+    <wsdl:operation name="translateBinToCode">
+      <wsdl:input name="translateBinToCodeRequest" message="impl:translateBinToCodeRequest" />
+      <wsdl:output name="translateBinToCodeResponse" message="impl:translateBinToCodeResponse" />
+      <wsdl:fault name="TDTExceptionFault" message="impl:TDTExceptionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="translateHexaToCode">
+      <wsdl:input name="translateHexaToCodeRequest" message="impl:translateHexaToCodeRequest" />
+      <wsdl:output name="translateHexaToCodeResponse" message="impl:translateHexaToCodeResponse" />
+      <wsdl:fault name="TDTExceptionFault" message="impl:TDTExceptionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="translateTagIdToBin">
+      <wsdl:input name="translateTagIdToBinRequest" message="impl:translateTagIdToBinRequest" />
+      <wsdl:output name="translateTagIdToBinResponse" message="impl:translateTagIdToBinResponse" />
+      <wsdl:fault name="TDTExceptionFault" message="impl:TDTExceptionResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TDTServiceBinding" type="impl:UPNTDTPortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="translateBinToCode">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TDTExceptionFault">
+        <wsdlsoap:fault use="literal" name="TDTExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="translateHexaToCode">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TDTExceptionFault">
+        <wsdlsoap:fault use="literal" name="TDTExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="translateTagIdToBin">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TDTExceptionFault">
+        <wsdlsoap:fault use="literal" name="TDTExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="translateTagIdToHex">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TDTExceptionFault">
+        <wsdlsoap:fault use="literal" name="TDTExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UPNTDTService">
+    <wsdl:port name="UPNTDTServicePort" binding="impl:TDTServiceBinding">
+      <wsdlsoap:address location="http://localhost/upntdt/translate" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

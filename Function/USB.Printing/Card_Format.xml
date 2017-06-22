@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CARD_FORMAT>
+  <TEST>
+    <H01>
+      <CMD>+RIB</CMD>
+    </H01>
+    <H02>
+      <CMD>+C 4</CMD>
+    </H02>
+    <H03>
+      <CMD>F</CMD>
+    </H03>
+    <T01>
+      <CMD>T 512 75 4 0 0 35 1</CMD>
+      <DATA>ZEBRA CARD PRINTER TEST</DATA>      
+    </T01>
+    <T02>
+      <CMD>T 65 320 7 1 0 50 0</CMD>
+      <DATA>CARD PRINTING TEST</DATA>
+    </T02>
+    <D01>
+      <CMD>B 512 600 4 0 2 4 50 1</CMD>
+      <STARTINDEX>0</STARTINDEX>
+      <LENGTH>10</LENGTH>
+    </D01>
+    <D02>
+      <CMD>T 200 200 0 0 0 50 1</CMD>
+      <STARTINDEX>10</STARTINDEX>
+      <LENGTH>10</LENGTH>
+    </D02>
+    <D03>
+      <CMD>T 200 300 0 1 0 50 1</CMD>
+      <STARTINDEX>20</STARTINDEX>
+      <LENGTH>10</LENGTH>
+    </D03>
+    <D03>
+      <CMD>T 200 400 0 1 0 50 1</CMD>
+      <STARTINDEX>30</STARTINDEX>
+      <LENGTH>10</LENGTH>
+    </D03>
+    <F01>
+      <CMD>L 15 80 970 4 1</CMD>
+    </F01>
+    <F02>
+      <CMD>I</CMD>
+    </F02>  
+  </TEST>
+  <INFOCARD>
+    <H01>
+      <CMD>+RIB</CMD>
+    </H01>
+    <H02>
+      <CMD>+C 4</CMD>
+    </H02>
+    <H03>
+      <CMD>F</CMD>
+    </H03>
+    <T01>
+      <CMD>T 512 75 4 0 0 35 1</CMD>
+      <DATA>GMK INFOCARD SYSTEM</DATA>
+    </T01>
+    <T02>
+      <CMD>T 65 320 7 1 0 50 0</CMD>
+      <DATA>GM KOREA</DATA>
+    </T02>
+    <D01>
+      <INFO>PONO_barcode</INFO>
+      <CMD>B 512 600 4 0 2 4 80 1</CMD>
+      <STARTINDEX>0</STARTINDEX>
+      <LENGTH>6</LENGTH>
+    </D01>
+    <D02>
+      <INFO>pono</INFO>
+      <CMD>T 200 200 0 0 0 50 1</CMD>
+      <STARTINDEX>0</STARTINDEX>
+      <LENGTH>6</LENGTH>
+    </D02>
+    <D03>
+      <INFO>seq</INFO>
+      <CMD>T 200 300 0 1 0 50 1</CMD>
+      <STARTINDEX>6</STARTINDEX>
+      <LENGTH>4</LENGTH>
+    </D03>
+    <D03>
+      <CMD>T 200 400 0 1 0 50 1</CMD>
+      <STARTINDEX>18</STARTINDEX>
+      <LENGTH>18</LENGTH>
+    </D03>
+    <F01>
+      <CMD>L 15 80 970 4 1</CMD>
+    </F01>
+    <F02>
+      <CMD>I</CMD>
+    </F02>
+  </INFOCARD>
+</CARD_FORMAT>

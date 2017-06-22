@@ -1,0 +1,205 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8CD08639-4AE9-46B1-8945-D0F8E0B6E496}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>prjU_SCM</RootNamespace>
+    <AssemblyName>U_SCM</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsCommon.cs" />
+    <Compile Include="clsDBFunc.cs" />
+    <Compile Include="clsEpcCodeTranslate.cs" />
+    <Compile Include="frmBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaseForm.Designer.cs">
+      <DependentUpon>frmBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInputOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInputOrder.Designer.cs">
+      <DependentUpon>frmInputOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\clsInterfaceObject.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="usrLogIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usrLogIn.Designer.cs">
+      <DependentUpon>usrLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usrProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usrProduct.Designer.cs">
+      <DependentUpon>usrProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usrStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usrStatusGrp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usrStatusGrp.Designer.cs">
+      <DependentUpon>usrStatusGrp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\webTranslate\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="frmCartypeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCartypeSearch.Designer.cs">
+      <DependentUpon>frmCartypeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInputOrder_Paint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInputOrder_Paint.Designer.cs">
+      <DependentUpon>frmInputOrder_Paint.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmBaseForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInputOrder.resx">
+      <DependentUpon>frmInputOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNumber.resx">
+      <DependentUpon>frmNumber.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrLogIn.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>usrLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrProduct.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>usrProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>usrStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrStatusGrp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>usrStatusGrp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCartypeSearch.resx">
+      <DependentUpon>frmCartypeSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInputOrder_Paint.resx">
+      <DependentUpon>frmInputOrder_Paint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Function\Function.csproj">
+      <Project>{5843EBC1-FFAB-4D2D-A61B-E53CDCF1D625}</Project>
+      <Name>Function</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\prjEpcMW\EpcMW.csproj">
+      <Project>{DB26B1EB-CC50-4DA0-BB88-249753A123B1}</Project>
+      <Name>EpcMW</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\webTranslate\CodeResultType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\webTranslate\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\webTranslate\UPN-tdt-translation-0.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\wsdl\translate_wsdl\UPN-tdt-translation-0.1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\webTranslate\</RelPath>
+      <UpdateFromURL>C:\wsdl\translate_wsdl\UPN-tdt-translation-0.1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>U_SCM_webTranslate_UPNTDTService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

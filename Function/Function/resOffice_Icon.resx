@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ACTIVITL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\ACTIVITL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACTIVITS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\ACTIVITS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="APPTL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\APPTL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="APPTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\APPTS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CNFNOT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\CNFNOT.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CONFLICT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\CONFLICT.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CONTACTL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\CONTACTL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CONTACTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\CONTACTS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DISTLSTL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\DISTLSTL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DISTLSTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\DISTLSTS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DOCL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\DOCL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DOCS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\DOCS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EXITEML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\EXITEML.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EXITEMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\EXITEMS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="INFOML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\INFOML.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="INFOMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\INFOMS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IPML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\IPML.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IPMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\IPMS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MMSL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\MMSL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MMSS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\MMSS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NOTEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\NOTEL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NOTES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\NOTES.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OOFL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\OOFL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OOFS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\OOFS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POSTITL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\POSTITL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POSTITS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\POSTITS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POSTL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\POSTL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POSTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\POSTS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RECL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\RECL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RECS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\RECS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REMOTEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\REMOTEL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REMOTES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\REMOTES.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REPORTL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\REPORTL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REPORTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\REPORTS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RESENDL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\RESENDL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RESENDS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\RESENDS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RSSITEML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\RSSITEML.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RSSITEMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\RSSITEMS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SCDCNCLL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SCDCNCLL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SCDCNCLS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SCDCNCLS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SCDREQL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SCDREQL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SCDREQS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SCDREQS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SCDRESNL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SCDRESNL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SCDRESNS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SCDRESNS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SCDRESPL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SCDRESPL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SCDRESPS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SCDRESPS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SCDRESTL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SCDRESTL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SCDRESTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SCDRESTS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SECRECL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SECRECL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SECRECS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SECRECS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SECURL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SECURL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SECURS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SECURS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SIGNL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SIGNL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SIGNS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SIGNS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SMSL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SMSL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SMSS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\SMSS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TASKACCL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\TASKACCL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TASKACCS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\TASKACCS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TASKDECL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\TASKDECL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TASKDECS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\TASKDECS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TASKL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\TASKL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TASKREQL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\TASKREQL.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TASKREQS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\TASKREQS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TASKS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Office_Icon\TASKS.ICO;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

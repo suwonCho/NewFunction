@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AutoUpdater.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BF_FORMPOSITION" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AutoUpdater_AutoUpdateServer_Web_AutoUpdateServer" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/DB_IF_Server/AutoUpdateServer.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

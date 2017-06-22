@@ -1,0 +1,11 @@
+﻿Telegram관련 dll  framework4.5 전용
+	TLSharp.TL.DLL
+	TLSharp.Core.DLL
+	Telegram.Massenger.DLL
+
+	.Bot은 4.0임
+
+
+
+
+

@@ -1,0 +1,9 @@
+1. "d:\_Task\_Function\Telegram\TLSharp.Test\bin\Debug\TLSharp.Test.exe" 파일 실행
+2. 전화번호 입력/확인
+3. 연결 버튼 클릭
+4. PC 인증 버튼 클릭
+	4-1.인증번호 요청 클릭
+	4-2.인증번호 입력
+	4-3.확인 클릭
+	4-4.안되면 창을 닫고 다시 시도한다.
+5.연락처조회, CHAT LIST 조회로 테스트

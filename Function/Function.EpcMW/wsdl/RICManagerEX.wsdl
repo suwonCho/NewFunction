@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.ricmgr.pro.edt.mbiz.net" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.ricmgr.pro.edt.mbiz.net" xmlns:intf="http://service.ricmgr.pro.edt.mbiz.net" xmlns:tns1="http://stub.client.service.ricmgr.pro.edt.mbiz.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.2.1
+Built on Aug 08, 2005 (11:49:10 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://stub.client.service.ricmgr.pro.edt.mbiz.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="SetAutoReadingControl">
+    <sequence>
+     <element name="autoControl" type="xsd:int"/>
+     <element name="ricID" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="StartReading">
+    <sequence>
+     <element name="ricID" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="StopReading">
+    <sequence>
+     <element name="ricID" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ControlLED">
+    <sequence>
+     <element name="greenLightOn" type="xsd:boolean"/>
+     <element name="redLightOn" type="xsd:boolean"/>
+     <element name="ricID" nillable="true" type="xsd:string"/>
+     <element name="yellowLightOn" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.ricmgr.pro.edt.mbiz.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://stub.client.service.ricmgr.pro.edt.mbiz.net"/>
+   <element name="setAutoReadingControl" type="tns1:SetAutoReadingControl"/>
+   <element name="setAutoReadingControlReturn" type="xsd:int"/>
+   <element name="startReading" type="tns1:StartReading"/>
+   <element name="startReadingReturn" type="xsd:int"/>
+   <element name="stopReading" type="tns1:StopReading"/>
+   <element name="stopReadingReturn" type="xsd:int"/>
+   <element name="controlLED" type="tns1:ControlLED"/>
+   <element name="controlLEDReturn" type="xsd:int"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setAutoReadingControlRequest">
+
+      <wsdl:part element="impl:setAutoReadingControl" name="setAutoReadingControl"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="stopReadingResponse">
+
+      <wsdl:part element="impl:stopReadingReturn" name="stopReadingReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="controlLEDRequest">
+
+      <wsdl:part element="impl:controlLED" name="controlLED"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="startReadingRequest">
+
+      <wsdl:part element="impl:startReading" name="startReading"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="stopReadingRequest">
+
+      <wsdl:part element="impl:stopReading" name="stopReading"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="startReadingResponse">
+
+      <wsdl:part element="impl:startReadingReturn" name="startReadingReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="controlLEDResponse">
+
+      <wsdl:part element="impl:controlLEDReturn" name="controlLEDReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setAutoReadingControlResponse">
+
+      <wsdl:part element="impl:setAutoReadingControlReturn" name="setAutoReadingControlReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="RICManagerEX">
+
+      <wsdl:operation name="setAutoReadingControl" parameterOrder="setAutoReadingControl">
+
+         <wsdl:input message="impl:setAutoReadingControlRequest" name="setAutoReadingControlRequest"/>
+
+         <wsdl:output message="impl:setAutoReadingControlResponse" name="setAutoReadingControlResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="startReading" parameterOrder="startReading">
+
+         <wsdl:input message="impl:startReadingRequest" name="startReadingRequest"/>
+
+         <wsdl:output message="impl:startReadingResponse" name="startReadingResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="stopReading" parameterOrder="stopReading">
+
+         <wsdl:input message="impl:stopReadingRequest" name="stopReadingRequest"/>
+
+         <wsdl:output message="impl:stopReadingResponse" name="stopReadingResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="controlLED" parameterOrder="controlLED">
+
+         <wsdl:input message="impl:controlLEDRequest" name="controlLEDRequest"/>
+
+         <wsdl:output message="impl:controlLEDResponse" name="controlLEDResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RICManagerEXSoapBinding" type="impl:RICManagerEX">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="setAutoReadingControl">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setAutoReadingControlRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setAutoReadingControlResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="startReading">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="startReadingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="startReadingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="stopReading">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="stopReadingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="stopReadingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="controlLED">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="controlLEDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="controlLEDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RICManagerEXService">
+
+      <wsdl:port binding="impl:RICManagerEXSoapBinding" name="RICManagerEX">
+
+         <wsdlsoap:address location="http://localhost:8080/EdgeServer/services/RICManagerEX"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

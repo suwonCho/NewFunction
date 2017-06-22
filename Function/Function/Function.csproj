@@ -1,0 +1,953 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5843EBC1-FFAB-4D2D-A61B-E53CDCF1D625}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Function</RootNamespace>
+    <AssemblyName>Function</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NO_PRINT;TEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Function.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\x86\Debug\Function.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Function.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\x86\Release\Function.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NO_PRINT;TEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Function.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Function.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NO_PRINT;TEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.2, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="SQLite.Designer, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\System.Data.SQLite\2010\bin\SQLite.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SQLite, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\System.Data.SQLite\2010\bin\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Db\fnc.cs" />
+    <Compile Include="Db\SQLite.cs" />
+    <Compile Include="DFnc.cs" />
+    <Compile Include="enums.cs" />
+    <Compile Include="file_backup.cs" />
+    <Compile Include="Fnc.cs" />
+    <Compile Include="Imaging.cs" />
+    <Compile Include="Odac.cs" />
+    <Compile Include="resIcon16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resIcon16.resx</DependentUpon>
+    </Compile>
+    <Compile Include="resOffice_Icon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resOffice_Icon.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs" />
+    <Compile Include="System\clsFile.cs" />
+    <Compile Include="Util\clsLog.cs" />
+    <Compile Include="Db\OLEDB.cs" />
+    <Compile Include="Db\Oracle.cs" />
+    <Compile Include="Comm\Serial.cs">
+    </Compile>
+    <Compile Include="Db\SQLDB.cs" />
+    <Compile Include="System\clsSystem.cs" />
+    <Compile Include="Comm\clsSocketClient.cs" />
+    <Compile Include="Comm\clsSocketServer.cs" />
+    <Compile Include="Util\clsSystemEventLog.cs" />
+    <Compile Include="Util\clsXML.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="usrMessageBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usrMessageBox.Designer.cs">
+      <DependentUpon>usrMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Db\OracleDB.cs" />
+    <Compile Include="Util\Cryptography.cs" />
+    <Compile Include="Util\WMI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resIcon16.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>resIcon16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resOffice_Icon.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>resOffice_Icon.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrMessageBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>usrMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\access.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\access-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add-window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\button blue alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\button green alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\button red alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\button-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\button-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\button-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\button-withe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\button-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CD-burn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CD-Music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\coffe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cpu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\db.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\db-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\db-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\db-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\db-upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\db-web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\delete-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DJ-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DJ-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\down-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\emoticon-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\euro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\faq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\favorites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\favorites-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\file-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\file-doc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\file-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\file-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\file-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder-blue rename.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder-blue up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder-blue-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder-blue-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder-white up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder-white-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder-white-rename.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\forward-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HD-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HD-share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HD-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ipod-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ipod-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Layer 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ligth-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ligth-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mail-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\misc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\misc-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\misc-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\misc-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\misc-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\module.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\monitor-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\monitor-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\offert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\package.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\package-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\package-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Package-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\package-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\phone-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\phone-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\phone-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\phone-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\play-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\play-first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\play-pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\play-rec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\play-repeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\play-star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\play-stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\preferences.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\print-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\public.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\reload-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\remove-window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\save copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\save-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\saveas-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\search-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\search-web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\statistic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\status-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\status-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\stop-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\trash-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\trash-full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\vcard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\web-ftp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\wireless-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\wireless-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\wireless-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\wireless-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\zoom-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\zoom+.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\ACTIVITL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\ACTIVITS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\APPTL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\APPTS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\CNFNOT.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\CONFLICT.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\CONTACTL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\CONTACTS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\DISTLSTL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\DISTLSTS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\DOCL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\DOCS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\EXITEML.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\EXITEMS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\INFOML.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\INFOMS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\IPML.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\IPMS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\MMSL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\MMSS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\NOTEL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\NOTES.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\OOFL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\OOFS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\POSTITL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\POSTITS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\POSTL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\POSTS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\RECL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\RECS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\REMOTEL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\REMOTES.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\REPORTL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\REPORTS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\RESENDL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\RESENDS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\RSSITEML.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\RSSITEMS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SCDCNCLL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SCDCNCLS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SCDREQL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SCDREQS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SCDRESNL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SCDRESNS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SCDRESPL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SCDRESPS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SCDRESTL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SCDRESTS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SECRECL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SECRECS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SECURL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SECURS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SIGNL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SIGNS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SMSL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\SMSS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\TASKACCL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\TASKACCS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\TASKDECL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\TASKDECS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\TASKL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\TASKREQL.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\TASKREQS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_Icon\TASKS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading_001.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading_002.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading_003.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading_004.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

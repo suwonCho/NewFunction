@@ -1,0 +1,67 @@
+CREATE TABLE TAUTOUPDATE
+(
+  UPDATETYPE  VARCHAR2(20 BYTE),
+  FILENAME    VARCHAR2(100 BYTE),
+  VERSION     VARCHAR2(20 BYTE),
+  FILEDATE    DATE,
+  FILEIMAGE   BLOB,
+  UPLOADDATE  DATE,
+  CRC         VARCHAR2(100 BYTE),
+  FILESIZE    INTEGER
+)
+TABLESPACE SYSTEM
+PCTUSED    40
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       2147483645
+            PCTINCREASE      0
+            FREELISTS        1
+            FREELIST GROUPS  1
+            BUFFER_POOL      DEFAULT
+           )
+LOGGING 
+NOCOMPRESS 
+LOB (FILEIMAGE) STORE AS 
+      ( TABLESPACE  SYSTEM 
+        ENABLE      STORAGE IN ROW
+        CHUNK       8192
+        PCTVERSION  10
+        NOCACHE
+        STORAGE    (
+                    INITIAL          64K
+                    MINEXTENTS       1
+                    MAXEXTENTS       2147483645
+                    PCTINCREASE      0
+                    FREELISTS        1
+                    FREELIST GROUPS  1
+                    BUFFER_POOL      DEFAULT
+                   )
+      )
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+
+
+ALTER TABLE TAUTOUPDATE ADD (
+  CONSTRAINT TAUTOUPDATE_PK
+ PRIMARY KEY
+ (UPDATETYPE, FILENAME)
+    USING INDEX 
+    TABLESPACE SYSTEM
+    PCTFREE    10
+    INITRANS   2
+    MAXTRANS   255
+    STORAGE    (
+                INITIAL          64K
+                MINEXTENTS       1
+                MAXEXTENTS       2147483645
+                PCTINCREASE      0
+                FREELISTS        1
+                FREELIST GROUPS  1
+               ));

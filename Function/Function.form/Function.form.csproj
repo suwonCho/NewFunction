@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D92B5672-4F0D-407A-AC14-D97DCA94E803}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Function.form</RootNamespace>
+    <AssemblyName>Function.form</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>2</WarningLevel>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Function.form.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\x86\Debug\Function.form.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Function.form.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\x86\Release\Function.form.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>2</WarningLevel>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Function.form.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Function.form.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>2</WarningLevel>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="api.cs" />
+    <Compile Include="clsFunction.cs" />
+    <Compile Include="control.cs" />
+    <Compile Include="controlEvent.cs" />
+    <Compile Include="console.cs" />
+    <Compile Include="Db\DBSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Db\DBSetting.Designer.cs">
+      <DependentUpon>DBSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="enums.cs" />
+    <Compile Include="Forms\clsbaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fncForm.cs" />
+    <Compile Include="Forms\frmBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBaseForm.designer.cs">
+      <DependentUpon>frmBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOptionSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOptionSelect.designer.cs">
+      <DependentUpon>frmOptionSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWating.designer.cs">
+      <DependentUpon>frmWating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMessage.designer.cs">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMessage1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMessage1.Designer.cs">
+      <DependentUpon>frmMessage1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNemberInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNemberInput.Designer.cs">
+      <DependentUpon>frmNemberInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConsoleLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConsoleLog.Designer.cs">
+      <DependentUpon>frmConsoleLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInputBox.Designer.cs">
+      <DependentUpon>frmInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formFunction.cs" />
+    <Compile Include="Forms\frmPasswords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPasswords.designer.cs">
+      <DependentUpon>frmPasswords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProgress.Designer.cs">
+      <DependentUpon>frmProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWorkBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWorkBase.Designer.cs">
+      <DependentUpon>frmWorkBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pop\popNotice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pop\popNotice.Designer.cs">
+      <DependentUpon>popNotice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTest.Designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_MouseWheel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\subBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\subBaseForm.Designer.cs">
+      <DependentUpon>subBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlBase\usrUserControlItemBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlBase\usrUserControlListBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\btnAdvToggleButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\btnAdvToggleButton.designer.cs">
+      <DependentUpon>btnAdvToggleButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\btnToggleButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\btnToggleButton.designer.cs">
+      <DependentUpon>btnToggleButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditLabel\usrEditLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditLabel\usrEditLabel.Designer.cs">
+      <DependentUpon>usrEditLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TypeConverter_Properties.cs" />
+    <Compile Include="UserControls\UserControls.cs" />
+    <Compile Include="UserControls\usrBaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrBaseUserControl.Designer.cs">
+      <DependentUpon>usrBaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditLabel\usrEditLabelList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditLabel\usrEditLabelList.Designer.cs">
+      <DependentUpon>usrEditLabelList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrContentAlignment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrContentAlignment.Designer.cs">
+      <DependentUpon>usrContentAlignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrGifPicbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrGroupHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrGroupHeader.Designer.cs">
+      <DependentUpon>usrGroupHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrInputBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrInputBox.Designer.cs">
+      <DependentUpon>usrInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrInputDatePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrInputDatePicker.Designer.cs">
+      <DependentUpon>usrInputDatePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrMultiTextItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrMultiTextItem.Designer.cs">
+      <DependentUpon>usrMultiTextItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrNumberInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrNumberInput.Designer.cs">
+      <DependentUpon>usrNumberInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrNumberInput2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrNumberInput2.Designer.cs">
+      <DependentUpon>usrNumberInput2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrPleaseWait.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrPleaseWait.Designer.cs">
+      <DependentUpon>usrPleaseWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrProgress.Designer.cs">
+      <DependentUpon>usrProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrSimpleGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrSimpleGrid.Designer.cs">
+      <DependentUpon>usrSimpleGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrTreeView_Ch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrTreeView_Ch.Designer.cs">
+      <DependentUpon>usrTreeView_Ch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usrEventHandler.cs" />
+    <Compile Include="UserControls\usrInputPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="vari.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Db\DBSetting.resx">
+      <DependentUpon>DBSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\clsbaseForm.resx">
+      <DependentUpon>clsbaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBaseForm.resx">
+      <DependentUpon>frmBaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInputBox.resx">
+      <DependentUpon>frmInputBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOptionSelect.resx">
+      <DependentUpon>frmOptionSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWating.resx">
+      <DependentUpon>frmWating.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMessage.resx">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMessage1.resx">
+      <DependentUpon>frmMessage1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNemberInput.resx">
+      <DependentUpon>frmNemberInput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPasswords.resx">
+      <DependentUpon>frmPasswords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProgress.resx">
+      <DependentUpon>frmProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWorkBase.resx">
+      <DependentUpon>frmWorkBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pop\popNotice.resx">
+      <DependentUpon>popNotice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\subBaseForm.resx">
+      <DependentUpon>subBaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConsoleLog.resx">
+      <DependentUpon>frmConsoleLog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTest.resx">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\btnAdvToggleButton.resx">
+      <DependentUpon>btnAdvToggleButton.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\btnToggleButton.resx">
+      <DependentUpon>btnToggleButton.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EditLabel\usrEditLabel.resx">
+      <DependentUpon>usrEditLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EditLabel\usrEditLabelList.resx">
+      <DependentUpon>usrEditLabelList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrBaseUserControl.resx">
+      <DependentUpon>usrBaseUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrContentAlignment.resx">
+      <DependentUpon>usrContentAlignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrGroupHeader.resx">
+      <DependentUpon>usrGroupHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrInputBox.resx">
+      <DependentUpon>usrInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrInputDatePicker.resx">
+      <DependentUpon>usrInputDatePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrMultiTextItem.resx">
+      <DependentUpon>usrMultiTextItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrNumberInput.resx">
+      <DependentUpon>usrNumberInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrNumberInput2.resx">
+      <DependentUpon>usrNumberInput2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrPleaseWait.resx">
+      <DependentUpon>usrPleaseWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrProgress.resx">
+      <DependentUpon>usrProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrSimpleGrid.resx">
+      <DependentUpon>usrSimpleGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrTreeView_Ch.resx">
+      <DependentUpon>usrTreeView_Ch.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\BTN_OFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\BTN_ON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\BTN_NONE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Function\Function.csproj">
+      <Project>{5843ebc1-ffab-4d2d-a61b-e53cdcf1d625}</Project>
+      <Name>Function</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

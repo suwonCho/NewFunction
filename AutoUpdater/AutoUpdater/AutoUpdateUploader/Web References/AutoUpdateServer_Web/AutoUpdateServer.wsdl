@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UpdateDataSet_Req">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDataSet_ReqResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDataSet_ReqResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDataSet_Schema_Upload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDataSet_Schema_UploadResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FileDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FileDeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ColumnAddedChk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Add_Cols" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Add_Types" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="dValue" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ColumnAddedChkResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FileUpload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="filedata" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="filedatalength" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fileLenth" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="fileIdx" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="key" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FileUploadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileUploadResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_FileStreamGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_FileStreamGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_FileStreamGetResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_FileStreamGet2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_FileStreamGet2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_FileStreamGet2Result" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_FileLengthGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_FileLengthGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Update_FileLengthGetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateDataSet_ReqSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDataSet_Req" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDataSet_ReqSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDataSet_ReqResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDataSet_Schema_UploadSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDataSet_Schema_Upload" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDataSet_Schema_UploadSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDataSet_Schema_UploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="FileDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:FileDelete" />
+  </wsdl:message>
+  <wsdl:message name="FileDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:FileDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ColumnAddedChkSoapIn">
+    <wsdl:part name="parameters" element="tns:ColumnAddedChk" />
+  </wsdl:message>
+  <wsdl:message name="ColumnAddedChkSoapOut">
+    <wsdl:part name="parameters" element="tns:ColumnAddedChkResponse" />
+  </wsdl:message>
+  <wsdl:message name="FileUploadSoapIn">
+    <wsdl:part name="parameters" element="tns:FileUpload" />
+  </wsdl:message>
+  <wsdl:message name="FileUploadSoapOut">
+    <wsdl:part name="parameters" element="tns:FileUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_FileStreamGetSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_FileStreamGet" />
+  </wsdl:message>
+  <wsdl:message name="Update_FileStreamGetSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_FileStreamGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_FileStreamGet2SoapIn">
+    <wsdl:part name="parameters" element="tns:Update_FileStreamGet2" />
+  </wsdl:message>
+  <wsdl:message name="Update_FileStreamGet2SoapOut">
+    <wsdl:part name="parameters" element="tns:Update_FileStreamGet2Response" />
+  </wsdl:message>
+  <wsdl:message name="Update_FileLengthGetSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_FileLengthGet" />
+  </wsdl:message>
+  <wsdl:message name="Update_FileLengthGetSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_FileLengthGetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AutoUpdateServerSoap">
+    <wsdl:operation name="UpdateDataSet_Req">
+      <wsdl:input message="tns:UpdateDataSet_ReqSoapIn" />
+      <wsdl:output message="tns:UpdateDataSet_ReqSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDataSet_Schema_Upload">
+      <wsdl:input message="tns:UpdateDataSet_Schema_UploadSoapIn" />
+      <wsdl:output message="tns:UpdateDataSet_Schema_UploadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FileDelete">
+      <wsdl:input message="tns:FileDeleteSoapIn" />
+      <wsdl:output message="tns:FileDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ColumnAddedChk">
+      <wsdl:input message="tns:ColumnAddedChkSoapIn" />
+      <wsdl:output message="tns:ColumnAddedChkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FileUpload">
+      <wsdl:input message="tns:FileUploadSoapIn" />
+      <wsdl:output message="tns:FileUploadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_FileStreamGet">
+      <wsdl:input message="tns:Update_FileStreamGetSoapIn" />
+      <wsdl:output message="tns:Update_FileStreamGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_FileStreamGet2">
+      <wsdl:input message="tns:Update_FileStreamGet2SoapIn" />
+      <wsdl:output message="tns:Update_FileStreamGet2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_FileLengthGet">
+      <wsdl:input message="tns:Update_FileLengthGetSoapIn" />
+      <wsdl:output message="tns:Update_FileLengthGetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutoUpdateServerSoap" type="tns:AutoUpdateServerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateDataSet_Req">
+      <soap:operation soapAction="http://tempuri.org/UpdateDataSet_Req" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDataSet_Schema_Upload">
+      <soap:operation soapAction="http://tempuri.org/UpdateDataSet_Schema_Upload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileDelete">
+      <soap:operation soapAction="http://tempuri.org/FileDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ColumnAddedChk">
+      <soap:operation soapAction="http://tempuri.org/ColumnAddedChk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileUpload">
+      <soap:operation soapAction="http://tempuri.org/FileUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_FileStreamGet">
+      <soap:operation soapAction="http://tempuri.org/Update_FileStreamGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_FileStreamGet2">
+      <soap:operation soapAction="http://tempuri.org/Update_FileStreamGet2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_FileLengthGet">
+      <soap:operation soapAction="http://tempuri.org/Update_FileLengthGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AutoUpdateServerSoap12" type="tns:AutoUpdateServerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateDataSet_Req">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDataSet_Req" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDataSet_Schema_Upload">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDataSet_Schema_Upload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileDelete">
+      <soap12:operation soapAction="http://tempuri.org/FileDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ColumnAddedChk">
+      <soap12:operation soapAction="http://tempuri.org/ColumnAddedChk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileUpload">
+      <soap12:operation soapAction="http://tempuri.org/FileUpload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_FileStreamGet">
+      <soap12:operation soapAction="http://tempuri.org/Update_FileStreamGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_FileStreamGet2">
+      <soap12:operation soapAction="http://tempuri.org/Update_FileStreamGet2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_FileLengthGet">
+      <soap12:operation soapAction="http://tempuri.org/Update_FileLengthGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutoUpdateServer">
+    <wsdl:port name="AutoUpdateServerSoap" binding="tns:AutoUpdateServerSoap">
+      <soap:address location="http://localhost/DB_IF_Server/AutoUpdateServer.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AutoUpdateServerSoap12" binding="tns:AutoUpdateServerSoap12">
+      <soap12:address location="http://localhost/DB_IF_Server/AutoUpdateServer.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

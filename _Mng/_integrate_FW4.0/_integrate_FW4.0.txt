@@ -1,0 +1,5 @@
+﻿DLL 참조시 추가 파일
+	Function.Device.QLight
+		- 참조 : AppAuth
+		- 추가 파일 : Qtvc_dll.dll / IP_Setting.exe
+

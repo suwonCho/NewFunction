@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table" msprop:REFCursorName="REFCursor">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ROWNUM" msprop:OraDbType="107" type="xs:decimal" minOccurs="0" />
+                <xs:element name="ISUPLOAD" msprop:OraDbType="104" type="xs:string" minOccurs="0" />
+                <xs:element name="UPDATETYPE" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="UTYPE" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="FILENAME" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="FILENAME2" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="VERSION" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="FILE_VERSION" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="FILEDATE" msprop:OraDbType="106" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="FILE_FILEDATE" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="TEXT" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="UPLOADDATE" msprop:OraDbType="106" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CRC" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="FILESIZE" msprop:OraDbType="107" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SOURCE_FILEPATH" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="UPLOAD" msprop:OraDbType="107" type="xs:decimal" minOccurs="0" />
+                <xs:element name="DEL" msprop:OraDbType="104" type="xs:string" minOccurs="0" />
+                <xs:element name="CH_SOURCE_FILEPATH" msprop:OraDbType="104" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+</NewDataSet>

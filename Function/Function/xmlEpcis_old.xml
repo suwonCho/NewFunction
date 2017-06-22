@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="euc-kr" standalone="no"?>
+<EPCIS>
+	<ObjectEvent>
+		<ObjectEvent>
+			<eventTime></eventTime>
+			<recordTime></recordTime>
+			<eventTimeZoneOffset></eventTimeZoneOffset>
+			<epcList>
+			</epcList>
+			<action></action>
+			<bizStep></bizStep>
+			<disposition></disposition>
+			<readPoint></readPoint>
+			<bizLocation></bizLocation>
+		</ObjectEvent>
+	</ObjectEvent>
+
+	<AggregationEvent>
+		<AggregationEvent>
+			<eventTime></eventTime>
+			<recordTime></recordTime>
+			<eventTimeZoneOffset></eventTimeZoneOffset>
+			<parentID></parentID>
+			<childEPCs></childEPCs>			
+			<action></action>
+			<bizStep></bizStep>
+			<disposition></disposition>
+			<readPoint></readPoint>
+			<bizLocation></bizLocation>
+		</AggregationEvent>
+	</AggregationEvent>
+
+	<TransactionEvent>
+		<TransactionEvent>
+			<eventTime></eventTime>
+			<recordTime></recordTime>
+			<eventTimeZoneOffset></eventTimeZoneOffset>
+			<parentID></parentID>
+			<action></action>
+			<epcList></epcList>
+			<bizStep></bizStep>
+			<disposition></disposition>
+			<readPoint></readPoint>
+			<bizLocation></bizLocation>
+			<bizTransactionList></bizTransactionList>
+		</TransactionEvent>
+	</TransactionEvent>
+
+	<QuantityEvent>
+		<QuantityEvent>
+			<eventTime></eventTime>
+			<recordTime></recordTime>
+			<eventTimeZoneOffset></eventTimeZoneOffset>
+			<epcClass></epcClass>
+			<quantity></quantity>
+			<bizStep></bizStep>
+			<disposition></disposition>
+			<readPoint></readPoint>
+			<bizLocation></bizLocation>
+		</QuantityEvent>
+	</QuantityEvent>
+
+</EPCIS>
+
+

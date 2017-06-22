@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="euc-kr" standalone="no"?>
+<UPDATECLIENT>
+	<UPDATETYPE>KGC_RFID_GATHERING</UPDATETYPE>
+	<SERVER>
+		<SERVERTYPE>ORACLE</SERVERTYPE>
+		<!--ORACLE-->
+		<ORACLE>
+			<TNS>(DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=192.168.11.4)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SID=KGCSCM)
+    )
+  )</TNS>
+			<ID>bgwms</ID>
+			<PASS>bgwms</PASS>
+		</ORACLE>
+	</SERVER>
+	<ICON_Path>.\KGC_CI.ico</ICON_Path>
+	<BackgroundImgae_Path>.\update.jpg</BackgroundImgae_Path>
+	<LogoImgae_Path>.\KGC_CI.PNG</LogoImgae_Path>
+	<TARGETFOLDER>.\</TARGETFOLDER>
+	<STARTUPFILE>.\KGC RFID GATHERING.exe</STARTUPFILE>
+</UPDATECLIENT>
