@@ -8,8 +8,8 @@ namespace PLCModule
 	public enum enPlcType : int
 	{	NotSet = 0, 
 		Melsec_A = 1,
-		Melsec_Q = 2, 
-#if(ABPLC)
+		Melsec_Q = 2,
+#if (ABPLC_A || ABPLC_B)
 		AB = 3,
 #endif
 		LS_XGT = 4,
@@ -226,7 +226,8 @@ namespace PLCModule
 			
 			try
 			{
-#if(ABPLC)
+#if(ABPLC_A || ABPLC_B)
+
 				if (ePlcType == enPlcType.AB)
 					clsPLC = new clsABPLC(strIPAddress, strProgramID, strGroupName, strTopicName, intUpdateRate);
 				else

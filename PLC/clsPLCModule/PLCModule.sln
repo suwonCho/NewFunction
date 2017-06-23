@@ -8,11 +8,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLCModuleTestApp", "PLCModu
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup KGC Storage Application", "Setup KGC Storage Application\Setup KGC Storage Application.vdproj", "{2CFDEDB7-2818-4A67-97E9-D50DA0F8AEEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function", "..\..\NewFunction_VS2010_FW4\Function\Function.csproj", "{5843EBC1-FFAB-4D2D-A61B-E53CDCF1D625}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function", "..\..\Function\Function\Function.csproj", "{5843EBC1-FFAB-4D2D-A61B-E53CDCF1D625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function.form", "..\..\NewFunction_VS2010_FW4\Function.form\Function.form.csproj", "{D92B5672-4F0D-407A-AC14-D97DCA94E803}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function.form", "..\..\Function\Function.form\Function.form.csproj", "{D92B5672-4F0D-407A-AC14-D97DCA94E803}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppAuth", "..\..\NewFunction_VS2010_FW4\AppAuth\AppAuth.csproj", "{78C34A59-0D62-46F6-93C1-EBB0D59AF147}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppAuth", "..\..\Function\AppAuth\AppAuth.csproj", "{78C34A59-0D62-46F6-93C1-EBB0D59AF147}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

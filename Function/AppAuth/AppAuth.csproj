@@ -97,7 +97,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\_Function\NewFunction_VS2010_FW4\Function\Function.csproj">
+    <ProjectReference Include="..\Function\Function.csproj">
       <Project>{5843ebc1-ffab-4d2d-a61b-e53cdcf1d625}</Project>
       <Name>Function</Name>
     </ProjectReference>

@@ -87,7 +87,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;LOG1;ABPLC</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;LOG1;ABPLC_B</DefineConstants>
     <BaseAddress>285212672</BaseAddress>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <FileAlignment>4096</FileAlignment>
@@ -128,6 +128,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="OpcNetApi, Version=2.1.105.1, Culture=neutral, PublicKeyToken=9a40e993cbface53, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Rockwell Software\RSLINX\OpcNetApi.dll</HintPath>
+    </Reference>
+    <Reference Include="OpcNetApi.Com, Version=2.1.105.1, Culture=neutral, PublicKeyToken=9a40e993cbface53, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Rockwell Software\RSLINX\OpcNetApi.Com.dll</HintPath>
+    </Reference>
+    <Reference Include="OpcNetApi.Xml, Version=2.1.105.1, Culture=neutral, PublicKeyToken=9a40e993cbface53, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Rockwell Software\RSLINX\OpcNetApi.Xml.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -163,6 +175,7 @@
     <Compile Include="frmPLCValueChange.Designer.cs">
       <DependentUpon>frmPLCValueChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="PLCModules\clsABPLC_B.cs" />
     <Compile Include="PLCModules\clsABPLC.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -214,17 +227,10 @@
       <Project>{78c34a59-0d62-46f6-93c1-ebb0d59af147}</Project>
       <Name>AppAuth</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="RsiOPCAuto">
-      <Guid>{DFB83232-A952-11D2-A46B-00C04F796375}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
+    <ProjectReference Include="..\..\..\Function\Function\Function.csproj">
+      <Project>{5843EBC1-FFAB-4D2D-A61B-E53CDCF1D625}</Project>
+      <Name>Function</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

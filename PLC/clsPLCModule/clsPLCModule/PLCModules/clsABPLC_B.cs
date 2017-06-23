@@ -3,12 +3,26 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Data;
 using System.Collections;
+using Function;
 
 
-//RS-Linx 2.54 이하 버전에서만 사용
+//RS-Linx 3.80 버전에서 사용
+//RS-Linx 설치 폴더에 OpcNetApi.dll, OpcNetApi.Com.dll, OpcNetApi.Xml.dll 추가 되어야 함
 
-#if (ABPLC_A)
-using RsiOPCAuto;
+/*아이템 추가 확인
+ // add items to the group    (in Rockwell names are identified like [Name of PLC in the server]Block of word:number of word,number of consecutive readed words)        
+items[0] = new Opc.Da.Item();
+items[0].ItemName = "[UNTITLED_1]N7:0,L2";//this reads 2 word (short - 16 bit)
+items[1] = new Opc.Da.Item();
+items[1].ItemName = "[UNTITLED_1]N11:0,L10";//this reads an array of 10 words (short[])
+items[2] = new Opc.Da.Item();
+items[2].ItemName = "[UNTITLED_1]B3:0,L2";//this read a 2 word array (but in the plc the are used as bits so you have to mask them)    
+items = groupRead.AddItems(items);	
+ */
+
+
+#if (ABPLC_B)
+using Opc;
 
 namespace PLCModule.PLCModules
 {
@@ -23,12 +37,29 @@ namespace PLCModule.PLCModules
 		/// <summary>
 		/// OpcClass
 		/// </summary>
-		OPCServer Opc;
-
-		OPCGroup OpcGrp;
+		Opc.Da.Server opc;
 
 		/// <summary>
-		/// GateWay프로그램 IP / local이면 비워 둘것...
+		/// Opc Url
+		/// </summary>
+		Opc.URL url;
+
+		/// <summary>
+		/// Item Group
+		/// </summary>
+		Opc.Da.Subscription OpcGrp;
+
+		/// <summary>
+		/// Item Group State
+		/// </summary>
+		Opc.Da.SubscriptionState OpcGrp_State;
+
+
+		OpcCom.Factory fact = new OpcCom.Factory();
+
+
+		/// <summary>
+		/// GateWay프로그램 IP / local이면 비워 둘것..
 		/// </summary>
 		string strIp = string.Empty;
 		/// <summary>
@@ -121,21 +152,44 @@ namespace PLCModule.PLCModules
 
 			try
 			{
-				if (Opc != null) close();
+				if (opc != null) close();
 
-				Opc = new OPCServer();
-				Opc.Connect(ProgId, (object)strIp);
+				string add;
 
-				//OpcGrp = new OPCGroup();			
+				//주소를 만들어 준다.
+				if(strIp.Equals(string.Empty))
+				{
+					add = $"opcda://localhost/{ProgId}";
+				}
+				else
+				{
+					add = $"opcda://{strIp}/{ProgId}";
+				}
 
-				OpcGrp = Opc.OPCGroups.Add(strGrpName);
 
-				OpcGrp.IsActive = true;
-				OpcGrp.UpdateRate = intUpdateRate;
-				OpcGrp.IsSubscribed = true;
+				opc = new Opc.Da.Server(fact, null);
 
-				OpcGrp.DataChange += new DIOPCGroupEvent_DataChangeEventHandler(OpcGrp_DataChange);
+				url = new Opc.URL(add);
 
+				//서버에 연결
+				opc.Connect(url, new Opc.ConnectData(new System.Net.NetworkCredential()));
+
+				//연결 후 - 테스트 할것
+				//opc.ServerShutdown
+
+
+				//그룹생성
+				OpcGrp_State = new Opc.Da.SubscriptionState();
+				OpcGrp_State.Name = strGrpName;
+				OpcGrp_State.UpdateRate = intUpdateRate;
+				OpcGrp_State.Active = true;
+
+				OpcGrp = (Opc.Da.Subscription)opc.CreateSubscription(OpcGrp_State);
+				OpcGrp.DataChanged += OpcGrp_DataChanged;
+				
+				
+
+								
 				//opc 연결상태 체크 Timer를 시작한다.
 				if (this.tmrOpcCheck != null)
 				{
@@ -171,7 +225,6 @@ namespace PLCModule.PLCModules
 
 		}
 
-
 		protected override bool close()
 		{
 			try
@@ -179,12 +232,13 @@ namespace PLCModule.PLCModules
 				if (OpcGrp != null)
 					OpcGrp = null;
 
-				if (Opc != null)
+				if (opc != null)
 				{
-					if (Opc.ServerState == 1)
-						Opc.Disconnect();
+					if(opc.IsConnected)
+						opc.Disconnect();
 
-					Opc = null;
+					opc.Dispose();
+					opc = null;
 				}
 
 				if (bolOpcStatus)
@@ -235,126 +289,6 @@ namespace PLCModule.PLCModules
 			}
 		}
 
-
-		/*
-		public override bool AddAddress(int intAddress)
-		{
-			throw new Exception("구현 되지 않는 기능 입니다.");
-		}
-
-		public override bool AddAddress(int intAddress, int intLength)
-		{
-			throw new Exception("구현 되지 않는 기능 입니다.");
-		}
-
-		public override bool AddAddress(string[] strAddress)
-		{
-			try
-			{
-				foreach (string strAdd in strAddress)
-				{
-					this.Item_Add(strAdd);
-				}
-				return true;
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-		}
-
-
-
-		public override bool DelAddress(int intAddress)
-		{
-			throw new Exception("구현 되지 않는 기능 입니다.");
-		}
-		public override bool DelAddress(string[] strAddress)
-		{
-			throw new Exception("구현 되지 않는 기능 입니다.");
-		}
-
-
-
-		public override int GetValue(int intAddress)
-		{
-			throw new Exception("구현 되지 않는 기능 입니다.");
-		}
-		public override int GetValue(int intAddress, int intLength)
-		{
-			throw new Exception("구현 되지 않는 기능 입니다.");
-		}
-		public override string GetValue(int intAddress, int intLength, int intRetrunLength)
-		{
-			throw new Exception("구현 되지 않는 기능 입니다.");
-		}
-
-		public override int GetValue(string[] strAddress)
-		{
-			try
-			{
-				string strValue = string.Empty;
-				foreach (string strAdd in strAddress)
-				{
-					strValue += IntToHex(this.Item_Read(strAdd));
-				}
-
-				return int.Parse(strValue);
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-		}
-		public override string GetValue(string[] strAddress, int intRetrunLength)
-		{
-			try
-			{
-				return string.Format("{0:D" + intRetrunLength.ToString() + "}", GetValue(strAddress));
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-		}
-
-		public override int GetValueInt(string strAddress)
-		{
-			try
-			{
-				return this.Item_Read(strAddress);
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-		}
-
-		public override bool WriteOrder(int Address, int Value)
-		{
-			throw new Exception("구현 되지 않는 기능 입니다.");
-		}
-
-		public override bool WriteOrder(string[] Address, int[] Value)
-		{
-			try
-			{
-				int i = 0;
-				string strValue = string.Empty;
-				foreach (string strAdd in Address)
-				{
-					this.Item_Write(strAdd, Value[i]);
-					i++;
-				}
-
-				return true;
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-		}
-		*/
 #endregion
 
 		/// <summary>
@@ -370,8 +304,7 @@ namespace PLCModule.PLCModules
 			try
 			{
 				bolChecking = true;
-
-				int intCancelId = 0;
+				
 				if (OpcGrp == null)
 				{
 					if (bolOpcStatus)
@@ -380,7 +313,7 @@ namespace PLCModule.PLCModules
 						throw new Exception(string.Empty);
 				}
 
-				if (OpcGrp.OPCItems.Count < 1)
+				if (OpcGrp.Items.Length < 1)
 				{
 					//if 	(bolOpcStatus) 
 					return;
@@ -388,19 +321,29 @@ namespace PLCModule.PLCModules
 					//	throw new Exception(string.Empty);
 				}
 
-				OpcGrp.AsyncRefresh(1, 2, out intCancelId);
+				OpcGrp.Refresh();
 
-				RsiOPCAuto.OPCItem item = OpcGrp.OPCItems.Item(1);
-
+				Opc.Da.Item item = OpcGrp.Items[0];
+				
 				//값을 정상 적으로 받지 못함..
-				if (item.Quality == 0) throw new Exception(string.Empty);
+				if (!item.Active) throw new Exception(string.Empty);
+								
 
-
-				if (this.Opc.ServerState == 1 && !this.bolOpcStatus)    //접속 정상
+				if (opc.GetStatus().ServerState != Opc.Da.serverState.running && !this.bolOpcStatus)    //접속 정상
 				{   //연결 회복..
 					this.bolOpcStatus = true;
 					this.ChConnection_Status(bolOpcStatus);
 				}
+
+				//쓰기명령을 처리 한다.
+				foreach(DataRow dr in dtWriteOrder.Rows)
+				{
+					//dtWriteOrder.Rows[j]["Address"], dtWriteOrder.Rows[j]["Value"]);
+
+					Item_Write(Fnc.obj2String(dr["Address"]), Fnc.obj2int(dr["value"]));
+				}
+
+
 
 			}
 			catch (Exception ex) //(System.Runtime.InteropServices.ExternalException ex)
@@ -485,9 +428,11 @@ namespace PLCModule.PLCModules
 
 			try
 			{
-				ItemName = strTopicName + strItem;
-				int intOpcItemCnt = OpcGrp.OPCItems.Count;
-				OpcGrp.OPCItems.AddItem(ItemName, intOpcItemCnt);
+				int intOpcItemCnt = OpcGrp.Items.Length;
+				Opc.Da.Item i = new Opc.Da.Item();
+				i.ItemName = strItem;
+
+				OpcGrp.AddItems(new Opc.Da.Item[] { i });				
 				ItemList.Add((object)ItemName);
 
 				dtAddress_Add(ItemName);
@@ -512,13 +457,22 @@ namespace PLCModule.PLCModules
 			try
 			{
 				int intOpcItemCnt = 0;
+
+				Opc.Da.Item[] items = new Opc.Da.Item[ItemList.Count];
+
 				foreach (object objItem in ItemList)
 				{
 					ItemName = objItem.ToString();
-					OpcGrp.OPCItems.AddItem(ItemName, intOpcItemCnt);
+
+					items[intOpcItemCnt] = new Opc.Da.Item();
+					items[intOpcItemCnt].ItemName = ItemName;
+					
 					intOpcItemCnt++;
 					dtAddress_Add(ItemName);
 				}
+
+				OpcGrp.AddItems(items);
+
 			}
 			catch (System.Runtime.InteropServices.ExternalException ex)
 			{   //activex이기 때문에 에러 발생이 제대로 되지 않아 몇가지만...
@@ -532,30 +486,32 @@ namespace PLCModule.PLCModules
 
 
 
-		/// <summary>
-		/// PLC Item 값을 읽는다.
-		/// </summary>
-		/// <param name="strItem">ItemName</param>
-		/// <returns></returns>
-		public int Item_Read(string strItem)
-		{
-			object ItemName = string.Empty;
-			try
-			{
-				ItemName = strTopicName + strItem;
-				OPCItem Item = OpcGrp.OPCItems.Item(ItemName);
-				object objValue = Item.Value;
-				return Convert.ToInt16(objValue.ToString(), 10);
-			}
-			catch (System.Runtime.InteropServices.ExternalException ex)
-			{   //activex이기 때문에 에러 발생이 제대로 되지 않아 몇가지만...
-				throw ComException(ex, ItemName.ToString());
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-		}
+		///// <summary>
+		///// PLC Item 값을 읽는다.
+		///// </summary>
+		///// <param name="strItem">ItemName</param>
+		///// <returns></returns>
+		//public int Item_Read(string strItem)
+		//{
+			
+		//	try
+		//	{
+		//		Opc.Da.Item item = OpcGrp.Items[strItem];
+
+				
+		//		OPCItem Item = OpcGrp.OPCItems.Item(ItemName);
+		//		object objValue = Item.Value;
+		//		return Convert.ToInt16(objValue.ToString(), 10);
+		//	}
+		//	catch (System.Runtime.InteropServices.ExternalException ex)
+		//	{   //activex이기 때문에 에러 발생이 제대로 되지 않아 몇가지만...
+		//		throw ComException(ex, ItemName.ToString());
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		throw ex;
+		//	}
+		//}
 
 
 
@@ -564,22 +520,41 @@ namespace PLCModule.PLCModules
 		/// </summary>
 		/// <param name="strItem">ItemName</param>
 		/// <param name="lngValue">Writing Value</param>
-		public void Item_Write(string strItem, int intValue)
-		{
-			object ItemName = string.Empty;
+		void Item_Write(string strItem, int intValue)
+		{			
 			try
 			{
-				ItemName = strTopicName + strItem;
-				OPCItem Item = OpcGrp.OPCItems.Item(ItemName);
-				object objValue = intValue;
-				Item.Write(objValue);
+				bool isWork = false;
+				Opc.Da.ItemValue iv = new Opc.Da.ItemValue();
+
+
+				foreach(Opc.Da.Item i in OpcGrp.Items)
+				{
+					if(i.ItemName.Equals(strItem))
+					{
+
+						iv.ServerHandle = i.ServerHandle;
+						isWork = true;
+						break;
+					}
+				}
+
+				if(!isWork)
+				{
+					//등록 안된 item을 쓸려고 했음
+					throw new Exception($"등록안된 ITEM[{strItem}에 값 변경을 시도 하였습니다. Item등록 하여 주십시요.");
+				}
+
+				iv.Value = intValue;
+
+				OpcGrp.Write(new Opc.Da.ItemValue[] { iv });
 
 				string strChanged = string.Format("[{0}] WorteValue : {1}", strItem, intValue);
 				WroteAddressValue(strChanged, null, null);
 			}
 			catch (System.Runtime.InteropServices.ExternalException ex)
 			{   //activex이기 때문에 에러 발생이 제대로 되지 않아 몇가지만...
-				throw ComException(ex, ItemName.ToString());
+				throw ComException(ex, strItem);
 			}
 			catch (Exception ex)
 			{
@@ -598,36 +573,37 @@ namespace PLCModule.PLCModules
 
 		}
 
-#endregion
+		#endregion
 
-		private void OpcGrp_DataChange(int TransactionID, int NumItems, ref Array ClientHandles, ref Array ItemValues, ref Array Qualities, ref Array TimeStamps)
+
+
+		private void OpcGrp_DataChanged(object subscriptionHandle, object requestHandle, Opc.Da.ItemValueResult[] values)
 		{
 			try
 			{
-				foreach (OPCItem it in OpcGrp.OPCItems)
+				//값 처리 부분은 추후 변경 필요 array 및 short[] 처리 부
+				DataRow[] item;
+
+				foreach (Opc.Da.ItemValueResult value in values)
 				{
-					//Console.WriteLine("[AB] {0} = {1}", item.ItemID, item.Value);
+					item = this.dtAddress.Select("Address = '" + value.ItemName + "'");
 
-					string strAddress = it.ItemID; //.Replace(this.strTopicName, string.Empty);
+					if (item.Length > 0)
+					{
+						short[] data = (short[])value.Value;
 
-					DataRow[] row = this.dtAddress.Select("Address = '" + strAddress + "'");
-
-					//row[0]["Value"] = Convert.ToInt32(it.Value);
-
-					if (row.Length > 0)
-						ChangeddAddressValue(row[0], Convert.ToInt32(it.Value), false, null, null);
-
+						ChangeddAddressValue(item[0], data[0], false, null, null);
+					}
 				}
-
-				if (this.evtPLCScan != null) ThevtPLCScan();
-
 			}
-			catch (Exception ex)
+			catch(Exception ex)
 			{
-				Console.WriteLine(ex.ToString());
+				PLCModule.clsPLCModule.LogWrite("OpcGrp_DataChanged", ex.ToString());
 			}
-
 		}
+
+
+		
 	}
 }
 
