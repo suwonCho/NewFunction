@@ -94,19 +94,19 @@
     <Content Include="_integrate_FW4.0.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AutoUpdater_KGC\AutoUpdater\AutoUpdateClient\AutoUpdateClient.csproj">
+    <ProjectReference Include="..\..\AutoUpdater\AutoUpdater\AutoUpdateClient\AutoUpdateClient.csproj">
       <Project>{d3cd5dd4-9b41-4751-9060-96ed915fcc0f}</Project>
       <Name>AutoUpdateClient</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\AutoUpdater_KGC\AutoUpdater\AutoUpdateUploader\AutoUpdateUploader.csproj">
+    <ProjectReference Include="..\..\AutoUpdater\AutoUpdater\AutoUpdateUploader\AutoUpdateUploader.csproj">
       <Project>{70f6ae58-eb7a-438d-b767-58b998bc021f}</Project>
       <Name>AutoUpdateUploader</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\AutoUpdater_KGC\AutoUpdater\prjFileMover\FileMover.csproj">
+    <ProjectReference Include="..\..\AutoUpdater\AutoUpdater\prjFileMover\FileMover.csproj">
       <Project>{fa288a9e-9779-40da-b72c-73b7a7e8ba2f}</Project>
       <Name>FileMover</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Ref.Proj\clsPLCModule_2010\clsPLCModule\clsPLCModule.csproj">
+    <ProjectReference Include="..\..\PLC\clsPLCModule\clsPLCModule\clsPLCModule.csproj">
       <Project>{863982ca-29cb-4ff7-b338-f770b85bc3c2}</Project>
       <Name>clsPLCModule</Name>
     </ProjectReference>
@@ -114,51 +114,51 @@
       <Project>{75580747-f7ca-44eb-9fcc-4e6a41c9a10e}</Project>
       <Name>Telegram.Bot</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AppAuth\AppAuth.csproj">
+    <ProjectReference Include="..\..\Function\AppAuth\AppAuth.csproj">
       <Project>{78c34a59-0d62-46f6-93c1-ebb0d59af147}</Project>
       <Name>AppAuth</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AutoUpdateServer_WEB\AutoUpdateServer_WEB.csproj">
+    <ProjectReference Include="..\..\Web\AutoUpdateServer_WEB\AutoUpdateServer_WEB.csproj">
       <Project>{389f6fb7-4f92-43b9-b50d-57c5b73d5171}</Project>
       <Name>AutoUpdateServer_WEB</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Function.Advenced\Function.Advenced.csproj">
+    <ProjectReference Include="..\..\Function\Function.Advenced\Function.Advenced.csproj">
       <Project>{73a519c1-5bec-4c59-9359-70cfba5edfc9}</Project>
       <Name>Function.Advenced</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Function.api\Function.api.csproj">
+    <ProjectReference Include="..\..\Function\Function.api\Function.api.csproj">
       <Project>{cbfcb375-b8ee-456b-b46e-934695c2a58a}</Project>
       <Name>Function.api</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Function.Archive\Function.Archive.csproj">
+    <ProjectReference Include="..\..\Function\Function.Archive\Function.Archive.csproj">
       <Project>{18348d28-2612-4eb1-a192-48db0cd4e92c}</Project>
       <Name>Function.Archive</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Function.Component.DevExp\Function.Component.DevExp.csproj">
+    <ProjectReference Include="..\..\Function\Function.Component.DevExp\Function.Component.DevExp.csproj">
       <Project>{9ae620b2-bdd3-4005-b964-c730215137c6}</Project>
       <Name>Function.Component.DevExp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Function.Device\Function.Device.csproj">
+    <ProjectReference Include="..\..\Function\Function.Device\Function.Device.csproj">
       <Project>{3af7ccd6-30b0-4212-b59e-3944bf04e38d}</Project>
       <Name>Function.Device</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Function.form\Function.form.csproj">
+    <ProjectReference Include="..\..\Function\Function.form\Function.form.csproj">
       <Project>{d92b5672-4f0d-407a-ac14-d97dca94e803}</Project>
       <Name>Function.form</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Function\Function.csproj">
+    <ProjectReference Include="..\..\Function\Function\Function.csproj">
       <Project>{5843ebc1-ffab-4d2d-a61b-e53cdcf1d625}</Project>
       <Name>Function</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IconHelper\IconHelper.csproj">
+    <ProjectReference Include="..\..\Function\IconHelper\IconHelper.csproj">
       <Project>{7d3bc97c-82dc-4541-bd01-cbdc5981f307}</Project>
       <Name>IconHelper</Name>
     </ProjectReference>
-    <ProjectReference Include="..\QLight\Function.Device.QLight.csproj">
+    <ProjectReference Include="..\..\Function\Function.Device.QLight\Function.Device.QLight.csproj">
       <Project>{36a1a0c5-752d-44d9-be49-2d17dd4b1530}</Project>
       <Name>Function.Device.QLight</Name>
     </ProjectReference>
-    <ProjectReference Include="..\USB.Printing\USB.Printing.csproj">
+    <ProjectReference Include="..\..\Function\USB.Printing\USB.Printing.csproj">
       <Project>{03008f6f-25c1-449e-af31-8a1289ddc432}</Project>
       <Name>USB.Printing</Name>
     </ProjectReference>

@@ -306,8 +306,8 @@ namespace Function
 		/// <summary>
 		/// 시작프로그램 등록 여부를 가져 옵니다.
 		/// </summary>
-		/// <param name="key"></param>
-		/// <param name="value"></param>
+		/// <param name="key">프로그램명</param>
+		/// <param name="value">프로그램 실행 경로 ex)Application.ExecutablePath</param>
 		/// <returns></returns>
 		public static bool StartUpPgm_isReg(string key, string value)
 		{
@@ -325,10 +325,11 @@ namespace Function
 		/// 시작프로그램 등록 하거나 삭제 합니다.
 		/// </summary>
 		/// <param name="isReg">[true]등록 [false]해제</param>
-		/// <param name="key"></param>
-		/// <param name="value"></param>
+		/// <param name="key">프로그램명</param>
+		/// <param name="value">프로그램 실행 경로 ex)Application.ExecutablePath</param>
 		public static void StartUpPgm_Reg(bool isReg, string key, string value)
 		{
+
 			RegistryKey k = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 			
 			if(isReg)
@@ -337,7 +338,7 @@ namespace Function
 			}
 			else
 			{
-				k.DeleteValue(key);
+				if(StartUpPgm_isReg(key,value))	k.DeleteValue(key);
 			}
 		}
 

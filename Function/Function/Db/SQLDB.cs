@@ -17,6 +17,8 @@ namespace Function.Db
 		{
 			string qry = "SELECT NAME FROM SYS.databases ORDER BY NAME";
 			MsSQL sql = new MsSQL(conn);
+			sql.retryTimes_Connecting = 1;
+			sql.RetryTimes_Query = 1;
 
 			using(DataSet ds = sql.Excute_Query(qry, ""))
 			{
@@ -485,7 +487,7 @@ order by parameter_id", spname);
 				{
 					if (_log != null & writelog) _log.WLog_Exception(string.Format("SQLDB.Excute_Query[{0}¹øÂ°", Count), ex);
 					
-					if (Count == retryTimes_Query) throw new Exception(string.Empty, ex);
+					if (Count >= retryTimes_Query) throw new Exception(string.Empty, ex);
 				}
                 
 			}

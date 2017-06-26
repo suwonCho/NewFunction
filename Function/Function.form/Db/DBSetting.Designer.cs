@@ -53,7 +53,7 @@
 			this.inpDbType.ComboBoxSelectItem = null;
 			this.inpDbType.ComboBoxValueMember = "";
 			this.inpDbType.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpDbType.DLabel_Blink =  usrInputBox.enBlinkType.None;
+			this.inpDbType.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.inpDbType.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpDbType.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpDbType.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -77,7 +77,9 @@
 			this.inpDbType.TabIndex = 1;
 			this.inpDbType.TEXT = "";
 			this.inpDbType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.inpDbType.TextBox_AcceptsTab = false;
 			this.inpDbType.TEXTBOX_PasswordChar = '\0';
+			this.inpDbType.TextBox_TabStopsLength = 8;
 			this.inpDbType.TextType = Function.form.usrInputBox.enTextType.All;
 			this.inpDbType.Value = "";
 			this.inpDbType.Text_Changed += new Function.form.usrEventHander(this.inpDbType_Text_Changed);
@@ -97,7 +99,7 @@
 			this.inpIp.ComboBoxSelectItem = null;
 			this.inpIp.ComboBoxValueMember = "";
 			this.inpIp.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpIp.DLabel_Blink = usrInputBox.enBlinkType.None;
+			this.inpIp.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.inpIp.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpIp.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpIp.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -117,11 +119,13 @@
 			this.inpIp.Multiline = true;
 			this.inpIp.Name = "inpIp";
 			this.inpIp.Orientation = System.Windows.Forms.Orientation.Vertical;
-			this.inpIp.Size = new System.Drawing.Size(341, 134);
+			this.inpIp.Size = new System.Drawing.Size(341, 128);
 			this.inpIp.TabIndex = 2;
 			this.inpIp.TEXT = "";
 			this.inpIp.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+			this.inpIp.TextBox_AcceptsTab = false;
 			this.inpIp.TEXTBOX_PasswordChar = '\0';
+			this.inpIp.TextBox_TabStopsLength = 8;
 			this.inpIp.TextType = Function.form.usrInputBox.enTextType.All;
 			this.inpIp.Value = "";
 			// 
@@ -140,7 +144,7 @@
 			this.inpId.ComboBoxSelectItem = null;
 			this.inpId.ComboBoxValueMember = "";
 			this.inpId.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpId.DLabel_Blink = usrInputBox.enBlinkType.None;
+			this.inpId.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.inpId.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpId.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpId.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -164,7 +168,9 @@
 			this.inpId.TabIndex = 3;
 			this.inpId.TEXT = "";
 			this.inpId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.inpId.TextBox_AcceptsTab = false;
 			this.inpId.TEXTBOX_PasswordChar = '*';
+			this.inpId.TextBox_TabStopsLength = 8;
 			this.inpId.TextType = Function.form.usrInputBox.enTextType.All;
 			this.inpId.Value = "";
 			// 
@@ -183,7 +189,7 @@
 			this.inpPass.ComboBoxSelectItem = null;
 			this.inpPass.ComboBoxValueMember = "";
 			this.inpPass.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpPass.DLabel_Blink = usrInputBox.enBlinkType.None;
+			this.inpPass.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.inpPass.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpPass.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpPass.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -207,7 +213,9 @@
 			this.inpPass.TabIndex = 4;
 			this.inpPass.TEXT = "";
 			this.inpPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.inpPass.TextBox_AcceptsTab = false;
 			this.inpPass.TEXTBOX_PasswordChar = '*';
+			this.inpPass.TextBox_TabStopsLength = 8;
 			this.inpPass.TextType = Function.form.usrInputBox.enTextType.All;
 			this.inpPass.Value = "";
 			// 
@@ -226,7 +234,7 @@
 			this.inpDataBase.ComboBoxSelectItem = null;
 			this.inpDataBase.ComboBoxValueMember = "";
 			this.inpDataBase.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpDataBase.DLabel_Blink = usrInputBox.enBlinkType.None;
+			this.inpDataBase.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.inpDataBase.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpDataBase.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpDataBase.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -250,7 +258,9 @@
 			this.inpDataBase.TabIndex = 5;
 			this.inpDataBase.TEXT = "";
 			this.inpDataBase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.inpDataBase.TextBox_AcceptsTab = false;
 			this.inpDataBase.TEXTBOX_PasswordChar = '\0';
+			this.inpDataBase.TextBox_TabStopsLength = 8;
 			this.inpDataBase.TextType = Function.form.usrInputBox.enTextType.All;
 			this.inpDataBase.Value = "";
 			this.inpDataBase.ComboBoxDropDown += new System.EventHandler(this.inpDataBase_ComboBoxDropDown);
@@ -270,7 +280,7 @@
 			this.inpAuthType.ComboBoxSelectItem = null;
 			this.inpAuthType.ComboBoxValueMember = "";
 			this.inpAuthType.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpAuthType.DLabel_Blink = usrInputBox.enBlinkType.None;
+			this.inpAuthType.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.inpAuthType.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpAuthType.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpAuthType.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -294,7 +304,9 @@
 			this.inpAuthType.TabIndex = 6;
 			this.inpAuthType.TEXT = "";
 			this.inpAuthType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.inpAuthType.TextBox_AcceptsTab = false;
 			this.inpAuthType.TEXTBOX_PasswordChar = '\0';
+			this.inpAuthType.TextBox_TabStopsLength = 8;
 			this.inpAuthType.TextType = Function.form.usrInputBox.enTextType.All;
 			this.inpAuthType.Value = "";
 			this.inpAuthType.Text_Changed += new Function.form.usrEventHander(this.inpAuthType_Text_Changed);
@@ -337,6 +349,7 @@
 			this.Name = "DBSetting";
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
+			this.ShowStatusBar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "데이터 베이스 설정";
 			this.Load += new System.EventHandler(this.DBSetting_Load);

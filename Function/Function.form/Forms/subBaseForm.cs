@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace Function.form
 {
+	/// <summary>
+	/// 서브폼, pop up 화면이나 툴박스, 설정 화면에 사용 하면 좋다.
+	/// </summary>
 	public partial class subBaseForm : clsbaseForm
 	{
 		/// <summary>

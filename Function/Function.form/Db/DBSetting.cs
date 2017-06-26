@@ -22,6 +22,19 @@ namespace Function.form.Db
 		bool isInit = false;
 
 
+		#region properties
+
+		/// <summary>
+		/// DB타입 변경 가능여부, 폼 로드전에만 변경 가능
+		/// </summary>
+		[Description("DB타입 변경 가능여부")]
+		public bool DbType_Changable { get; set; } = true;
+
+
+
+		#endregion
+
+
 
 		public DBSetting()
 		{
@@ -219,9 +232,10 @@ namespace Function.form.Db
 
 				DataTable dt = MsSQL.DBListGet(sql);
 
-				inpDataBase.ComboBoxDataSource = dt;
 				inpDataBase.ComboBoxDisplayMember = "Name";
-				inpDataBase.ComboBoxValueMember = "Name";
+				inpDataBase.ComboBoxValueMember = "NAME";
+				inpDataBase.ComboBoxDataSource = dt;
+				
 
 				SetMessage(false, "", false);
 			}
@@ -247,7 +261,9 @@ namespace Function.form.Db
 
 		private void DBSetting_Load(object sender, EventArgs e)
 		{
-			Form_Init();
+			//Form_Init();
+			inpDbType.Enabled = DbType_Changable;
+			
 		}
 	}
 }

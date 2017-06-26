@@ -199,19 +199,19 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\NewFunction_VS2010_FW4\Function.Archive\Function.Archive.csproj">
+    <ProjectReference Include="..\..\..\Function\Function.Archive\Function.Archive.csproj">
       <Project>{18348d28-2612-4eb1-a192-48db0cd4e92c}</Project>
       <Name>Function.Archive</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\NewFunction_VS2010_FW4\Function.Component.DevExp\Function.Component.DevExp.csproj">
+    <ProjectReference Include="..\..\..\Function\Function.Component.DevExp\Function.Component.DevExp.csproj">
       <Project>{9AE620B2-BDD3-4005-B964-C730215137C6}</Project>
       <Name>Function.Component.DevExp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\NewFunction_VS2010_FW4\Function.form\Function.form.csproj">
+    <ProjectReference Include="..\..\..\Function\Function.form\Function.form.csproj">
       <Project>{D92B5672-4F0D-407A-AC14-D97DCA94E803}</Project>
       <Name>Function.form</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\NewFunction_VS2010_FW4\Function\Function.csproj">
+    <ProjectReference Include="..\..\..\Function\Function\Function.csproj">
       <Project>{5843EBC1-FFAB-4D2D-A61B-E53CDCF1D625}</Project>
       <Name>Function</Name>
     </ProjectReference>
