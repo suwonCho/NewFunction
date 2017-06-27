@@ -1434,6 +1434,13 @@ namespace Function
 			string rtn = string.Empty;
 			int x, y;
 
+			if(txt.Length < length)
+			{
+				rtn = txt;
+				txt = string.Empty;
+				return rtn;
+			}
+
 
 			switch (loc)
 			{

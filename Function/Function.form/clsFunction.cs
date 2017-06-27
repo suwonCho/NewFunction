@@ -5,6 +5,8 @@ using System.Text;
 using System.Windows.Forms;
 using Function.form;
 using Microsoft.Win32;
+using System.Data;
+using System.IO;
 
 namespace Function
 {
@@ -367,6 +369,56 @@ namespace Function
 				inputBox_Commit(c);
 			}
 
+		}
+
+		/// <summary>
+		/// 데이터 테이블을 csv파일로 출력을 한다.
+		/// </summary>
+		/// <param name="dt"></param>
+		/// <param name="file"></param>
+		public static void DataTable2CSV(DataTable dt, string file)
+		{
+			if (File.Exists(file)) File.Delete(file);
+
+			byte[] b;
+			int idx = 0;
+			Encoding encoding = Encoding.Default;
+
+
+			using (FileStream fs = new FileStream(file, FileMode.Create, FileAccess.Write, FileShare.None, 1024))
+			{
+				//컬럼을 추가한다.
+				foreach(DataColumn c in dt.Columns)
+				{
+					b = encoding.GetBytes(string.Format("{0}{1}", idx == 0 ? "" : ", ", c.ColumnName));
+					fs.Write(b, 0, b.Length);
+					idx++;
+				}
+
+				//줄바꿈
+				b = encoding.GetBytes("\r\n");
+				fs.Write(b, 0, b.Length);
+				
+				//데이터를 쓴다
+				foreach(DataRow r in dt.Rows)
+				{
+					idx = 0;
+					foreach(object v in r.ItemArray)
+					{
+						b = encoding.GetBytes(string.Format("{0}{1}", idx == 0 ? "" : ", ", v));
+						fs.Write(b, 0, b.Length);
+						idx++;
+					}
+
+					//줄바꿈
+					b = encoding.GetBytes("\r\n");
+					fs.Write(b, 0, b.Length);
+				}
+				
+				fs.Flush();
+				fs.Close();
+			}
+				
 		}
 
 
