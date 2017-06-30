@@ -197,7 +197,9 @@ namespace PLCModule
 			
 			try
 			{
-				string strLogDirectory = @".\Log_PlcModule\";
+
+				
+				string strLogDirectory = System.Windows.Forms.Application.StartupPath + @"\Log_PlcModule\";
 				Set_Module(ePlcType, strIPAddress, intPort, strDeviceType, strLogDirectory, strLogFileName);
 				
 			}

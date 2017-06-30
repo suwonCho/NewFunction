@@ -108,7 +108,7 @@ namespace Function.form.Db
 		private void set_ConnString()
 		{
 			
-			if (inpIp.TEXT.Trim().Equals(string.Empty))	
+			if (inpIp.Text.Trim().Equals(string.Empty))	
 			{
 				if(dbType == enDBType.Oracle)
 					SetMessage(true, "IP를 입력 하여 주세요", false);
@@ -116,29 +116,29 @@ namespace Function.form.Db
 					SetMessage(true, "TNS를 입력 하여 주세요", false);
 			}
 
-			bool auth = inpAuthType.TEXT.Equals("Sql Server 인증");
+			bool auth = inpAuthType.Text.Equals("Sql Server 인증");
 
 			if (auth)
 			{
-				if (inpId.TEXT.Trim().Equals(string.Empty)) SetMessage(true, "ID를 입력 하여 주세요", false);
+				if (inpId.Text.Trim().Equals(string.Empty)) SetMessage(true, "ID를 입력 하여 주세요", false);
 
-				if (inpPass.TEXT.Trim().Equals(string.Empty)) SetMessage(true, "암호를 입력 하여 주세요", false);
+				if (inpPass.Text.Trim().Equals(string.Empty)) SetMessage(true, "암호를 입력 하여 주세요", false);
 			}
 
 			switch (dbType)
 			{
 				case enDBType.Oracle:
-					ora.strTNS = inpIp.TEXT.Trim();
-					ora.strID = inpId.TEXT.Trim();
-					ora.strPass = inpPass.TEXT.Trim();
+					ora.strTNS = inpIp.Text.Trim();
+					ora.strID = inpId.Text.Trim();
+					ora.strPass = inpPass.Text.Trim();
 					break;
 
 				case enDBType.MsSQL:
-					sql.strIP = inpIp.TEXT.Trim();
+					sql.strIP = inpIp.Text.Trim();
 					if (auth)
 					{
-						sql.strID = inpId.TEXT.Trim();
-						sql.strPass = inpPass.TEXT.Trim();
+						sql.strID = inpId.Text.Trim();
+						sql.strPass = inpPass.Text.Trim();
 					}
 					else
 					{
@@ -147,7 +147,7 @@ namespace Function.form.Db
 					}
 
 					
-					sql.strDataBase = inpDataBase.TEXT.Trim();
+					sql.strDataBase = inpDataBase.Text.Trim();
 					break;
 
 				default:
@@ -207,7 +207,7 @@ namespace Function.form.Db
 
 		private void inpAuthType_Text_Changed(object sender, usrEventArgs e)
 		{
-			bool value = inpAuthType.TEXT.Equals("Sql Server 인증");
+			bool value = inpAuthType.Text.Equals("Sql Server 인증");
 
 			inpId.Enabled = value;
 			inpPass.Enabled = value;

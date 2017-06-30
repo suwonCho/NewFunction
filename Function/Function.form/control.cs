@@ -496,7 +496,7 @@ namespace Function.form
 
 				if (ib != null)
 				{
-					ib.TEXT = string.Empty;					
+					ib.Text = string.Empty;					
 				}
 
 				tv = c as usrTreeView_Ch;
@@ -1581,14 +1581,14 @@ namespace Function.form
 					isInpCtrl = true;
 					if (chkParents)
 					{
-						if ((ib.Value.Equals(string.Empty) && ib.TEXT != string.Empty))
+						if ((ib.Value.Equals(string.Empty) && ib.Text != string.Empty))
 						{
-							ib.TEXT = string.Empty;
+							ib.Text = string.Empty;
 							rtn = true;
 						}
-						else if (ib.Value != ib.TEXT)
+						else if (ib.Value != ib.Text)
 						{
-							ib.Value = ib.TEXT;
+							ib.Value = ib.Text;
 							rtn = true;
 						}
 					}

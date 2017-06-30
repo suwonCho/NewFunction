@@ -202,8 +202,8 @@ namespace Function.form
 
 			if (isUseFormInit)
 			{
-				//1초 후 폼 초기화를 처리 한다.
-				tmrInit.Interval = 1000;
+				//0.1초 후 폼 초기화를 처리 한다.
+				tmrInit.Interval = 100;
 				tmrInit.Tick += TmrInit_Tick;
 				tmrInit.Start();
 			}
@@ -224,8 +224,10 @@ namespace Function.form
 
 				control.Control2Center(this, u);
 				u.BringToFront();
-
+				
 				Application.DoEvents();
+
+				System.Threading.Thread.Sleep(500);
 
 				Form_Init();
 			}

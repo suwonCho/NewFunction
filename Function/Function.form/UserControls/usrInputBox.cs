@@ -490,7 +490,7 @@ namespace Function.form
 		/// 한 줄만 입력할 수 있는 System.Windows.Forms.TextBox 컨트롤에서 암호 문자를 마스킹하는 데 사용되는 문자를 가져오거나 설정합니다.
 		/// </summary>
 		[Description("한 줄만 입력할 수 있는 System.Windows.Forms.TextBox 컨트롤에서 암호 문자를 마스킹하는 데 사용되는 문자를 가져오거나 설정합니다.")]
-		public char TEXTBOX_PasswordChar
+		public char TextBox_PasswordChar
 		{
 			get
 			{
@@ -499,6 +499,19 @@ namespace Function.form
 			set
 			{
 				txtBox.PasswordChar = value;
+			}
+		}
+
+		[Description("텍스트 박스에 입력 할 수 있는 최대 문자수를 가져오거나 설정 합니다.")]
+		public int TextBox_MaxLength
+		{
+			get
+			{
+				return txtBox.MaxLength;
+			}
+			set
+			{
+				txtBox.MaxLength = value;
 			}
 		}
 
@@ -527,7 +540,7 @@ namespace Function.form
 				else
 					control.Invoke_ComboBox_SelectedItem(cmbBox, ComboBoxValueMember, v);
 
-				TEXT = _value;
+				Text = _value;
 				label1.Text = string.Empty;
 				isChange = false;
 
@@ -551,19 +564,20 @@ namespace Function.form
 			}
 		}
 
-		public new string Text
-		{
-			get { return TEXT; }
-			set
-			{
-				TEXT = value;
-			}
-		}
+		//public new string Text
+		//{
+		//	get { return TEXT; }
+		//	set
+		//	{
+		//		TEXT = value;
+		//	}
+		//}
 
 		/// <summary>
 		/// 표시 텍스트
 		/// </summary>
-		public string TEXT
+		[Description("표시 텍스트")]
+		public new string Text
 		{
 			get 
 			{
@@ -611,7 +625,7 @@ namespace Function.form
 						if (cmbBox.DropDownStyle == ComboBoxStyle.DropDown)
 							cmbBox.Text = value;
 						else if (cmbBox.DataSource == null)
-							cmbBox.SelectedItem = TEXT;						
+							cmbBox.SelectedItem = Text;						
 						else
 							control.Invoke_ComboBox_SelectedItem(cmbBox, ComboBoxValueMember, Fnc.obj2String(value));
 						break;				
@@ -640,7 +654,7 @@ namespace Function.form
 		/// </summary>
 		public void Commit()
 		{
-			Value = Text;
+			Value = base.Text;
 		}
 
 
@@ -963,7 +977,7 @@ namespace Function.form
 		private void Check_TextChanged()
 		{
 
-			if (Fnc.obj2String(TEXT).Equals(Value))
+			if (Fnc.obj2String(Text).Equals(Value))
 			{
 				label1.Text = string.Empty;
 				isChange = false;
@@ -1068,7 +1082,7 @@ namespace Function.form
 		{
 			if (e.KeyCode == Keys.Escape)
 			{
-				TEXT = Value;
+				Text = Value;
 			}
 
 			if (keydown != null) keydown(this, e);
