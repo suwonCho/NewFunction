@@ -354,6 +354,26 @@ namespace PLCModule
 			}
 		}
 
+		public string GetValueHex(string strAddress)
+		{
+
+			try
+			{
+				if (!this.isConnected) throw new Exception("PLC와 연결이 끊어 졌습니다.");
+
+				DataRow[] row = this.dtAddress.Select("Address = '" + strAddress + "'");
+
+				if (row.Length > 0)
+					return Function.Fnc.obj2String(row[0]["Value(HEX)"]);
+				else
+					throw new Exception("확인(등록) 되어 있지 PLC Address입니다.[" + strAddress + "]");
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+		}
+
 
 
 		/// <summary>
@@ -420,6 +440,36 @@ namespace PLCModule
 			}
 
 		}
+
+		/// <summary>
+		/// 주소 값에 값을 써준다.(TestPLC 전용)
+		/// </summary>
+		/// <param name="Address"></param>
+		/// <param name="intValue"></param>
+		/// <returns></returns>
+		public bool WriteOrder(string Address, string sValue)
+		{
+			lock (this)
+			{
+				if (!this.isConnected) throw new Exception("PLC와 연결이 끊어 졌습니다.");
+
+				if (this.GetType() != Type.GetType("PLCModule.PLCModules.clsTEST")) return false;
+
+				
+				DataRow[] d = dtAddress.Select(string.Format("Address = '{0}'", Address));
+
+				if (d.Length > 0)
+				{
+					d[0]["Value(HEX)"] = sValue;
+					return true;
+				}
+				else
+					return false;
+				
+				
+			}
+		}
+
 
 
 		#region 공용 function

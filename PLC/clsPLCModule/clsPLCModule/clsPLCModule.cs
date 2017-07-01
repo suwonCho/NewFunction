@@ -523,7 +523,26 @@ namespace PLCModule
 				throw ex;
 			}
 		}
-		
+
+		/// <summary>
+		///  1개 Address에 대한 HEX값을 가져 온다.
+		/// </summary>
+		/// <param name="strAddress"></param>
+		/// <returns></returns>
+		public string GetValueHex(string strAddress)
+		{
+			try
+			{
+				return clsPLC.GetValueHex(strAddress);
+			}
+			catch (Exception ex)
+			{
+				ProcException(ex);
+				throw ex;
+			}
+		}
+
+
 		/// <summary>
 		/// Address에 값을 써넣는다.
 		/// AB에서는 에러 발생.
@@ -563,8 +582,30 @@ namespace PLCModule
 			}
 		}
 
+
+		/// <summary>
+		/// Address에 값을 써넣는다.(Test PLC 전용)
+		/// </summary>
+		/// <param name="Address">Address</param>
+		/// <param name="Value">값</param>
+		/// <returns></returns>
+		public bool WriteOrder(string Address, string Value)
+		{
+			try
+			{
+				return clsPLC.WriteOrder(Address, Value);
+			}
+			catch (Exception ex)
+			{
+				ProcException(ex);
+				throw ex;
+			}
+		}
+
+
+
 		#endregion
-		
+
 		#region IDisposable 멤버
 
 		public void Dispose()

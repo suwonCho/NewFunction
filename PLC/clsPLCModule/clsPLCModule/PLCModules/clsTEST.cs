@@ -52,12 +52,12 @@ namespace  PLCModule.PLCModules
 			this.ChConnection_Status(false);
 			return true;
 
-		}
+		}		
 
 		#endregion
-		
 
-		#region IDisposable 멤버
+
+			#region IDisposable 멤버
 
 		public void Dispose()
 		{
