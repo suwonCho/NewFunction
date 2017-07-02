@@ -58,5 +58,16 @@ namespace Function
 		End
 	}
 
+	/// <summary>
+	/// 상태 enum
+	/// </summary>
+	public enum enStatus
+	{
+		None,
+		OK,
+		Error,
+		Done
+	}
+
 
 }
