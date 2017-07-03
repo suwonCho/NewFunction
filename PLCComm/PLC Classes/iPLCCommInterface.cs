@@ -536,7 +536,7 @@ namespace PLCComm
 		/// <param name="Address"></param>
 		/// <param name="Value"></param>
 		/// <returns></returns>
-		public bool WriteOrder(string Address, int intValue)
+		public virtual bool WriteOrder(string Address, int intValue)
 		{
 			try
 			{
@@ -572,7 +572,7 @@ namespace PLCComm
 			}
 		}
 
-		public bool WriteOrder(string[] strAddress, int[] intValue)
+		public virtual bool WriteOrder(string[] strAddress, int[] intValue)
 		{
 			try
 			{
@@ -601,11 +601,11 @@ namespace PLCComm
 		/// <param name="Address"></param>
 		/// <param name="intValue"></param>
 		/// <returns></returns>
-		public bool WriteOrder(string Address, string sValue)
+		public virtual bool WriteOrder(string Address, string sValue)
 		{
 			lock (this)
 			{
-				if (!this.isConnected) throw new Exception("PLC와 연결이 끊어 졌습니다.");
+				if (ConnctionStatus != enStatus.OK) throw new Exception("PLC와 연결이 끊어 졌습니다.");
 
 				if (this.GetType() != Type.GetType("PLCModule.PLCModules.clsTEST")) return false;
 
