@@ -13,8 +13,19 @@ namespace PLCComm
 	/// </summary>
 	abstract class iPLCCommInterface
 	{
+		/// <summary>
+		/// WriteOrderTable 사용 여부
+		/// </summary>
+		bool isUseWriteOrderTable;
 
-		public iPLCCommInterface()
+		/// <summary>
+		/// iPLCCommInterface 클래스
+		/// </summary>
+		/// <param name="UseWriteOrderTable">WriteOrderTable 사용 여부 
+		///		<para/>사용:WriteOrder를 내리면 테이블에 쓰기 명령을 쌓아주며 처리는 별도로 해야 한다.(소켓통신시)
+		///		<para/>미사용:WriteOrder Override해서 별도 처리 안하면 실행 시 오류 발생
+		///		</param>
+		public iPLCCommInterface(bool UseWriteOrderTable)
 		{
 			dtAddress = new DataTable("PLC Address");		
 						
@@ -27,9 +38,17 @@ namespace PLCComm
 			dtAddress.PrimaryKey = new DataColumn[] { dtAddress.Columns["Address"] };
 			
 			dtWriteOrder.Columns.Add(new DataColumn("Address", System.Type.GetType("System.String")));
+			dtWriteOrder.Columns.Add(new DataColumn("PLCValueType", System.Type.GetType("PLCComm.enPLCValueType")));
 			dtWriteOrder.Columns.Add(new DataColumn("Value", System.Type.GetType("System.Object")));
 		}
 
+
+
+		/// <summary>
+		/// Log기록 클래스
+		/// </summary>
+		internal static Function.Util.Log _log = null;
+		
 		/// <summary>
 		/// 등록되 PLC 주소를 관리 하는 Datatable
 		/// </summary>
@@ -88,7 +107,9 @@ namespace PLCComm
 						foreach (DataRow dr in dtAddress.Rows)
 						{
 							dr["Value"] = System.DBNull.Value;
+							dr["Value(INT)"] = System.DBNull.Value;
 							dr["Value(Hex)"] = System.DBNull.Value;
+							dr["Value(STRING)"] = System.DBNull.Value;
 						}
 					}
 					else
@@ -128,42 +149,31 @@ namespace PLCComm
 			add { _onChConnectionStatus += value; }
 			remove { _onChConnectionStatus -= value; }
 		}
-
-		List<string> lstEvtAdd_ch = new List<string>();
-
-		/// <summary>
-		/// 값 변경 이벤트에서 체크할 주소를 등록한다.
-		/// </summary>
-		/// <param name="address"></param>
-		public void ChangeEvtAddress_Add(string address)
-		{
-			if (lstEvtAdd_ch.Contains(address)) return;
-
-			lstEvtAdd_ch.Add(address);
-		}
+		
+		Dictionary<string, List<delChAddressValue>> dicEvtAdd_ch = new Dictionary<string, List<delChAddressValue>>();
 
 		/// <summary>
-		/// 값 변경 이벤트에서 체크할 등록되 주소를 삭제
+		/// 해당 주소의 값이 변경 될 경우 발생 할 이벤틀르 등록 한다.(실행 시 비동기 처리를 하므로 쓰레드 처리를 할것)
 		/// </summary>
-		/// <param name="address"></param>
-
-		public void ChangeEvtAddress_Remove(string address)
+		/// <param name="address">감시할 주소</param>
+		/// <param name="onChAddressValue">일어날 이벤트</param>
+		public void ChangeEvtAddress_Add(string address, delChAddressValue onChAddressValue)
 		{
-			if (!lstEvtAdd_ch.Contains(address)) return;
+			List<delChAddressValue> lst;
 
-			lstEvtAdd_ch.Remove(address);
+			if (dicEvtAdd_ch.ContainsKey(address))
+			{
+				lst = dicEvtAdd_ch[address];				
+			}
+			else
+			{
+				lst = new List<delChAddressValue>();
+				dicEvtAdd_ch.Add(address, lst);
+			}
+
+			lst.Add(onChAddressValue);
 		}
-
-		event delChAddressValue _onChAddressValue;
-
-		/// <summary>
-		/// ChangeEvtAddress_Add로 등록된 Address값이 변경 될경우 발생하는 이벤트
-		/// </summary>
-		public event delChAddressValue OnChAddressValue
-		{
-			add { _onChAddressValue += value; }
-			remove { _onChAddressValue -= value; }
-		}
+		
 
 		
 		/// <summary>
@@ -538,6 +548,8 @@ namespace PLCComm
 		/// <returns></returns>
 		public virtual bool WriteOrder(string Address, int intValue)
 		{
+			if (isUseWriteOrderTable) throw new Exception("WriterOrder를 Override 하여 주십시요.");
+
 			try
 			{
 				lock (this)
@@ -549,7 +561,10 @@ namespace PLCComm
 						DataRow[] d = dtAddress.Select(string.Format("Address = '{0}'", Address));
 
 						if (d.Length > 0)
-							return ChangeddAddressValue(d[0], intValue, false, null, null);
+						{
+							ChangeddAddressValue(Address, intValue, false, null, null);
+							return true;
+						}
 						else
 							return false;
 					}
@@ -574,6 +589,8 @@ namespace PLCComm
 
 		public virtual bool WriteOrder(string[] strAddress, int[] intValue)
 		{
+			if (isUseWriteOrderTable) throw new Exception("WriterOrder를 Override 하여 주십시요.");
+
 			try
 			{
 				int i = 0;
@@ -603,6 +620,8 @@ namespace PLCComm
 		/// <returns></returns>
 		public virtual bool WriteOrder(string Address, string sValue)
 		{
+			throw new Exception("WriterOrder를 Override 하여 주십시요.");
+
 			lock (this)
 			{
 				if (ConnctionStatus != enStatus.OK) throw new Exception("PLC와 연결이 끊어 졌습니다.");
@@ -626,128 +645,63 @@ namespace PLCComm
 
 
 
-		#region 공용 function
-
-		protected string IntToHex(int intValue)
-		{
-			try
-			{
-				string strTemp = string.Format("{0:X4}", intValue);
-				strTemp = strTemp.Substring(strTemp.Length - 4, 4);
-				return strTemp;
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-		}
-
-		protected long HexToInt(string strValue)
-		{
-			return Convert.ToInt16(strValue, 16);
-		}
-
-		protected void ByteSetValue(byte[] bytByt, int intStartLength, int intLength, int intValue)
-		{
-			byte[] bytSet = IntToByte(intValue, intLength);
-
-			for (int i = intStartLength; i < intStartLength + intLength; i++)
-			{
-				bytByt[i] = bytSet[i - intStartLength];
-			}
-
-		}
-
-		protected byte[] IntToByte(int intValue, int intLength)
-		{
-			int IntLength = intLength * 2;
-			byte[] bytValue = new byte[intLength];
-			string strValue = intValue.ToString("X" + IntLength.ToString());
-
-			for (int i = 0; i < IntLength; i += 2)
-			{
-				bytValue[i / 2] = Convert.ToByte(strValue.Substring(strValue.Length - (i + 2), 2), 16);
-			}
-
-			return bytValue;
-
-		}
-
-		protected long ByteToInt(byte[] bytByt)
-		{
-			string strByte = this.byteToString(bytByt);
-			string strValue = string.Empty;
-
-			for (int i = 0; i < strByte.Length; i += 2)
-			{
-				strValue += strByte.Substring(strByte.Length - (i + 2), 2);
-			}
-
-			return Convert.ToInt16(strValue, 16);
-		}
-
-
-		protected string byteToString(byte[] yDATA)
-		{
-			int yLen = yDATA.Length;
-			string strData = string.Empty;
-			for (int i = 0; i < yLen; i++)
-			{
-				strData += yDATA[i].ToString("X2");
-			}
-
-			return strData;
-		}
-
+		/// <summary>
+		/// 어드래스 등록 여부를 확인한다.
+		/// </summary>
+		/// <param name="Address"></param>
+		/// <returns></returns>
 		protected bool AddressIsExist(string Address)
 		{
 			DataRow[] drs = dtAddress.Select("Address = '" + Address.ToString() + "'");
 
 			if (drs.Length > 0) return true;
-
 			return false;
-
 		}
 
 		/// <summary>
-		/// Address 값 변경 시 일어나는 이벤트 처리.
+		/// 등록된 어드레스의 Datarow를 가지고 온다
 		/// </summary>
-		protected void ThevtPLCScan()
+		/// <param name="Address"></param>
+		/// <returns>null이면 미등록</returns>
+		protected DataRow AddressGetRow(string Address)
 		{
-			Thread thevtPLCScan = new Thread(new ThreadStart(this.evtPLCScan));
-			thevtPLCScan.IsBackground = true;
-			thevtPLCScan.Name = "evtPLCScan";
-			thevtPLCScan.Start();
+			DataRow[] drs = dtAddress.Select("Address = '" + Address.ToString() + "'");
 
+			if (drs.Length > 0) return drs[0];
+			return null;
 		}
 
-
-
 		/// <summary>
-		/// 바이트 배열을 string숫자 연결 형태로
+		/// 로그 기록을 합니다.
 		/// </summary>
-		/// <param name="b"></param>
-		protected string ByteToString(byte[] bb)
+		/// <param name="strModule"></param>
+		/// <param name="strMsg"></param>
+
+		internal static void LogWrite(string strModule, string strMsg)
 		{
-			string temp = "";
-			foreach (byte b in bb)
+			try
 			{
-				temp = temp + string.Format("{0:X2}", Convert.ToInt32(b)) + " ";
-			}
+				if (_log == null) return;
 
-			return temp;
+				string strMessage = string.Format("[{1}] {2}", strModule, strMsg);
+				_log.WLog(strMessage);
+			}
+			catch
+			{ }
+
 		}
 
+
 		/// <summary>
-		///  각 어드레스에 값이 변경 되었을 경우.. Log를 기록한다.
+		/// 각 어드레스에 값이 변경 되었을 경우.. Log를 기록하고, 등록되 주소 값 변경 이벤트가 있으면 비동기 실행 하여준다.
 		/// </summary>
-		/// <param name="dr"></param>
-		/// <param name="ReceiveValue"></param>
+		/// <param name="address"></param>
+		/// <param name="ReceiveValue">변경된 값 byte배열로 넘기거나 3자 이상 문자열만 HEX로 보내고 나머지는 숫자(int)로 넘길것</param>
 		/// <param name="isWirteByte"></param>
 		/// <param name="SendByte"></param>
-		/// <param name="ReciveByte"></param>
-		/// <returns>변경 여부</returns>
-		protected bool ChangeddAddressValue(DataRow dr, int ReceiveValue, bool isWirteByte, byte[] SendByte, byte[] ReceiveByte)
+		/// <param name="ReceiveByte"></param>
+		/// <returns></returns>
+		protected void ChangeddAddressValue(string address, object ReceiveValue, bool isWirteByte, byte[] SendByte, byte[] ReceiveByte)
 		{
 			
 
@@ -756,26 +710,103 @@ namespace PLCComm
 
 				lock (this)
 				{
-					string oldValue = dr["Value"] != DBNull.Value ? string.Format("{0:X4}", dr["Value"]) : "(null)";
-					System.Int16 intReceiveValue = Convert.ToInt16(ReceiveValue);
+					DataRow dr = AddressGetRow(address);
 
-					if (oldValue != intReceiveValue.ToString("X4"))
+					if (dr == null)
+					{
+						LogWrite("ChangeddAddressValue", $"미등록된 주소 값변경 수신(미처리)[Address]{address} [ReceiveValue]{ReceiveValue}");
+						return;
+					}
+
+					
+
+					object oldValue = dr["Value"] != DBNull.Value ? dr["Value"] : "(null)";
+					object newValue = null;
+					enPLCValueType vType = (enPLCValueType)dr["PLCValueType"];
+
+					enPLCValueType nType = enPLCValueType.INT;
+
+					Int16 intReceiveValue = -1;
+					bool isChage = false;
+					string tmp;				
+
+					byte[] bts = ReceiveValue as byte[];
+
+
+					//신규값 처리 및 값 변경 여부 확인한다.
+					if(bts != null)
+					{	//바이트 배열 처리
+						//2개 이하면 short 이므로
+						if(bts.Length < 3)
+						{   //int16 처리
+							intReceiveValue = Int16.Parse(fnc.ByteToLong(bts).ToString());
+
+							isChage = (Int16)dr["Value(INT)"] != intReceiveValue;
+							newValue = intReceiveValue;
+						}
+						else
+						{   //Hex처리
+							nType = enPLCValueType.HEX;
+							newValue = fnc.ByteToHex(bts);
+
+							isChage = Fnc.obj2String(dr["Value(HEX)"]).Equals(newValue.ToString());
+						}
+
+					}
+					else if (Int16.TryParse(ReceiveValue.ToString(), out intReceiveValue))
+					{	//int16 처리
+						isChage = (Int16)dr["Value(INT)"] != intReceiveValue;
+						newValue = intReceiveValue;
+					}
+					else
+					{	//hex 처리
+						isChage = !Fnc.obj2String(dr["Value(HEX)"]).Equals(ReceiveValue.ToString());
+						nType = enPLCValueType.HEX;
+					}
+					
+					
+					//변경이 되었으면 로그를 남기로 이벤트를 실행 한다.
+					if (isChage)
 					{
 						if (isWirteByte)
 						{
-							if (SendByte != null) PLCModule.clsPLCModule.LogWrite("ChangeddAddressValue", "[Sent] " + ByteToString(SendByte));
-							if (ReceiveByte != null) PLCModule.clsPLCModule.LogWrite("ChangeddAddressValue", "[Received] " + ByteToString(ReceiveByte));
+							if (SendByte != null) LogWrite("ChangeddAddressValue", "[Sent] " + fnc.ByteToHex(SendByte));
+							if (ReceiveByte != null) LogWrite("ChangeddAddressValue", "[Received] " + fnc.ByteToHex(ReceiveByte));
 						}
 
-						PLCModule.clsPLCModule.LogWrite("ChangeddAddressValue", string.Format("[{0}] {1} --> {2}", dr["Address"], oldValue, intReceiveValue.ToString("X4")));
+						LogWrite("ChangeddAddressValue", string.Format("[{0}] {1} --> {2}", dr["Address"], oldValue, intReceiveValue.ToString("X4")));
 
-						dr["Value"] = intReceiveValue;
-						dr["Value(HEX)"] = string.Format("{0:X4}", intReceiveValue);
+						if (nType == enPLCValueType.INT)
+						{
+							dr["Value"] = intReceiveValue;
+							dr["Value(INT)"] = intReceiveValue;
+							tmp = string.Format("{0:X4}", intReceiveValue);
+							dr["Value(HEX)"] = tmp;
+							dr["Value(STRING)"] = fnc.HexToString(tmp);
+						}
+						else
+						{	//hex
+							dr["Value"] = newValue;
+							dr["Value(INT)"] = DBNull.Value;
+							dr["Value(HEX)"] = newValue;
+							dr["Value(STRING)"] = fnc.HexToString(newValue.ToString());
+						}
 
-						return true;
+						//이벤트 등록 여부 확인
+						if (dicEvtAdd_ch.ContainsKey(address))
+						{
+							List<delChAddressValue> lst = dicEvtAdd_ch[address];
+
+							foreach(delChAddressValue del in lst)
+							{
+								del.BeginInvoke(address, vType, newValue, null, null);								
+							}
+
+						}
+						
 					}
 
-					return false;
+					
 				}
 			}
 			catch
@@ -783,26 +814,28 @@ namespace PLCComm
 				throw;
 			}
 			
-		}
+		}	
+
+
 
 		/// <summary>
 		/// 어드레스 값 변경 로그를 남긴다.
 		/// </summary>
 		/// <param name="dr"></param>
 		/// <param name="newValue"></param>
-		/// <param name="SendByte"></param>
-		/// <param name="ReceiveByte"></param>
+		/// <param name="SendByte">기록에 남길 보낸 byte 배열(null 입력 시 로그기록X)</param>
+		/// <param name="ReceiveByte">기록에 남길 받은(응답) byte 배열(null 입력 시 로그기록X)</param>
 		/// <returns></returns>
 		protected bool WroteAddressValue(string strChanged, byte[] SendByte, byte[] ReceiveByte)
 		{
-			if (SendByte != null) PLCModule.clsPLCModule.LogWrite("WroteAddressValue", "[Sent] " + ByteToString(SendByte));
-			if (ReceiveByte != null) PLCModule.clsPLCModule.LogWrite("WroteAddressValue", "[Received] " + ByteToString(ReceiveByte));
-			PLCModule.clsPLCModule.LogWrite("WroteAddressValue", strChanged);
+			if (SendByte != null) LogWrite("WroteAddressValue", "[Sent] " + fnc.ByteToHex(SendByte));
+			if (ReceiveByte != null) LogWrite("WroteAddressValue", "[Received] " + fnc.ByteToHex(ReceiveByte));
+			LogWrite("WroteAddressValue", strChanged);
 
 			return true;
 		}
 
-		#endregion
+		
 
 		#region PLC Scan Theread 검사 처리 부분..
 		/// <summary>
@@ -845,7 +878,7 @@ namespace PLCComm
 		private void tmrCheckScan(object obj)
 		{
 			//연결이 끊겨 있으면 검사 할 필요 없음.
-			if (!this.isConnected) return;
+			if (ConnctionStatus != enStatus.OK ) return;
 
 			//정상 작동중..
 			if (thPLCScan != null && thPLCScan.IsAlive) return;
@@ -853,7 +886,7 @@ namespace PLCComm
 			//기능 사용 않함.
 			if (delStart == null) return;
 
-			PLCModule.clsPLCModule.LogWrite("tmrCheckScan", "Address 스캔 쓰래드가 중지 되었습니다. 다시 시작 합니다.");
+			LogWrite("tmrCheckScan", "Address 스캔 쓰래드가 중지 되었습니다. 다시 시작 합니다.");
 
 			delStart(true);
 
@@ -882,8 +915,6 @@ namespace PLCComm
 		}
 
 		#endregion
-
-
 
 
 	}
