@@ -30,7 +30,7 @@ namespace PLCComm
 			dtAddress = new DataTable("PLC Address");		
 						
 			dtAddress.Columns.Add(new DataColumn("Address", System.Type.GetType("System.String")));
-			dtAddress.Columns.Add(new DataColumn("PLCValueType", System.Type.GetType("PLCComm.enPLCValueType")));
+			dtAddress.Columns.Add(new DataColumn("ValueType", System.Type.GetType("PLCComm.enPLCValueType")));
 			dtAddress.Columns.Add(new DataColumn("Value", System.Type.GetType("System.Object")));
 			dtAddress.Columns.Add(new DataColumn("Value(INT)", System.Type.GetType("System.Int16")));
 			dtAddress.Columns.Add(new DataColumn("Value(HEX)", System.Type.GetType("System.String")));
@@ -38,7 +38,7 @@ namespace PLCComm
 			dtAddress.PrimaryKey = new DataColumn[] { dtAddress.Columns["Address"] };
 			
 			dtWriteOrder.Columns.Add(new DataColumn("Address", System.Type.GetType("System.String")));
-			dtWriteOrder.Columns.Add(new DataColumn("PLCValueType", System.Type.GetType("PLCComm.enPLCValueType")));
+			dtWriteOrder.Columns.Add(new DataColumn("ValueType", System.Type.GetType("PLCComm.enPLCValueType")));
 			dtWriteOrder.Columns.Add(new DataColumn("Value", System.Type.GetType("System.Object")));
 		}
 
@@ -47,7 +47,7 @@ namespace PLCComm
 		/// <summary>
 		/// Log기록 클래스
 		/// </summary>
-		internal static Function.Util.Log _log = null;
+		internal Function.Util.Log log = null;
 		
 		/// <summary>
 		/// 등록되 PLC 주소를 관리 하는 Datatable
@@ -272,18 +272,32 @@ namespace PLCComm
 		/// </summary>
 		/// <param name="Address">추가할 주소</param>	
 		/// <returns></returns>
-		public bool AddAddress(string Address)
+		public virtual bool AddAddress(string Address, enPLCValueType type = enPLCValueType.INT)
 		{
 			try
 			{
+
+
 				DataRow row = dtAddress.NewRow();
 
 				row["Address"] = Address;
+				row["ValueType"] = type;
 
-				if (this.GetType() == Type.GetType("PLCModule.PLCModules.clsTEST") && ConnctionStatus == enStatus.OK)
-					row["Value"] = 0;
-				else
-					row["Value"] = DBNull.Value;
+
+
+				//if (this.GetType() == Type.GetType("PLCComm.TEST_PLC") && ConnctionStatus == enStatus.OK)
+				//{
+				//	row["Value"] = 0;
+				//	row["Value(Int)"] = 0;
+				//	row["Value(Hex)"] = "0000";
+				//	row["Value(String)"] = string.Empty;
+				//}
+				//else
+								
+				row["Value"] = DBNull.Value;
+				row["Value(Int)"] = DBNull.Value;
+				row["Value(Hex)"] = DBNull.Value;
+				row["Value(String)"] = DBNull.Value;
 
 				dtAddress.Rows.Add(row);
 
@@ -295,31 +309,7 @@ namespace PLCComm
 				throw ex;
 			}
 		}
-
-
-
-		/// <summary>
-		/// PLC와 통신할 PLC ADDRESS를 추가한다.
-		/// </summary>
-		/// <param name="Address"></param>
-		/// <returns></returns>
-		public bool AddAddress(string[] Address)
-		{
-			try
-			{
-				foreach (string strAdd in Address)
-				{
-					AddAddress(strAdd);
-				}
-
-				return true;
-
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-		}
+		
 
 
 
@@ -587,7 +577,14 @@ namespace PLCComm
 			}
 		}
 
-		public virtual bool WriteOrder(string[] strAddress, int[] intValue)
+
+		/// <summary>
+		/// 주소들에 값들을 써준다.
+		/// </summary>
+		/// <param name="Address"></param>
+		/// <param name="intValue"></param>
+		/// <returns></returns>
+		public virtual bool WriteOrder(string[] Address, int[] intValue)
 		{
 			if (isUseWriteOrderTable) throw new Exception("WriterOrder를 Override 하여 주십시요.");
 
@@ -595,7 +592,7 @@ namespace PLCComm
 			{
 				int i = 0;
 
-				foreach (string strAdd in strAddress)
+				foreach (string strAdd in Address)
 				{
 					WriteOrder(strAdd, intValue[i]);
 					i++;
@@ -620,14 +617,11 @@ namespace PLCComm
 		/// <returns></returns>
 		public virtual bool WriteOrder(string Address, string sValue)
 		{
-			throw new Exception("WriterOrder를 Override 하여 주십시요.");
+			if (isUseWriteOrderTable) throw new Exception("WriterOrder를 Override 하여 주십시요.");
 
 			lock (this)
 			{
 				if (ConnctionStatus != enStatus.OK) throw new Exception("PLC와 연결이 끊어 졌습니다.");
-
-				if (this.GetType() != Type.GetType("PLCModule.PLCModules.clsTEST")) return false;
-
 				
 				DataRow[] d = dtAddress.Select(string.Format("Address = '{0}'", Address));
 
@@ -677,14 +671,14 @@ namespace PLCComm
 		/// <param name="strModule"></param>
 		/// <param name="strMsg"></param>
 
-		internal static void LogWrite(string strModule, string strMsg)
+		internal void LogWrite(string strModule, string strMsg)
 		{
 			try
 			{
-				if (_log == null) return;
+				if (log == null) return;
 
 				string strMessage = string.Format("[{1}] {2}", strModule, strMsg);
-				_log.WLog(strMessage);
+				log.WLog(strMessage);
 			}
 			catch
 			{ }
@@ -722,7 +716,7 @@ namespace PLCComm
 
 					object oldValue = dr["Value"] != DBNull.Value ? dr["Value"] : "(null)";
 					object newValue = null;
-					enPLCValueType vType = (enPLCValueType)dr["PLCValueType"];
+					enPLCValueType vType = (enPLCValueType)dr["ValueType"];
 
 					enPLCValueType nType = enPLCValueType.INT;
 
@@ -799,7 +793,7 @@ namespace PLCComm
 
 							foreach(delChAddressValue del in lst)
 							{
-								del.BeginInvoke(address, vType, newValue, null, null);								
+								del.BeginInvoke(address, vType, oldValue, newValue, null, null);								
 							}
 
 						}

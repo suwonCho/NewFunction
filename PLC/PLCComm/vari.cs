@@ -26,7 +26,7 @@ namespace PLCComm
 	/// <param name="Address"></param>
 	/// <param name="valueType"></param>
 	/// <param name="value"></param>
-	public delegate void delChAddressValue(string Address, enPLCValueType valueType, object value);
+	public delegate void delChAddressValue(string Address, enPLCValueType valueType, object oldValue, object newValue);
 
 	/// <summary>
 	/// PLC Address Value Struct

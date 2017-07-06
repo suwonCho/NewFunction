@@ -127,7 +127,7 @@
 			this.txtPriority.ComboBoxSelectItem = null;
 			this.txtPriority.ComboBoxValueMember = "";
 			this.txtPriority.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtPriority.DLabel_Blink = false;
+			this.txtPriority.DLabel_Blink =  Function.form.usrInputBox.enBlinkType.None;
 			this.txtPriority.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtPriority.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtPriority.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -149,9 +149,9 @@
 			this.txtPriority.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtPriority.Size = new System.Drawing.Size(229, 23);
 			this.txtPriority.TabIndex = 7;
-			this.txtPriority.TEXT = "";
+			this.txtPriority.Text = "";
 			this.txtPriority.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtPriority.TEXTBOX_PasswordChar = '\0';
+			this.txtPriority.TextBox_PasswordChar = '\0';
 			this.txtPriority.TextType = Function.form.usrInputBox.enTextType.NumberOlny;
 			this.txtPriority.Value = "";
 			// 
@@ -167,7 +167,7 @@
 			this.cmbGroup.ComboBoxSelectItem = null;
 			this.cmbGroup.ComboBoxValueMember = "";
 			this.cmbGroup.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.cmbGroup.DLabel_Blink = false;
+			this.cmbGroup.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.cmbGroup.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.cmbGroup.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.cmbGroup.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -189,9 +189,9 @@
 			this.cmbGroup.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.cmbGroup.Size = new System.Drawing.Size(318, 22);
 			this.cmbGroup.TabIndex = 6;
-			this.cmbGroup.TEXT = "";
+			this.cmbGroup.Text = "";
 			this.cmbGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.cmbGroup.TEXTBOX_PasswordChar = '\0';
+			this.cmbGroup.TextBox_PasswordChar = '\0';
 			this.cmbGroup.TextType = Function.form.usrInputBox.enTextType.All;
 			this.cmbGroup.Value = "";
 			// 
@@ -228,7 +228,7 @@
 			this.txtBigo.ComboBoxSelectItem = null;
 			this.txtBigo.ComboBoxValueMember = "";
 			this.txtBigo.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtBigo.DLabel_Blink = false;
+			this.txtBigo.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.txtBigo.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtBigo.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtBigo.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -250,9 +250,9 @@
 			this.txtBigo.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtBigo.Size = new System.Drawing.Size(356, 23);
 			this.txtBigo.TabIndex = 3;
-			this.txtBigo.TEXT = "";
+			this.txtBigo.Text = "";
 			this.txtBigo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtBigo.TEXTBOX_PasswordChar = '\0';
+			this.txtBigo.TextBox_PasswordChar = '\0';
 			this.txtBigo.TextType = Function.form.usrInputBox.enTextType.All;
 			this.txtBigo.Value = "";
 			// 
@@ -268,7 +268,7 @@
 			this.txtUpdateType.ComboBoxSelectItem = null;
 			this.txtUpdateType.ComboBoxValueMember = "";
 			this.txtUpdateType.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtUpdateType.DLabel_Blink = false;
+			this.txtUpdateType.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.txtUpdateType.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtUpdateType.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtUpdateType.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -290,9 +290,9 @@
 			this.txtUpdateType.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtUpdateType.Size = new System.Drawing.Size(356, 23);
 			this.txtUpdateType.TabIndex = 2;
-			this.txtUpdateType.TEXT = "";
+			this.txtUpdateType.Text = "";
 			this.txtUpdateType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtUpdateType.TEXTBOX_PasswordChar = '\0';
+			this.txtUpdateType.TextBox_PasswordChar = '\0';
 			this.txtUpdateType.TextType = Function.form.usrInputBox.enTextType.All;
 			this.txtUpdateType.Value = "";
 			// 
@@ -308,7 +308,7 @@
 			this.cmbType.ComboBoxSelectItem = null;
 			this.cmbType.ComboBoxValueMember = "";
 			this.cmbType.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.cmbType.DLabel_Blink = false;
+			this.cmbType.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.cmbType.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.cmbType.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.cmbType.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -330,9 +330,9 @@
 			this.cmbType.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.cmbType.Size = new System.Drawing.Size(191, 22);
 			this.cmbType.TabIndex = 1;
-			this.cmbType.TEXT = "";
+			this.cmbType.Text = "";
 			this.cmbType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.cmbType.TEXTBOX_PasswordChar = '\0';
+			this.cmbType.TextBox_PasswordChar = '\0';
 			this.cmbType.TextType = Function.form.usrInputBox.enTextType.All;
 			this.cmbType.Value = "";
 			this.cmbType.Text_Changed += new Function.form.usrEventHander(this.cmbType_Text_Changed);
@@ -346,7 +346,7 @@
 			this.usrGroupHeader1.Name = "usrGroupHeader1";
 			this.usrGroupHeader1.Size = new System.Drawing.Size(559, 26);
 			this.usrGroupHeader1.TabIndex = 0;
-			this.usrGroupHeader1.TEXT = "포인트 정보";
+			this.usrGroupHeader1.Text = "포인트 정보";
 			this.usrGroupHeader1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// pnlOracle
@@ -373,7 +373,7 @@
 			this.txtOraPass.ComboBoxSelectItem = null;
 			this.txtOraPass.ComboBoxValueMember = "";
 			this.txtOraPass.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtOraPass.DLabel_Blink = false;
+			this.txtOraPass.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.txtOraPass.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtOraPass.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtOraPass.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -395,9 +395,9 @@
 			this.txtOraPass.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtOraPass.Size = new System.Drawing.Size(223, 23);
 			this.txtOraPass.TabIndex = 5;
-			this.txtOraPass.TEXT = "";
+			this.txtOraPass.Text = "";
 			this.txtOraPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtOraPass.TEXTBOX_PasswordChar = '\0';
+			this.txtOraPass.TextBox_PasswordChar = '\0';
 			this.txtOraPass.TextType = Function.form.usrInputBox.enTextType.All;
 			this.txtOraPass.Value = "";
 			// 
@@ -413,7 +413,7 @@
 			this.txtOraID.ComboBoxSelectItem = null;
 			this.txtOraID.ComboBoxValueMember = "";
 			this.txtOraID.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtOraID.DLabel_Blink = false;
+			this.txtOraID.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.txtOraID.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtOraID.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtOraID.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -435,9 +435,9 @@
 			this.txtOraID.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtOraID.Size = new System.Drawing.Size(193, 23);
 			this.txtOraID.TabIndex = 4;
-			this.txtOraID.TEXT = "";
+			this.txtOraID.Text = "";
 			this.txtOraID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtOraID.TEXTBOX_PasswordChar = '\0';
+			this.txtOraID.TextBox_PasswordChar = '\0';
 			this.txtOraID.TextType = Function.form.usrInputBox.enTextType.All;
 			this.txtOraID.Value = "";
 			// 
@@ -453,7 +453,7 @@
 			this.txtOraTNS.ComboBoxSelectItem = null;
 			this.txtOraTNS.ComboBoxValueMember = "";
 			this.txtOraTNS.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtOraTNS.DLabel_Blink = false;
+			this.txtOraTNS.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.txtOraTNS.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtOraTNS.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtOraTNS.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -475,9 +475,9 @@
 			this.txtOraTNS.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtOraTNS.Size = new System.Drawing.Size(553, 177);
 			this.txtOraTNS.TabIndex = 3;
-			this.txtOraTNS.TEXT = "";
+			this.txtOraTNS.Text = "";
 			this.txtOraTNS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtOraTNS.TEXTBOX_PasswordChar = '\0';
+			this.txtOraTNS.TextBox_PasswordChar = '\0';
 			this.txtOraTNS.TextType = Function.form.usrInputBox.enTextType.All;
 			this.txtOraTNS.Value = "";
 			// 
@@ -490,7 +490,7 @@
 			this.usrGroupHeader2.Name = "usrGroupHeader2";
 			this.usrGroupHeader2.Size = new System.Drawing.Size(559, 26);
 			this.usrGroupHeader2.TabIndex = 1;
-			this.usrGroupHeader2.TEXT = "접속 정보[ORCLE]";
+			this.usrGroupHeader2.Text = "접속 정보[ORCLE]";
 			this.usrGroupHeader2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// pnlConnSql
@@ -518,7 +518,7 @@
 			this.txtSqlPass.ComboBoxSelectItem = null;
 			this.txtSqlPass.ComboBoxValueMember = "";
 			this.txtSqlPass.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtSqlPass.DLabel_Blink = false;
+			this.txtSqlPass.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.txtSqlPass.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtSqlPass.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtSqlPass.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -540,9 +540,9 @@
 			this.txtSqlPass.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtSqlPass.Size = new System.Drawing.Size(223, 23);
 			this.txtSqlPass.TabIndex = 9;
-			this.txtSqlPass.TEXT = "";
+			this.txtSqlPass.Text = "";
 			this.txtSqlPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtSqlPass.TEXTBOX_PasswordChar = '\0';
+			this.txtSqlPass.TextBox_PasswordChar = '\0';
 			this.txtSqlPass.TextType = Function.form.usrInputBox.enTextType.All;
 			this.txtSqlPass.Value = "";
 			// 
@@ -558,7 +558,7 @@
 			this.txtSqlID.ComboBoxSelectItem = null;
 			this.txtSqlID.ComboBoxValueMember = "";
 			this.txtSqlID.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtSqlID.DLabel_Blink = false;
+			this.txtSqlID.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.txtSqlID.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtSqlID.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtSqlID.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -580,9 +580,9 @@
 			this.txtSqlID.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtSqlID.Size = new System.Drawing.Size(193, 23);
 			this.txtSqlID.TabIndex = 8;
-			this.txtSqlID.TEXT = "";
+			this.txtSqlID.Text = "";
 			this.txtSqlID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtSqlID.TEXTBOX_PasswordChar = '\0';
+			this.txtSqlID.TextBox_PasswordChar = '\0';
 			this.txtSqlID.TextType = Function.form.usrInputBox.enTextType.All;
 			this.txtSqlID.Value = "";
 			// 
@@ -598,7 +598,7 @@
 			this.txtSqlDB.ComboBoxSelectItem = null;
 			this.txtSqlDB.ComboBoxValueMember = "";
 			this.txtSqlDB.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtSqlDB.DLabel_Blink = false;
+			this.txtSqlDB.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.txtSqlDB.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtSqlDB.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtSqlDB.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -620,9 +620,9 @@
 			this.txtSqlDB.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtSqlDB.Size = new System.Drawing.Size(223, 23);
 			this.txtSqlDB.TabIndex = 7;
-			this.txtSqlDB.TEXT = "";
+			this.txtSqlDB.Text = "";
 			this.txtSqlDB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtSqlDB.TEXTBOX_PasswordChar = '\0';
+			this.txtSqlDB.TextBox_PasswordChar = '\0';
 			this.txtSqlDB.TextType = Function.form.usrInputBox.enTextType.All;
 			this.txtSqlDB.Value = "";
 			// 
@@ -638,7 +638,7 @@
 			this.txtSqlIP.ComboBoxSelectItem = null;
 			this.txtSqlIP.ComboBoxValueMember = "";
 			this.txtSqlIP.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtSqlIP.DLabel_Blink = false;
+			this.txtSqlIP.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.txtSqlIP.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtSqlIP.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtSqlIP.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -660,9 +660,9 @@
 			this.txtSqlIP.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtSqlIP.Size = new System.Drawing.Size(193, 23);
 			this.txtSqlIP.TabIndex = 6;
-			this.txtSqlIP.TEXT = "";
+			this.txtSqlIP.Text = "";
 			this.txtSqlIP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtSqlIP.TEXTBOX_PasswordChar = '\0';
+			this.txtSqlIP.TextBox_PasswordChar = '\0';
 			this.txtSqlIP.TextType = Function.form.usrInputBox.enTextType.All;
 			this.txtSqlIP.Value = "";
 			// 
@@ -675,7 +675,7 @@
 			this.usrGroupHeader3.Name = "usrGroupHeader3";
 			this.usrGroupHeader3.Size = new System.Drawing.Size(559, 26);
 			this.usrGroupHeader3.TabIndex = 1;
-			this.usrGroupHeader3.TEXT = "접속 정보[SQL]";
+			this.usrGroupHeader3.Text = "접속 정보[SQL]";
 			this.usrGroupHeader3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// pnlConnWEB
@@ -701,7 +701,7 @@
 			this.txtWEBPass.ComboBoxSelectItem = null;
 			this.txtWEBPass.ComboBoxValueMember = "";
 			this.txtWEBPass.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtWEBPass.DLabel_Blink = false;
+			this.txtWEBPass.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.txtWEBPass.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtWEBPass.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtWEBPass.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -723,9 +723,9 @@
 			this.txtWEBPass.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtWEBPass.Size = new System.Drawing.Size(267, 23);
 			this.txtWEBPass.TabIndex = 10;
-			this.txtWEBPass.TEXT = "";
+			this.txtWEBPass.Text = "";
 			this.txtWEBPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtWEBPass.TEXTBOX_PasswordChar = '\0';
+			this.txtWEBPass.TextBox_PasswordChar = '\0';
 			this.txtWEBPass.TextType = Function.form.usrInputBox.enTextType.All;
 			this.txtWEBPass.Value = "";
 			// 
@@ -743,7 +743,7 @@
 			this.txtWEBUrl.ComboBoxSelectItem = null;
 			this.txtWEBUrl.ComboBoxValueMember = "";
 			this.txtWEBUrl.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.txtWEBUrl.DLabel_Blink = false;
+			this.txtWEBUrl.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.txtWEBUrl.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.txtWEBUrl.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtWEBUrl.DLabel_Font = new System.Drawing.Font("굴림체", 9F);
@@ -765,9 +765,9 @@
 			this.txtWEBUrl.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.txtWEBUrl.Size = new System.Drawing.Size(553, 73);
 			this.txtWEBUrl.TabIndex = 8;
-			this.txtWEBUrl.TEXT = "";
+			this.txtWEBUrl.Text = "";
 			this.txtWEBUrl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtWEBUrl.TEXTBOX_PasswordChar = '\0';
+			this.txtWEBUrl.TextBox_PasswordChar = '\0';
 			this.txtWEBUrl.TextType = Function.form.usrInputBox.enTextType.All;
 			this.txtWEBUrl.Value = "";
 			// 
@@ -780,7 +780,7 @@
 			this.usrGroupHeader4.Name = "usrGroupHeader4";
 			this.usrGroupHeader4.Size = new System.Drawing.Size(559, 26);
 			this.usrGroupHeader4.TabIndex = 1;
-			this.usrGroupHeader4.TEXT = "접속 정보[WEB]";
+			this.usrGroupHeader4.Text = "접속 정보[WEB]";
 			this.usrGroupHeader4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// gcSettingList

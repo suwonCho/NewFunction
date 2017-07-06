@@ -80,7 +80,7 @@
 			this.inpIpAddress.ComboBoxSelectItem = null;
 			this.inpIpAddress.ComboBoxValueMember = null;
 			this.inpIpAddress.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpIpAddress.DLabel_Blink = false;
+			this.inpIpAddress.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.inpIpAddress.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpIpAddress.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpIpAddress.DLabel_Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -102,7 +102,7 @@
 			this.inpIpAddress.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.inpIpAddress.Size = new System.Drawing.Size(166, 23);
 			this.inpIpAddress.TabIndex = 0;
-			this.inpIpAddress.TEXT = "";
+			this.inpIpAddress.Text = "";
 			this.inpIpAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.inpIpAddress.TextType = Function.form.usrInputBox.enTextType.NumberOlny;
 			this.inpIpAddress.Value = "";
@@ -119,7 +119,7 @@
 			this.inpPort.ComboBoxSelectItem = null;
 			this.inpPort.ComboBoxValueMember = null;
 			this.inpPort.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpPort.DLabel_Blink = false;
+			this.inpPort.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.inpPort.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpPort.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpPort.DLabel_Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -141,7 +141,7 @@
 			this.inpPort.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.inpPort.Size = new System.Drawing.Size(130, 23);
 			this.inpPort.TabIndex = 1;
-			this.inpPort.TEXT = "";
+			this.inpPort.Text = "";
 			this.inpPort.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.inpPort.TextType = Function.form.usrInputBox.enTextType.NumberOlny;
 			this.inpPort.Value = "";
@@ -234,7 +234,7 @@
 			this.inpAlarm.ComboBoxSelectItem = null;
 			this.inpAlarm.ComboBoxValueMember = null;
 			this.inpAlarm.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpAlarm.DLabel_Blink = false;
+			this.inpAlarm.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
 			this.inpAlarm.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpAlarm.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpAlarm.DLabel_Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -256,7 +256,7 @@
 			this.inpAlarm.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.inpAlarm.Size = new System.Drawing.Size(160, 22);
 			this.inpAlarm.TabIndex = 5;
-			this.inpAlarm.TEXT = "";
+			this.inpAlarm.Text = "";
 			this.inpAlarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.inpAlarm.TextType = Function.form.usrInputBox.enTextType.All;
 			this.inpAlarm.Value = "";

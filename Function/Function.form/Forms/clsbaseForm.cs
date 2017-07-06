@@ -603,7 +603,7 @@ namespace Function.form
 
 							//case "Function.form.usrInputBox":
 							//    Function.form.usrInputBox ib = c as Function.form.usrInputBox;
-							//    value += string.Format("{0}:{1};", ib.Name, ib.TEXT);
+							//    value += string.Format("{0}:{1};", ib.Name, ib.Text);
 							//    break;
 
 							default:
@@ -748,7 +748,7 @@ namespace Function.form
 
 							//case "Function.form.usrInputBox":
 							//    Function.form.usrInputBox ib = c as Function.form.usrInputBox;
-							//    ib.TEXT = v[1];
+							//    ib.Text = v[1];
 							//    break;
 
 							case "System.Windows.Forms.Panel":

@@ -56,6 +56,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmPLCModuleMonitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPLCValueChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPLCValueChange.Designer.cs">
+      <DependentUpon>frmPLCValueChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC Classes\clsABPLC_B.cs" />
+    <Compile Include="PLCComm.cs" />
     <Compile Include="fnc.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -70,6 +81,13 @@
     <Compile Include="vari.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPLCModuleMonitoring.resx">
+      <DependentUpon>frmPLCModuleMonitoring.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPLCValueChange.resx">
+      <DependentUpon>frmPLCValueChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,11 +109,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Function\AppAuth\AppAuth.csproj">
-      <Project>{78c34a59-0d62-46f6-93c1-ebb0d59af147}</Project>
-      <Name>AppAuth</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Function\Function\Function.csproj">
+    <ProjectReference Include="..\..\Function\Function\Function.csproj">
       <Project>{5843ebc1-ffab-4d2d-a61b-e53cdcf1d625}</Project>
       <Name>Function</Name>
     </ProjectReference>

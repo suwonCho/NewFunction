@@ -198,7 +198,7 @@ PROCEDURE FileInfo_Restore_OldVersion
     ps_Version                in        TAUTOUPDATE.VERSION%TYPE,
     ps_FileDate                in        TAUTOUPDATE.FILEDATE%TYPE,
     ps_FileImage            in        TAUTOUPDATE.FILEIMAGE%TYPE,
-    ps_Text                in        TAUTOUPDATE.TEXT%TYPE,
+    ps_Text                in        TAUTOUPDATE.Text%TYPE,
     ps_CRC                    in        TAUTOUPDATE.CRC%TYPE,
     ps_FileSize            in        TAUTOUPDATE.FileSize%TYPE
   );
@@ -491,7 +491,7 @@ PROCEDURE FileInfo_Set
     ps_Version                in        TAUTOUPDATE.VERSION%TYPE,
     ps_FileDate                in        TAUTOUPDATE.FILEDATE%TYPE,
     ps_FileImage            in        TAUTOUPDATE.FILEIMAGE%TYPE,
-    ps_Text                in        TAUTOUPDATE.TEXT%TYPE,
+    ps_Text                in        TAUTOUPDATE.Text%TYPE,
     ps_CRC                    in        TAUTOUPDATE.CRC%TYPE,
     ps_FileSize            in        TAUTOUPDATE.FileSize%TYPE
 )
