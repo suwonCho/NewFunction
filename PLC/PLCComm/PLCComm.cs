@@ -196,15 +196,14 @@ namespace PLCComm
 			
 			try
 			{
-#if(ABPLC_A || ABPLC_B)
 
 				if (ePlcType == enPlcType.AB)
-					clsPLC = new clsABPLC(strIPAddress, strProgramID, strGroupName, strTopicName, intUpdateRate);
+					plc = new clsABPLC(strIPAddress, strProgramID, strGroupName, strTopicName, intUpdateRate);
 				else
 				{
 					throw new Exception(string.Format("AB PLC 생성자의 Type이 잘 못 되었니다.(생성 요청 타입 : {0})",enPLCType.ToString()));
 				}
-#endif
+
 			
 				enPLCType = ePlcType;
 				InitClass(strLogFileName);
@@ -442,6 +441,43 @@ namespace PLCComm
 			}
 		}
 
+
+		/// <summary>
+		/// 1개 Address의 값을 가져온다.
+		/// </summary>
+		/// <param name="strAddress"></param>
+		/// <returns></returns>
+		public AddressValue GetValue(string strAddress)
+		{
+			try
+			{
+				return plc.GetValue(strAddress);
+			}
+			catch (Exception ex)
+			{
+				ProcException(ex);
+				throw ex;
+			}
+		}
+
+		/// <summary>
+		///  1개 Address에 대한 String 값을 가져 온다.
+		/// </summary>
+		/// <param name="strAddress"></param>
+		/// <returns></returns>
+
+		public string GetValueString(string strAddress)
+		{
+			try
+			{
+				return plc.GetValueString(strAddress);
+			}
+			catch (Exception ex)
+			{
+				ProcException(ex);
+				throw ex;
+			}
+		}
 	
 		
 		

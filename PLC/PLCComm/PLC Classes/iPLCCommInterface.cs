@@ -496,7 +496,8 @@ namespace PLCComm
 		{
 			try
 			{
-				int rtn = (int)GetValue(strAddress, enPLCValueType.INT).Value;
+				
+				int rtn = Fnc.obj2int(GetValue(strAddress, enPLCValueType.INT).Value);
 
 				return rtn;
 			}
@@ -743,13 +744,16 @@ namespace PLCComm
 							nType = enPLCValueType.HEX;
 							newValue = fnc.ByteToHex(bts);
 
-							isChage = Fnc.obj2String(dr["Value(HEX)"]).Equals(newValue.ToString());
+							isChage = !Fnc.obj2String(dr["Value(HEX)"]).Equals(newValue.ToString());
 						}
 
 					}
 					else if (Int16.TryParse(ReceiveValue.ToString(), out intReceiveValue))
-					{	//int16 贸府
-						isChage = (Int16)dr["Value(INT)"] != intReceiveValue;
+					{   //int16 贸府
+						if (nType != vType)
+							isChage = true;
+						else
+							isChage = (Int16)dr["Value(INT)"] != intReceiveValue;
 						newValue = intReceiveValue;
 					}
 					else

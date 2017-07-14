@@ -207,6 +207,9 @@ namespace Function
 				//    fd.InitialDirectory = @"C:\";
 				//}
 
+				if(!Directory.Exists(fd.InitialDirectory)) fd.InitialDirectory = @"C:\";
+
+
 				DialogResult dr;
 
 
