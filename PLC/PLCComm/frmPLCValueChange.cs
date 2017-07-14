@@ -255,8 +255,18 @@ namespace PLCComm
 
 		private void txtHex_Changed()
 		{
-			value_new = Convert.ToInt16(txtHex.Text, 16);
-			input_value();
+			try
+			{
+				value_new = Convert.ToInt16(txtHex.Text, 16);
+				input_value();
+			}
+			catch
+			{
+				txtHex.Text = "0000";
+				value_new = 0;
+				input_value();
+			}
+			
 		}
 
 		private void txtHex_KeyDown(object sender, KeyEventArgs e)

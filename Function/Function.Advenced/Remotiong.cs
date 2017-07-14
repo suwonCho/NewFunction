@@ -192,7 +192,8 @@ namespace Function.Advenced
 		/// <returns></returns>
 		public object HttpChannel_ClientLoad(Type type)
 		{
-			ch = new  HttpClientChannel();
+			ch = (IChannelReceiver)new  HttpClientChannel();
+			
 			if (ChannelServices.RegisteredChannels.Length < 1) ChannelServices.RegisterChannel(ch, false);
 
 			return Activator.GetObject(type, strFullUri );

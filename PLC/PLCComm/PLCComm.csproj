@@ -65,7 +65,9 @@
     <Compile Include="frmPLCValueChange.Designer.cs">
       <DependentUpon>frmPLCValueChange.cs</DependentUpon>
     </Compile>
-    <Compile Include="PLC Classes\clsABPLC_B.cs" />
+    <Compile Include="PLC Classes\clsABPLC.cs" />
+    <Compile Include="PLC Classes\clsLS_XG.cs" />
+    <Compile Include="PLC Classes\clsPLCSocket.cs" />
     <Compile Include="PLCComm.cs" />
     <Compile Include="fnc.cs" />
     <Compile Include="Form1.cs">
