@@ -142,7 +142,7 @@ namespace Function
 			/// 파일 이름을 확인한다. 같은이름이 있으면 이름뒤에 (1),(2)....
 			/// 를 붙여 준다
 			/// </summary>
-			/// <param name="file"></param>
+			/// <param name="fullfilename"></param>
 			/// <returns></returns>
 			public static string FileName_Check(string fullfilename)
 			{
