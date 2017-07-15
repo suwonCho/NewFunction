@@ -162,6 +162,8 @@ namespace PLCComm
 					add = $"opcda://{strIp}/{ProgId}";
 				}
 
+				add = ProgId;
+
 
 				opc = new Opc.Da.Server(fact, null);
 
@@ -309,28 +311,70 @@ namespace PLCComm
 					//	throw new Exception(string.Empty);
 				}
 
-				OpcGrp.Refresh();
+				//OpcGrp.Refresh();
 
+
+				/* 구 체크 로직....
 				Opc.Da.Item item = OpcGrp.Items[0];
 				
 				//값을 정상 적으로 받지 못함..
 				if (!item.Active) throw new Exception(string.Empty);
-								
-
-				if (opc.GetStatus().ServerState != Opc.Da.serverState.running && !this.bolOpcStatus)    //접속 정상
+				
+				if (opc.GetStatus().ServerState == Opc.Da.serverState.running && !this.bolOpcStatus)    //접속 정상
 				{   //연결 회복..
 					this.bolOpcStatus = true;
 					_ConnctionStatus = enStatus.OK;					
 				}
+				*/
 
-				//쓰기명령을 처리 한다.
-				foreach(DataRow dr in dtWriteOrder.Rows)
+
+				bool isConn = false;
+
+
+				//연결이 끊어 지면 모든 값이 0이된다.
+				foreach(DataRow r in dtAddress.Rows)
 				{
-					//dtWriteOrder.Rows[j]["Address"], dtWriteOrder.Rows[j]["Value"]);
+					if(r["Value"] != DBNull.Value)
+					{
+						int v = 0;
 
-					Item_Write(Fnc.obj2String(dr["Address"]), Fnc.obj2int(dr["value"]));
+						if (int.TryParse(Fnc.obj2String(r["Value"]), out v))
+						{
+							if (v != 0) isConn = true;
+						}
+						else
+							isConn = true;
+
+					}
+					//연결 확인
+					if (isConn) break;
+					
 				}
 
+				if(isConn != this.bolOpcStatus)
+				{
+					bolOpcStatus = isConn;
+					_ConnctionStatus = isConn ? enStatus.OK : enStatus.Error;
+				}
+
+
+				if (_ConnctionStatus == enStatus.OK && dtWriteOrder.Rows.Count > 0)
+				{
+					DataRow[] rows = new DataRow[dtWriteOrder.Rows.Count];
+
+					dtWriteOrder.Rows.CopyTo(rows, 0);
+
+
+					//쓰기명령을 처리 한다.
+					foreach (DataRow dr in rows)
+					{
+						//dtWriteOrder.Rows[j]["Address"], dtWriteOrder.Rows[j]["Value"]);
+
+						Item_Write(Fnc.obj2String(dr["Address"]), Fnc.obj2int(dr["value"]));
+
+						dtWriteOrder.Rows.Remove(dr);
+					}
+				}
 
 
 			}
@@ -347,9 +391,9 @@ namespace PLCComm
 				//접속재시도..
 				try
 				{
-					this.close();
-					this.Open();
-					this.Item_ReAdd_All();
+					//this.close();
+					//this.Open();
+					//this.Item_ReAdd_All();
 				}
 				catch { }
 			}
@@ -493,10 +537,21 @@ namespace PLCComm
 
 				foreach (Opc.Da.ItemValueResult value in values)
 				{
+					short d;
+					short[] data;
 
-					//값이 어떻게 넘어 오는지 확인 하고 변경 할것
-					short[] data = (short[])value.Value;
-					ChangeddAddressValue(value.ItemName, data[0], false, null, null);
+					if (short.TryParse(value.Value.ToString(), out d))
+					{
+						data = new short[] { d };
+					}
+					else
+					{
+						//값이 어떻게 넘어 오는지 확인 하고 변경 할것
+						data = (short[])value.Value;
+					}
+
+					
+					ChangeddAddressValue(value.ItemName, data, false, null, null);
 				
 				}
 			}

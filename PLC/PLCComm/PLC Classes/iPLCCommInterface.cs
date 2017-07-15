@@ -721,39 +721,39 @@ namespace PLCComm
 
 					enPLCValueType nType = enPLCValueType.INT;
 
-					Int16 intReceiveValue = -1;
+					short intReceiveValue = -1;
 					bool isChage = false;
 					string tmp;				
 
-					byte[] bts = ReceiveValue as byte[];
+					short[] bts = ReceiveValue as short[];
 
 
 					//신규값 처리 및 값 변경 여부 확인한다.
 					if(bts != null)
 					{	//바이트 배열 처리
 						//2개 이하면 short 이므로
-						if(bts.Length < 3)
+						if(bts.Length < 2)
 						{   //int16 처리
-							intReceiveValue = Int16.Parse(fnc.ByteToLong(bts).ToString());
+							intReceiveValue = bts[0];
 
-							isChage = (Int16)dr["Value(INT)"] != intReceiveValue;
+							isChage = Fnc.obj2int(dr["Value(INT)"]) != intReceiveValue;
 							newValue = intReceiveValue;
 						}
 						else
 						{   //Hex처리
 							nType = enPLCValueType.HEX;
-							newValue = fnc.ByteToHex(bts);
+							newValue = fnc.ShortToHex(bts);
 
 							isChage = !Fnc.obj2String(dr["Value(HEX)"]).Equals(newValue.ToString());
 						}
 
 					}
-					else if (Int16.TryParse(ReceiveValue.ToString(), out intReceiveValue))
+					else if (short.TryParse(ReceiveValue.ToString(), out intReceiveValue))
 					{   //int16 처리
 						if (nType != vType)
 							isChage = true;
 						else
-							isChage = (Int16)dr["Value(INT)"] != intReceiveValue;
+							isChage = (short)dr["Value(INT)"] != intReceiveValue;
 						newValue = intReceiveValue;
 					}
 					else
