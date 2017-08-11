@@ -630,6 +630,76 @@ order by parameter_id", spname);
 
 
 
+		/// <summary>
+		/// (펑션)sql db연결 체크용 시간조회
+		/// </summary>
+		/// <returns></returns>
+		public static DateTime fnc_date_get(MsSQL.strConnect conn)
+		{
+			MsSQL sql = new MsSQL(conn);
+
+			string qry = string.Format("SELECT GETDATE()");
+
+			DataTable dt = sql.Excute_Query(qry, "").Tables[0];
+
+			return (DateTime)dt.Rows[0][0];
+		}
+
+		/// <summary>
+		/// (펑션)기본(master) 파일 경로를 조회 한다.
+		/// </summary>
+		/// <param name="conn"></param>
+		/// <returns></returns>
+		public static string fnc_filepath_get(MsSQL.strConnect conn)
+		{
+			MsSQL sql = new MsSQL(conn);
+
+			string qry = @"select filename
+from [master].[dbo].sysfiles
+where fileid = 1";
+
+			DataTable dt = sql.Excute_Query(qry, "").Tables[0];
+
+			string[] path = Function.system.clsFile.FileSplitPath_Name(Fnc.obj2String(dt.Rows[0]["filename"]));
+
+			return path[0];
+		}
+
+
+		/// <summary>
+		/// (펑션)DataBase 존재 여부를 확인한다.
+		/// </summary>
+		/// <param name="conn"></param>
+		/// <param name="dbName"></param>
+		/// <returns></returns>
+		public static bool fnc_DataBase_Exists(MsSQL.strConnect conn, string dbName)
+		{
+			MsSQL sql = new MsSQL(conn);
+
+			string qry = $@"SELECT *
+FROM model.[sys].[databases]
+WHERE 1=1 
+AND NAME = '{dbName}'";
+
+			DataTable dt = sql.Excute_Query(qry, "").Tables[0];
+
+			return dt.Rows.Count > 0;
+		}
+
+		/// <summary>
+		///  (펑션)DataBase 삭제 한다.
+		/// </summary>
+		/// <param name="conn"></param>
+		/// <param name="dbName"></param>
+		public static void fnc_DataBase_drop(MsSQL.strConnect conn, string dbName)
+		{
+			MsSQL sql = new MsSQL(conn);
+
+			string qry = $@"DROP database {dbName}";
+
+			sql.Excute_Query(qry, "");
+
+		}
 
 
 
