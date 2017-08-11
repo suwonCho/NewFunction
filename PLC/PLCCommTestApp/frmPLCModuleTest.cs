@@ -158,13 +158,13 @@ namespace PLCCommTestApp
 			this.label11 = new System.Windows.Forms.Label();
 			this.Grid = new System.Windows.Forms.DataGridView();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.bntChAddSet = new System.Windows.Forms.Button();
-			this.txtChAdd = new System.Windows.Forms.TextBox();
-			this.label9 = new System.Windows.Forms.Label();
 			this.lstChValue = new System.Windows.Forms.ListView();
 			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.txtChAdd = new System.Windows.Forms.TextBox();
+			this.label9 = new System.Windows.Forms.Label();
+			this.bntChAddSet = new System.Windows.Forms.Button();
 			this.grpMelsec.SuspendLayout();
 			this.grpAB.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -362,7 +362,7 @@ namespace PLCCommTestApp
 			this.txtProgID.Name = "txtProgID";
 			this.txtProgID.Size = new System.Drawing.Size(208, 23);
 			this.txtProgID.TabIndex = 7;
-			this.txtProgID.Text = "RSLinx OPC Server";
+			this.txtProgID.Text = "opcda://localhost/RSLinx OPC Server";
 			// 
 			// lblProgID
 			// 
@@ -695,34 +695,6 @@ namespace PLCCommTestApp
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Address Value Change Event";
 			// 
-			// bntChAddSet
-			// 
-			this.bntChAddSet.Location = new System.Drawing.Point(348, 16);
-			this.bntChAddSet.Name = "bntChAddSet";
-			this.bntChAddSet.Size = new System.Drawing.Size(80, 24);
-			this.bntChAddSet.TabIndex = 15;
-			this.bntChAddSet.Text = "이벤트 등록";
-			this.bntChAddSet.Click += new System.EventHandler(this.bntChAddSet_Click);
-			// 
-			// txtChAdd
-			// 
-			this.txtChAdd.Font = new System.Drawing.Font("Bitstream Vera Sans Mono", 10F);
-			this.txtChAdd.Location = new System.Drawing.Point(104, 16);
-			this.txtChAdd.Name = "txtChAdd";
-			this.txtChAdd.Size = new System.Drawing.Size(136, 23);
-			this.txtChAdd.TabIndex = 18;
-			this.txtChAdd.Text = "900";
-			// 
-			// label9
-			// 
-			this.label9.Font = new System.Drawing.Font("Bitstream Vera Sans Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label9.Location = new System.Drawing.Point(16, 16);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(80, 24);
-			this.label9.TabIndex = 17;
-			this.label9.Text = "Address";
-			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// lstChValue
 			// 
 			this.lstChValue.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -752,6 +724,34 @@ namespace PLCCommTestApp
 			// 
 			this.columnHeader3.Text = "내용";
 			this.columnHeader3.Width = 280;
+			// 
+			// txtChAdd
+			// 
+			this.txtChAdd.Font = new System.Drawing.Font("Bitstream Vera Sans Mono", 10F);
+			this.txtChAdd.Location = new System.Drawing.Point(104, 16);
+			this.txtChAdd.Name = "txtChAdd";
+			this.txtChAdd.Size = new System.Drawing.Size(136, 23);
+			this.txtChAdd.TabIndex = 18;
+			this.txtChAdd.Text = "900";
+			// 
+			// label9
+			// 
+			this.label9.Font = new System.Drawing.Font("Bitstream Vera Sans Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label9.Location = new System.Drawing.Point(16, 16);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(80, 24);
+			this.label9.TabIndex = 17;
+			this.label9.Text = "Address";
+			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// bntChAddSet
+			// 
+			this.bntChAddSet.Location = new System.Drawing.Point(348, 16);
+			this.bntChAddSet.Name = "bntChAddSet";
+			this.bntChAddSet.Size = new System.Drawing.Size(80, 24);
+			this.bntChAddSet.TabIndex = 15;
+			this.bntChAddSet.Text = "이벤트 등록";
+			this.bntChAddSet.Click += new System.EventHandler(this.bntChAddSet_Click);
 			// 
 			// frmTest
 			// 
@@ -819,7 +819,11 @@ namespace PLCCommTestApp
 			
 			
 			Comm.Open();
-			
+
+			Comm.AddAddress("[TORQUE]R7000:0,L100");
+
+			Comm.AddAddress("[TORQUE]R7000[0]");
+
 			this.Grid.DataSource = Comm.dtAddress;
 
 
@@ -893,16 +897,17 @@ namespace PLCCommTestApp
 
 
 						break;
-#if(ABPLC)
+
 					case enPlcType.AB:
 						string strNode = this.txtNODE.Text;
 						string strProgID = this.txtProgID.Text;
 						string strGroupName = "grpTest";
 						string strTopicName = this.txtTopic.Text;
 						int intUpdateRate = 1000;
-						Comm = new clsPLCModule(en, strNode, strProgID, strGroupName, strTopicName, intUpdateRate, strLogFileName);
+						Comm = new PLCComm.PLCComm(en, strNode, strProgID, strGroupName, strTopicName, intUpdateRate, strLogFileName);
+						
 						break;
-#endif
+
 					default:
 						Comm = null;
 						break;

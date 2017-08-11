@@ -114,6 +114,18 @@ namespace PLCComm
 			return temp;
 		}
 
+
+		public static string ShortToHex(short[] ss)
+		{
+			string temp = "";
+			foreach (short s in ss)
+			{
+				temp += s.ToString("X4"); //string.Format("{0:X2}", Convert.ToInt32(b)) + " ";
+			}
+
+			return temp;
+		}
+
 		/// <summary>
 		/// Hex값을 Ascii 값 기준으로 문자열로 변경 하여 준다.
 		/// </summary>

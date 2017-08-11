@@ -512,6 +512,7 @@ namespace PLCComm
 		{
 			try
 			{
+				Console.WriteLine($"WriteOrder [Add]{Address} [Value]{Value}");
 				return plc.WriteOrder(Address, Value);
 			}
 			catch(Exception ex)
