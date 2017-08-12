@@ -583,12 +583,16 @@ order by parameter_id", spname);
 				this.Dbcmd.Connection = this.Dbconn;
 				Dbcmd.CommandType = CommandType.StoredProcedure;
 				Dbcmd.CommandText = spName;
-				
-				foreach(SqlParameter param in Params)
-				{
-					Dbcmd.Parameters.Add(param);
-					if (_log != null && writelog) log += string.Format("\r\n\t\t{0} = '{1}'", param.ParameterName, param.Value);
-				}
+
+                if (Params != null)
+                {
+
+                    foreach (SqlParameter param in Params)
+                    {
+                        Dbcmd.Parameters.Add(param);
+                        if (_log != null && writelog) log += string.Format("\r\n\t\t{0} = '{1}'", param.ParameterName, param.Value);
+                    }
+                }
 
 				if (_log != null && writelog)
 				{
@@ -701,8 +705,79 @@ AND NAME = '{dbName}'";
 
 		}
 
+        /// <summary>
+        /// (펑션)연결된 서버 목록을 조회 한다.
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <returns></returns>
+        public static DataTable fnc_LinkedServers(MsSQL.strConnect conn)
+        {
+            MsSQL sql = new MsSQL(conn);
 
+            string qry = "sp_linkedservers";
 
+            return sql.Excute_StoredProcedure(qry, new SqlParameter[] { }, string.Empty, false).Tables[0];
+        }
 
-	}
+        /// <summary>
+        /// (펑션)연결된 서버를 테스트 한다. 실패 시 exception 발생
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="linkedServerName"></param>
+        public static void fnc_LinkedServer_Test(MsSQL.strConnect conn, string linkedServerName)
+        {
+            MsSQL sql = new MsSQL(conn);
+
+            string qry = $"exec sp_testlinkedserver {linkedServerName}";
+
+            sql.Excute_Query(qry, "", false);
+        }
+
+        /// <summary>
+        /// (펑션)연결된 서버 이름으로 존재여부를 확인한다.
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="linkedServerName"></param>
+        /// <returns></returns>
+        public static bool fnc_LinkedServer_Exist(MsSQL.strConnect conn, string linkedServerName)
+        {
+            DataTable dt = fnc_LinkedServers(conn);
+
+            DataRow[] rows = dt.Select($"SRV_NAME = '{linkedServerName}'");
+
+            return rows.Length > 0;
+
+        }
+
+        /// <summary>
+        /// (펑션)연결된 서버를 삭제 한다.
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="linkedServerName"></param>
+        public static void fnc_LinkedServer_Drop(MsSQL.strConnect conn, string linkedServerName)
+        {
+            MsSQL sql = new MsSQL(conn);
+
+            string qry = string.Format("IF  EXISTS (SELECT srv.name FROM sys.servers srv WHERE srv.server_id != 0 AND srv.name = N'{0}')EXEC master.dbo.sp_dropserver @server=N'{0}', @droplogins='droplogins'",
+                linkedServerName);
+
+            sql.Excute_Query(qry, "", false);
+        }
+
+        /// <summary>
+        /// (펑션)프로시져를 삭제 한다.
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="SPName"></param>
+        public static void fnc_Procedure_Drop(MsSQL.strConnect conn, string SPName)
+        {
+            MsSQL sql = new MsSQL(conn);
+
+            string qry = string.Format(@"IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{0}') AND type in (N'P', N'PC'))
+DROP PROCEDURE {0}",  SPName);
+
+            sql.Excute_Query(qry, "", false);
+        }
+
+    }
 }

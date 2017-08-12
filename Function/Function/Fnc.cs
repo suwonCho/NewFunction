@@ -1448,8 +1448,7 @@ namespace Function
 					rtn = txt.Substring(startIdx, length);
 					txt = txt.Substring(0, startIdx) + txt.Substring(startIdx + length);
 					break;
-
-
+                    
 				case enStringLocation.End:
 					x = txt.Length - startIdx;
 					if (x + length > txt.Length)
@@ -1464,8 +1463,7 @@ namespace Function
 				default:
 					break;
 			}
-
-
+            
 			return rtn;
 			
 		}
