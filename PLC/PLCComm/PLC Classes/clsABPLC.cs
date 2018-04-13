@@ -184,10 +184,7 @@ namespace PLCComm
 
 				OpcGrp = (Opc.Da.Subscription)opc.CreateSubscription(OpcGrp_State);
 				OpcGrp.DataChanged += OpcGrp_DataChanged;
-				
-				
-
-								
+												
 				//opc 연결상태 체크 Timer를 시작한다.
 				if (this.tmrOpcCheck != null)
 				{
