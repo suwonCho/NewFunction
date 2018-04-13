@@ -27,8 +27,9 @@ namespace Function.form
 
 
 		/// <summary>
-		/// 폼 로드 시 타이머로 FormInit 사용 여부를 가져오거나 설정한다.
+		/// 폼 로드 시 타이머로 Form_Init 사용 여부를 가져오거나 설정한다. Form_Init를 override하여 사용할것
 		/// </summary>
+		[Description("폼 로드 시 타이머로 Form_Init 사용 여부를 가져오거나 설정한다. Form_Init를 override하여 사용할것")]
 		public bool isUseFormInit
 		{
 			get { return _isUseFormInit; }
@@ -75,6 +76,10 @@ namespace Function.form
 		/// 폼상태 저장을 위해서는 SavePosition_Setting 변수에 사용할 프로퍼티 클래스를 할당하고(ex)SavePosition_Setting = Properties.Settings.Default <para />
 		///		프로퍼티 클래스에 FormControlSize항목 추가한다(형식은 string) - 저장은 subBaseForm 이름을 기준으로 각컨트롤의 이름으로 사이즈 저장 처리를 한다.<para />
 		/// </summary>
+		[Description(@"컨트롤 크기저장여부를 가져오거나 설정한다.
+폼상태 저장을 위해서는 SavePosition_Setting 변수에 사용할 프로퍼티 클래스를 할당하고(ex)SavePosition_Setting = Properties.Settings.Default
+프로퍼티 클래스에 FormControlSize항목 추가한다(형식은 string) - 저장은 subBaseForm 이름을 기준으로 각컨트롤의 이름으로 사이즈 저장 처리를 한다.
+(설정파일 사용 시는 필요 없음)")]
 		public bool isSaveControlSize
 		{
 			get { return _isSaveControlSize; }
@@ -85,21 +90,21 @@ namespace Function.form
 		}
 
 
-		protected void control_Size_Load()
-		{
-			if (isSaveControlSize)
-			{
-				fncForm.control_Size_Load(_saveposition_setting, _FormControlSize_property_name, this);
-			}
-		}
+		//protected void control_Size_Load()
+		//{
+		//	if (isSaveControlSize)
+		//	{
+		//		fncForm.control_Size_Load(_saveposition_setting, _FormControlSize_property_name, this);
+		//	}
+		//}
 
-		protected void control_Size_Save()
-		{
-			if (isSaveControlSize)
-			{
-				fncForm.control_Size_Save(_saveposition_setting, _FormControlSize_property_name, this);
-			}
-		}
+		//protected void control_Size_Save()
+		//{
+		//	if (isSaveControlSize)
+		//	{
+		//		fncForm.control_Size_Save(_saveposition_setting, _FormControlSize_property_name, this);
+		//	}
+		//}
 
 		public clsbaseForm()
 		{
@@ -190,14 +195,14 @@ namespace Function.form
 		void clsbaseForm_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			formPostion_Save();
-			control_Size_Save();
+			//control_Size_Save();
 			property_Save();
 		}
 
 		void clsbaseForm_Load(object sender, EventArgs e)
 		{
 			formPositon_Load();
-			control_Size_Load();
+			//control_Size_Load();
 			property_Load();
 
 			if (isUseFormInit)

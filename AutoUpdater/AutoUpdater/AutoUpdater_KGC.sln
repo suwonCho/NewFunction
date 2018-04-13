@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUpdateClient", "AutoUpdateClient\AutoUpdateClient.csproj", "{D3CD5DD4-9B41-4751-9060-96ED915FCC0F}"
 EndProject
@@ -9,13 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMover", "prjFileMover\F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUpdateUploader", "AutoUpdateUploader\AutoUpdateUploader.csproj", "{70F6AE58-EB7A-438D-B767-58B998BC021F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function", "..\..\NewFunction_VS2010_FW4\Function\Function.csproj", "{5843EBC1-FFAB-4D2D-A61B-E53CDCF1D625}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function", "..\..\Function\Function\Function.csproj", "{5843EBC1-FFAB-4D2D-A61B-E53CDCF1D625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function.form", "..\..\NewFunction_VS2010_FW4\Function.form\Function.form.csproj", "{D92B5672-4F0D-407A-AC14-D97DCA94E803}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function.form", "..\..\Function\Function.form\Function.form.csproj", "{D92B5672-4F0D-407A-AC14-D97DCA94E803}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function.Component.DevExp", "..\..\NewFunction_VS2010_FW4\Function.Component.DevExp\Function.Component.DevExp.csproj", "{9AE620B2-BDD3-4005-B964-C730215137C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function.Component.DevExp", "..\..\Function\Function.Component.DevExp\Function.Component.DevExp.csproj", "{9AE620B2-BDD3-4005-B964-C730215137C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function.Archive", "..\..\NewFunction_VS2010_FW4\Function.Archive\Function.Archive.csproj", "{18348D28-2612-4EB1-A192-48DB0CD4E92C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function.Archive", "..\..\Function\Function.Archive\Function.Archive.csproj", "{18348D28-2612-4EB1-A192-48DB0CD4E92C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

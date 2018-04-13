@@ -184,6 +184,7 @@ namespace Function.form
 		{
 			this.Select(true, false);
 			this.BringToFront();
+			this.TopMost = true;
 		}
 
 		private void frmMessage_FormClosed(object sender, FormClosedEventArgs e)

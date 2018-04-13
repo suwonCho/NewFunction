@@ -97,11 +97,11 @@ namespace Function.form
 			{
 				if (splitContainer1.Orientation == value) return;
 
-				splitContainer1.SplitterDistance = 1;
+				//splitContainer1.SplitterDistance = 1;
 				
 				splitContainer1.Orientation = value;
 
-				LabelWidth = -1;			
+				//LabelWidth = -1;			
 
 				usrInputBox_SizeChanged(null, null);
 			}
@@ -145,7 +145,7 @@ namespace Function.form
 					"*");
 			else
 				f = Function.form.control.Font_Control_String_Size_Get(label, control.enControl_Criteria.height,
-					label.Text) * Function.form.control.Font_Control_String_Size_Get(label, control.enControl_Criteria.height,
+					label.Text) + Function.form.control.Font_Control_String_Size_Get(label, control.enControl_Criteria.height,
 					"*");
 
 			int i = int.Parse(Math.Round(Double.Parse(f.ToString()), 0).ToString());
@@ -1106,5 +1106,18 @@ namespace Function.form
 			this.Focus();
 		}
 
+		private void txtBox_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			//더블클릭으로 텍스트 선택시 공백은 제외 한다.
+			int iSLen = txtBox.SelectionLength;
+			int iTlen = txtBox.SelectedText.Trim().Length;
+
+
+			if(iSLen > iTlen)
+			{
+				txtBox.SelectionLength = iTlen;
+			}
+
+		}
 	}
 }

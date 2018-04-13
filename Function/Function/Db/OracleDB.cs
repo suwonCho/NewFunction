@@ -387,7 +387,7 @@ ORDER BY LINE ", spname);
         /// <summary>
         /// 쿼리 재시도 회수 (범위 1-5)
         /// </summary>
-        int retryTimes_Query = 3;
+        int retryTimes_Query = 1;
         public int RetryTimes_Query
         {
             set
@@ -919,7 +919,7 @@ ORDER BY LINE ", spname);
                 Dbcmd.Parameters.Clear();
                 this.Dbcmd.Connection = this.Dbconn;
                 Dbcmd.CommandType = CommandType.Text;
-                Dbcmd.CommandText = Query;
+                Dbcmd.CommandText = Fnc.RemoveSpLetter(Query);
 
 				if (Log != null & writelog) Log.WLog("[OracleDB 쿼리 실행]{0}", Query);
 

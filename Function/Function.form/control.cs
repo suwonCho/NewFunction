@@ -1506,7 +1506,7 @@ namespace Function.form
 			catch { }
 			finally
 			{
-				ctrl.Focus();
+				if(ctrl != null)ctrl.Focus();
 			}
 		}
 

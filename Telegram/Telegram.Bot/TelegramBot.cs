@@ -23,6 +23,8 @@ namespace Telegram
 		public static string _token_30min = null;
 		public static string _chatid_30min = null;
 
+		
+
 		/// <summary>
 		/// 큐를 이용히여 텔레그램에 메시지를 보낸다.
 		/// </summary>

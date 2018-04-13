@@ -73,7 +73,7 @@ namespace Function.form
 
 		/// <summary>
 		/// 마지막 메세지 내용
-		/// </summary>
+		/// </summary>		
 		public string LastMessage { get; set; }
 		/// <summary>
 		/// 마지막 메세지 에러 여부
@@ -99,7 +99,7 @@ namespace Function.form
 		/// <summary>
 		/// 프로그램 이름을 설정 하거나 가저 옵니다.
 		/// </summary>
-		[Description("")]
+		[Description("프로그램 이름을 설정 하거나 가저 옵니다.")]
 		public string PgmName
 		{
 			get

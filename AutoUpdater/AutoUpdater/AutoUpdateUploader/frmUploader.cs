@@ -13,12 +13,15 @@ namespace AutoUpdater
 	{
 
 		public static DataSet dsSetting;
-		public static readonly string strDSFileName = @".\Setting.xml";
+		public static readonly string strDSFileName = @"Setting.xml";
 		public static frmUploader mdiMain;
 
 		int dGrpCode = 9999;
 		string dGrpName = "PGM";
 
+		/// <summary>
+		/// 
+		/// </summary>
 		public frmUploader()
 		{
 			InitializeComponent();

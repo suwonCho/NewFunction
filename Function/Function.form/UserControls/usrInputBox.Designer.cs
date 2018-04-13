@@ -48,6 +48,7 @@
 			this.txtBox.Size = new System.Drawing.Size(183, 21);
 			this.txtBox.TabIndex = 0;
 			this.txtBox.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+			this.txtBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtBox_MouseDoubleClick);
 			// 
 			// label1
 			// 
