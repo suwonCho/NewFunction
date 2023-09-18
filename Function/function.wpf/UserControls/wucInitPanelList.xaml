@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="function.wpf.wucInitPanelList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:function.wpf"
+             mc:Ignorable="d" BorderBrush="Black" BorderThickness="2" Background="LightGray" Width="900" Height="500" Padding="3" Loaded="UserControl_Loaded" >
+    <Grid Name="grdMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Label Name="lblTitle" Content="Title" HorizontalContentAlignment="Center" FontSize="30" Padding="0" />
+
+        <DataGrid Name="grdList" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" FontSize="25" HorizontalScrollBarVisibility="Hidden"  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="처 리 내 역"  Width="{Binding Path=ActualWidth, ElementName=grdList}" Binding="{Binding Text}" IsReadOnly="True" CanUserSort="False" CanUserResize="False" CanUserReorder="False">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="{Binding BackColor}"/>
+                    <Setter Property="Foreground" Value="{Binding ForeColor}"/>
+                </Style>
+            </DataGrid.RowStyle>
+        </DataGrid>
+
+        <local:ImageButton x:Name="btnOk" ResIcon16Name="ok"  Text="확 인" Grid.Row="2" Margin="389,3,371,1" FontSize="18" IsEnabled="False" Click="btnOk_Click" />
+    </Grid>
+</UserControl>

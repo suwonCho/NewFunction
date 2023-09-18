@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Base_POP_INFO_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="encText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Base_POP_INFO_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Base_POP_INFO_GetResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Base_POP_CONFIG_Upd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="encText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Base_POP_CONFIG_UpdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="param_sperator_get">
+        <s:complexType />
+      </s:element>
+      <s:element name="param_sperator_getResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="param_sperator_getResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="item_sperator_get">
+        <s:complexType />
+      </s:element>
+      <s:element name="item_sperator_getResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item_sperator_getResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServerTime_Get">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServerTime_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServerTime_GetResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Excute_Table_Get">
+        <s:complexType />
+      </s:element>
+      <s:element name="Excute_Table_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Excute_Table_GetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Excute_Table">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="encText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Excute_TableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Excute_TableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Excute_Query_Cnt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="encText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Excute_Query_CntResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Excute_Query_CntResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Base_POP_INFO_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Base_POP_INFO_Get" />
+  </wsdl:message>
+  <wsdl:message name="Base_POP_INFO_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Base_POP_INFO_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Base_POP_CONFIG_UpdSoapIn">
+    <wsdl:part name="parameters" element="tns:Base_POP_CONFIG_Upd" />
+  </wsdl:message>
+  <wsdl:message name="Base_POP_CONFIG_UpdSoapOut">
+    <wsdl:part name="parameters" element="tns:Base_POP_CONFIG_UpdResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="param_sperator_getSoapIn">
+    <wsdl:part name="parameters" element="tns:param_sperator_get" />
+  </wsdl:message>
+  <wsdl:message name="param_sperator_getSoapOut">
+    <wsdl:part name="parameters" element="tns:param_sperator_getResponse" />
+  </wsdl:message>
+  <wsdl:message name="item_sperator_getSoapIn">
+    <wsdl:part name="parameters" element="tns:item_sperator_get" />
+  </wsdl:message>
+  <wsdl:message name="item_sperator_getSoapOut">
+    <wsdl:part name="parameters" element="tns:item_sperator_getResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServerTime_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:ServerTime_Get" />
+  </wsdl:message>
+  <wsdl:message name="ServerTime_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:ServerTime_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Excute_Table_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Excute_Table_Get" />
+  </wsdl:message>
+  <wsdl:message name="Excute_Table_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Excute_Table_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Excute_TableSoapIn">
+    <wsdl:part name="parameters" element="tns:Excute_Table" />
+  </wsdl:message>
+  <wsdl:message name="Excute_TableSoapOut">
+    <wsdl:part name="parameters" element="tns:Excute_TableResponse" />
+  </wsdl:message>
+  <wsdl:message name="Excute_Query_CntSoapIn">
+    <wsdl:part name="parameters" element="tns:Excute_Query_Cnt" />
+  </wsdl:message>
+  <wsdl:message name="Excute_Query_CntSoapOut">
+    <wsdl:part name="parameters" element="tns:Excute_Query_CntResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DB_POP_SERVICESoap">
+    <wsdl:operation name="Base_POP_INFO_Get">
+      <wsdl:input message="tns:Base_POP_INFO_GetSoapIn" />
+      <wsdl:output message="tns:Base_POP_INFO_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Base_POP_CONFIG_Upd">
+      <wsdl:input message="tns:Base_POP_CONFIG_UpdSoapIn" />
+      <wsdl:output message="tns:Base_POP_CONFIG_UpdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="param_sperator_get">
+      <wsdl:input message="tns:param_sperator_getSoapIn" />
+      <wsdl:output message="tns:param_sperator_getSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="item_sperator_get">
+      <wsdl:input message="tns:item_sperator_getSoapIn" />
+      <wsdl:output message="tns:item_sperator_getSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServerTime_Get">
+      <wsdl:input message="tns:ServerTime_GetSoapIn" />
+      <wsdl:output message="tns:ServerTime_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Excute_Table_Get">
+      <wsdl:input message="tns:Excute_Table_GetSoapIn" />
+      <wsdl:output message="tns:Excute_Table_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Excute_Table">
+      <wsdl:input message="tns:Excute_TableSoapIn" />
+      <wsdl:output message="tns:Excute_TableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Excute_Query_Cnt">
+      <wsdl:input message="tns:Excute_Query_CntSoapIn" />
+      <wsdl:output message="tns:Excute_Query_CntSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DB_POP_SERVICESoap" type="tns:DB_POP_SERVICESoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Base_POP_INFO_Get">
+      <soap:operation soapAction="http://tempuri.org/Base_POP_INFO_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Base_POP_CONFIG_Upd">
+      <soap:operation soapAction="http://tempuri.org/Base_POP_CONFIG_Upd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="param_sperator_get">
+      <soap:operation soapAction="http://tempuri.org/param_sperator_get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="item_sperator_get">
+      <soap:operation soapAction="http://tempuri.org/item_sperator_get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerTime_Get">
+      <soap:operation soapAction="http://tempuri.org/ServerTime_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Excute_Table_Get">
+      <soap:operation soapAction="http://tempuri.org/Excute_Table_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Excute_Table">
+      <soap:operation soapAction="http://tempuri.org/Excute_Table" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Excute_Query_Cnt">
+      <soap:operation soapAction="http://tempuri.org/Excute_Query_Cnt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DB_POP_SERVICESoap12" type="tns:DB_POP_SERVICESoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Base_POP_INFO_Get">
+      <soap12:operation soapAction="http://tempuri.org/Base_POP_INFO_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Base_POP_CONFIG_Upd">
+      <soap12:operation soapAction="http://tempuri.org/Base_POP_CONFIG_Upd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="param_sperator_get">
+      <soap12:operation soapAction="http://tempuri.org/param_sperator_get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="item_sperator_get">
+      <soap12:operation soapAction="http://tempuri.org/item_sperator_get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerTime_Get">
+      <soap12:operation soapAction="http://tempuri.org/ServerTime_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Excute_Table_Get">
+      <soap12:operation soapAction="http://tempuri.org/Excute_Table_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Excute_Table">
+      <soap12:operation soapAction="http://tempuri.org/Excute_Table" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Excute_Query_Cnt">
+      <soap12:operation soapAction="http://tempuri.org/Excute_Query_Cnt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DB_POP_SERVICE">
+    <wsdl:port name="DB_POP_SERVICESoap" binding="tns:DB_POP_SERVICESoap">
+      <soap:address location="http://210.100.77.224:9021/DB_POP_SERVICE.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DB_POP_SERVICESoap12" binding="tns:DB_POP_SERVICESoap12">
+      <soap12:address location="http://210.100.77.224:9021/DB_POP_SERVICE.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

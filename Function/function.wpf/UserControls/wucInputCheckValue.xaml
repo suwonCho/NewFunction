@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="function.wpf.wucInputCheckValue"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:function.wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="300" Background="White" GotFocus="UserControl_GotFocus" >
+    <UserControl.Resources>
+        <GridLength x:Key="col0">1*</GridLength>
+        <GridLength x:Key="col1">1*</GridLength>
+        <GridLength x:Key="col2">1*</GridLength>
+        <GridLength x:Key="col3">1*</GridLength>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{DynamicResource col0}" />
+            <ColumnDefinition Width="{DynamicResource col1}" />
+            <ColumnDefinition Width="{DynamicResource col2}" />
+            <ColumnDefinition Width="{DynamicResource col3}" />
+        </Grid.ColumnDefinitions>
+        <Label Name="lblTitle" Content="Title" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Name="lblValue" Content="Value" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="Black" BorderThickness="0.7" Margin="2" Background="Black"/>
+        <TextBox Name="txtValue" Grid.Column="2" BorderBrush="Black" BorderThickness="0.7" Margin="2"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="txtValue_TextChanged"   />
+        <Label Name="lblRst" Content="입력  대기" Grid.Column="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="Black" BorderThickness="0.7" Margin="2" Background="LightGray"/>
+    </Grid>
+</UserControl>

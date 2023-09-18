@@ -6,7 +6,7 @@ using System.Threading;
 
 using System.Runtime.InteropServices;
 
-namespace Function.Device.QLight
+namespace function.Device.QLight
 {
 	/// <summary>
 	/// 램프 상태

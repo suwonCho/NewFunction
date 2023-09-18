@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52238F3C-4328-4504-902F-4C83B3DD279B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>function.wpf</RootNamespace>
+    <AssemblyName>function.wpf</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NO_ORACLE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NO_ORACLE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NO_ORACLE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NO_ORACLE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>.\Microsoft.WindowsAPICodePack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>.\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions">
+      <HintPath>.\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="baseWindow.cs" />
+    <Compile Include="class\ComboBoxX.cs" />
+    <Compile Include="class\control_Dispatcher.cs" />
+    <Compile Include="class\cStatic.cs" />
+    <Compile Include="class\GridX.cs" />
+    <Compile Include="class\TreeViewItemMove.cs" />
+    <Compile Include="class\DataGridItemMove.cs" />
+    <Compile Include="class\FontSizeNotify.cs" />
+    <Compile Include="UserControls\ComboBoxXTextItem.xaml.cs">
+      <DependentUpon>ComboBoxXTextItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\wucTriangle.xaml.cs">
+      <DependentUpon>wucTriangle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="valueConvertor\datetimeConverter.cs" />
+    <Compile Include="valueConvertor\integerConverter.cs" />
+    <Compile Include="valueConvertor\dateConverter.cs" />
+    <Compile Include="valueConvertor\strEmptyConverter.cs" />
+    <Compile Include="valueConvertor\numberConverter.cs" />
+    <Compile Include="RadialPanel.cs" />
+    <Compile Include="template\DataGridColMultiRow.xaml.cs">
+      <DependentUpon>DataGridColMultiRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ComboBoxBrush.cs" />
+    <Compile Include="UserControls\DatePicker.xaml.cs">
+      <DependentUpon>DatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ListBoxResicon16.cs" />
+    <Compile Include="UserControls\ListBoxBrushes.cs" />
+    <Compile Include="UserControls\ListBoxDayItem.cs" />
+    <Compile Include="UserControls\wucInputBox.xaml.cs">
+      <DependentUpon>wucInputBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Service_Oracle\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="winElementSize2.xaml.cs">
+      <DependentUpon>winElementSize2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="class\WpfFont.cs" />
+    <Compile Include="windows\wpfMsgBox.xaml.cs">
+      <DependentUpon>wpfMsgBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\DBSetting.xaml.cs">
+      <DependentUpon>DBSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="class\enums.cs" />
+    <Compile Include="UserControls\ImageButton.xaml.cs">
+      <DependentUpon>ImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="class\wpfFnc.cs" />
+    <Compile Include="class\Transform.cs" />
+    <Compile Include="class\MouseAdorner.cs" />
+    <Compile Include="class\fncWin.cs" />
+    <Compile Include="class\vari.cs" />
+    <Compile Include="class\windowSetScale.cs" />
+    <Compile Include="UserControls\wucStatusBar.xaml.cs">
+      <DependentUpon>wucStatusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\winPlzWait.xaml.cs">
+      <DependentUpon>winPlzWait.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\wucPlzWait.xaml.cs">
+      <DependentUpon>wucPlzWait.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\wucInitPanelList.xaml.cs">
+      <DependentUpon>wucInitPanelList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\wucSandtimer.xaml.cs">
+      <DependentUpon>wucSandtimer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\wucTreeViewItem.xaml.cs">
+      <DependentUpon>wucTreeViewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="class\wuiSizable.cs" />
+    <Compile Include="winSettingView.xaml.cs">
+      <DependentUpon>winSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="wTest.xaml.cs">
+      <DependentUpon>wTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\wucLog.xaml.cs">
+      <DependentUpon>wucLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\wucNumpad.xaml.cs">
+      <DependentUpon>wucNumpad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\wucStatusProgress.xaml.cs">
+      <DependentUpon>wucStatusProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\wucInputCheckValue.xaml.cs">
+      <DependentUpon>wucInputCheckValue.xaml</DependentUpon>
+    </Compile>
+    <Page Include="UserControls\ComboBoxXTextItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="template\DataGridColMultiRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\wucInputBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\wucTriangle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="winElementSize2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\wpfMsgBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\DBSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ImageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UserControls\wucStatusBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\winPlzWait.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\wucPlzWait.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\wucInitPanelList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\wucSandtimer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\wucTreeViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="winSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wpfResourcesDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\wucLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\wucNumpad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\wucStatusProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\wucInputCheckValue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Service_Oracle\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Service_Oracle\Service_Oracle.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\function.Db\function.Db.csproj">
+      <Project>{8f2b4d89-0ced-4dc8-a742-e9fd52cccb6d}</Project>
+      <Name>function.Db</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Function\function.csproj">
+      <Project>{5843ebc1-ffab-4d2d-a61b-e53cdcf1d625}</Project>
+      <Name>function</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="please_wait.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://210.100.70.3/Service_Oracle.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Service_Oracle\</RelPath>
+      <UpdateFromURL>http://210.100.70.3/Service_Oracle.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>function_wpf_Service_Oracle_Service_Oracle</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\Service_Oracle\Service_Oracle.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="참조 wpf.SQL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

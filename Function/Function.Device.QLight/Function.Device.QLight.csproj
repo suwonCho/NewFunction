@@ -113,13 +113,13 @@
       <Project>{78c34a59-0d62-46f6-93c1-ebb0d59af147}</Project>
       <Name>AppAuth</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Function.form\Function.form.csproj">
+    <ProjectReference Include="..\Function.form\function.form.csproj">
       <Project>{d92b5672-4f0d-407a-ac14-d97dca94e803}</Project>
-      <Name>Function.form</Name>
+      <Name>function.form</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Function\Function.csproj">
+    <ProjectReference Include="..\Function\function.csproj">
       <Project>{5843ebc1-ffab-4d2d-a61b-e53cdcf1d625}</Project>
-      <Name>Function</Name>
+      <Name>function</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

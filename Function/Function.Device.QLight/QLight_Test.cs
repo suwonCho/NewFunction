@@ -1,4 +1,4 @@
-﻿using Function;
+﻿using function;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 using System.Threading;
 
-namespace Function.Device.QLight
+namespace function.Device.QLight
 {
 	/// <summary>
 	/// QLight 경광등 테스트 폼
 	/// </summary>
-	public partial class QLight_Test : Function.form.subBaseForm
+	public partial class QLight_Test : function.form.subBaseForm
 	{
 
 		QL _ql = null;
@@ -49,8 +49,8 @@ namespace Function.Device.QLight
 
 			if (readOnly)
 			{
-				inpIpAddress.InputType = Function.form.usrInputBox.enInputType.LABEL;
-				inpPort.InputType = Function.form.usrInputBox.enInputType.LABEL;
+				inpIpAddress.InputType = function.form.usrInputBox.enInputType.LABEL;
+				inpPort.InputType = function.form.usrInputBox.enInputType.LABEL;
 			}		
 
 		}
@@ -71,10 +71,10 @@ namespace Function.Device.QLight
 
 			if (status == enQL_Status.Connected)
 			{
-				picStatus.Image = Function.resIcon16.button_green;
+				picStatus.Image = function.resIcon16.button_green;
 			}
 			else
-				picStatus.Image = Function.resIcon16.button_red;
+				picStatus.Image = function.resIcon16.button_red;
 
 
 			lblStatus.Text = status.ToString();
@@ -88,14 +88,14 @@ namespace Function.Device.QLight
 			{
 				//있음
 				btnSettingPgm.Enabled = true;
-				btnSettingPgm.Image = Function.resIcon16.status_on;
+				btnSettingPgm.Image = function.resIcon16.status_on;
 
 			}
 			else
 			{
 				//없음
 				btnSettingPgm.Enabled = false;
-				btnSettingPgm.Image = Function.resIcon16.status_off;
+				btnSettingPgm.Image = function.resIcon16.status_off;
 
 			}
 
@@ -145,7 +145,7 @@ namespace Function.Device.QLight
 					else
 						col = Color.Transparent;
 
-					Function.form.control.Invoke_Control_Color(lblCStatus[i - 2], null, col);
+					function.form.control.Invoke_Control_Color(lblCStatus[i - 2], null, col);
 
 				}
 				
@@ -180,15 +180,15 @@ namespace Function.Device.QLight
 						tag = 0;
 					}
 					
-					Function.form.control.Invoke_Control_Color(lblCStatus[i-2], null, col);
-					//Function.form.control.Invoke_Control_Tag(lblCStatus[i - 2], tag);
+					function.form.control.Invoke_Control_Color(lblCStatus[i-2], null, col);
+					//function.form.control.Invoke_Control_Tag(lblCStatus[i - 2], tag);
 
 					tags[i - 2] = tag;
 
 					//알람은 텍스트 변경
 					if (i == 7)
 					{
-						Function.form.control.Invoke_Control_Text(lblCStatus[i - 2], tag == 0 ? "A" : tag.ToString() );
+						function.form.control.Invoke_Control_Text(lblCStatus[i - 2], tag == 0 ? "A" : tag.ToString() );
 					}
 
 				}

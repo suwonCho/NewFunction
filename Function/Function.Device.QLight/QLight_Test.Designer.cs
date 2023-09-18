@@ -1,4 +1,4 @@
-﻿namespace Function.Device.QLight
+﻿namespace function.Device.QLight
 {
 	partial class QLight_Test
 	{
@@ -29,14 +29,14 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.inpIpAddress = new Function.form.usrInputBox();
-			this.inpPort = new Function.form.usrInputBox();
+			this.inpIpAddress = new function.form.usrInputBox();
+			this.inpPort = new function.form.usrInputBox();
 			this.picStatus = new System.Windows.Forms.PictureBox();
 			this.lblStatus = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.btnClear = new System.Windows.Forms.Button();
 			this.btnAlarm = new System.Windows.Forms.Button();
-			this.inpAlarm = new Function.form.usrInputBox();
+			this.inpAlarm = new function.form.usrInputBox();
 			this.button13 = new System.Windows.Forms.Button();
 			this.button14 = new System.Windows.Forms.Button();
 			this.button15 = new System.Windows.Forms.Button();
@@ -80,14 +80,14 @@
 			this.inpIpAddress.ComboBoxSelectItem = null;
 			this.inpIpAddress.ComboBoxValueMember = null;
 			this.inpIpAddress.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpIpAddress.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
+			this.inpIpAddress.DLabel_Blink = function.form.usrInputBox.enBlinkType.None;
 			this.inpIpAddress.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpIpAddress.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpIpAddress.DLabel_Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.inpIpAddress.DLabel_FontAutoSize = false;
 			this.inpIpAddress.DLabel_ForeColor = System.Drawing.SystemColors.ControlText;
 			this.inpIpAddress.DLabel_TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.inpIpAddress.InputType = Function.form.usrInputBox.enInputType.TEXTBOX;
+			this.inpIpAddress.InputType = function.form.usrInputBox.enInputType.TEXTBOX;
 			this.inpIpAddress.Label_BackColor = System.Drawing.Color.Transparent;
 			this.inpIpAddress.Label_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpIpAddress.Label_Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -104,7 +104,7 @@
 			this.inpIpAddress.TabIndex = 0;
 			this.inpIpAddress.Text = "";
 			this.inpIpAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.inpIpAddress.TextType = Function.form.usrInputBox.enTextType.NumberOlny;
+			this.inpIpAddress.TextType = function.form.usrInputBox.enTextType.NumberOlny;
 			this.inpIpAddress.Value = "";
 			this.inpIpAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.inpIpAddress_KeyDown);
 			// 
@@ -119,14 +119,14 @@
 			this.inpPort.ComboBoxSelectItem = null;
 			this.inpPort.ComboBoxValueMember = null;
 			this.inpPort.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpPort.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
+			this.inpPort.DLabel_Blink = function.form.usrInputBox.enBlinkType.None;
 			this.inpPort.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpPort.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpPort.DLabel_Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.inpPort.DLabel_FontAutoSize = false;
 			this.inpPort.DLabel_ForeColor = System.Drawing.SystemColors.ControlText;
 			this.inpPort.DLabel_TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.inpPort.InputType = Function.form.usrInputBox.enInputType.TEXTBOX;
+			this.inpPort.InputType = function.form.usrInputBox.enInputType.TEXTBOX;
 			this.inpPort.Label_BackColor = System.Drawing.Color.Transparent;
 			this.inpPort.Label_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpPort.Label_Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -143,7 +143,7 @@
 			this.inpPort.TabIndex = 1;
 			this.inpPort.Text = "";
 			this.inpPort.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.inpPort.TextType = Function.form.usrInputBox.enTextType.NumberOlny;
+			this.inpPort.TextType = function.form.usrInputBox.enTextType.NumberOlny;
 			this.inpPort.Value = "";
 			this.inpPort.KeyDown += new System.Windows.Forms.KeyEventHandler(this.inpPort_KeyDown);
 			// 
@@ -234,14 +234,14 @@
 			this.inpAlarm.ComboBoxSelectItem = null;
 			this.inpAlarm.ComboBoxValueMember = null;
 			this.inpAlarm.DLabel_BackColor = System.Drawing.Color.Transparent;
-			this.inpAlarm.DLabel_Blink = Function.form.usrInputBox.enBlinkType.None;
+			this.inpAlarm.DLabel_Blink = function.form.usrInputBox.enBlinkType.None;
 			this.inpAlarm.DLabel_BlinkColor = System.Drawing.Color.White;
 			this.inpAlarm.DLabel_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpAlarm.DLabel_Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.inpAlarm.DLabel_FontAutoSize = false;
 			this.inpAlarm.DLabel_ForeColor = System.Drawing.SystemColors.ControlText;
 			this.inpAlarm.DLabel_TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.inpAlarm.InputType = Function.form.usrInputBox.enInputType.COMBO;
+			this.inpAlarm.InputType = function.form.usrInputBox.enInputType.COMBO;
 			this.inpAlarm.Label_BackColor = System.Drawing.Color.Transparent;
 			this.inpAlarm.Label_BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.inpAlarm.Label_Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -258,7 +258,7 @@
 			this.inpAlarm.TabIndex = 5;
 			this.inpAlarm.Text = "";
 			this.inpAlarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.inpAlarm.TextType = Function.form.usrInputBox.enTextType.All;
+			this.inpAlarm.TextType = function.form.usrInputBox.enTextType.All;
 			this.inpAlarm.Value = "";
 			// 
 			// button13
@@ -585,8 +585,8 @@
 
 		#endregion
 
-		private Function.form.usrInputBox inpIpAddress;
-		private Function.form.usrInputBox inpPort;
+		private function.form.usrInputBox inpIpAddress;
+		private function.form.usrInputBox inpPort;
 		private System.Windows.Forms.PictureBox picStatus;
 		private System.Windows.Forms.Label lblStatus;
 		private System.Windows.Forms.GroupBox groupBox1;
@@ -610,7 +610,7 @@
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label lblColor;
-		private Function.form.usrInputBox inpAlarm;
+		private function.form.usrInputBox inpAlarm;
 		private System.Windows.Forms.Button btnClear;
 		private System.Windows.Forms.Button btnAlarm;
 		private System.Windows.Forms.Label label5;

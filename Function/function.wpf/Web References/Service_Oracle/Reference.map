@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://210.100.70.3/Service_Oracle.asmx?wsdl" filename="Service_Oracle.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://210.100.70.3/Service_Oracle.asmx?disco" filename="Service_Oracle.disco" />
+  </Results>
+</DiscoveryClientResultsFile>

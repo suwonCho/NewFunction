@@ -1,0 +1,16 @@
+﻿<Window x:Class="function.wpf.wTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:function.wpf"        
+        mc:Ignorable="d"
+        Title="wTest" Height="300" Width="300">
+    <Grid>
+        <local:wucInputBox HorizontalAlignment="Left" Height="19" Margin="10,10,0,0" VerticalAlignment="Top" Width="272" Orientation="Horizontal" InputType="TEXTBOX" Value="TTTTT"/>
+        <local:wucInputCheckValue x:Name="txtItemCD" FontSize="20" Padding="10" Title="품목 코드" TitleWidth="0.6*" RstWidth="0.45*" Margin="0,43,0,170"/>
+        <local:wucInputCheckValue x:Name="txtOrderNO" FontSize="20" Padding="10" Title="작업지시번호" TitleWidth="0.6*" RstWidth="0.45*" Margin="0,91,0,121"/>
+        <local:wucInputCheckValue x:Name="txtBestDT" FontSize="20" Padding="10" Title="유통 기한" TitleWidth="0.6*" RstWidth="0.45*" Margin="0,139,0,71"/>
+
+    </Grid>
+</Window>

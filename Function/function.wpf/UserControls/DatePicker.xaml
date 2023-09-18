@@ -1,0 +1,117 @@
+﻿<UserControl x:Class="function.wpf.DatePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:g="clr-namespace:System.Globalization;assembly=mscorlib"
+             xmlns:local="clr-namespace:function.wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" PreviewKeyDown="UserControl_PreviewKeyDown">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type RepeatButton}">
+            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource self}, Path=ActualHeight}" />
+            <Setter Property="Focusable" Value="False" />
+
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=chkboxNull, Path=IsChecked}" Value="True">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type StatusBarItem}">
+            <Setter Property="Margin" Value="1" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Margin" Value="1" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="True" />
+                        <Condition Property="Selector.IsSelectionActive" Value="False" />                        
+                    </MultiTrigger.Conditions>
+                    <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+                </MultiTrigger>
+                <DataTrigger Binding="{Binding ElementName=chkboxNull,Path=IsChecked}" Value="True">
+                    <Setter Property="IsEnabled" Value="True" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border BorderThickness="1" BorderBrush="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="80*" />
+                <RowDefinition Name="row3" Height="25" />
+                <RowDefinition Name="row4" Height="28" />
+            </Grid.RowDefinitions>
+
+             <!--월/이동번튼 표시-->
+            <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"
+                  TextBlock.Foreground="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <RepeatButton Grid.Column="0" Content="&lt;&lt;" FontWeight="Bold" Click="MoveButton_Click" Tag="-12" />
+                <RepeatButton Grid.Column="1" Content="&lt;" FontWeight="Bold" Click="MoveButton_Click" Tag="-1" />
+                <TextBlock Name="txtblkMonthYear" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3" />
+                <RepeatButton Grid.Column="3" Content="&gt;" FontWeight="Bold" Click="MoveButton_Click" Tag="1" />
+                <RepeatButton Grid.Column="4" Content="&gt;&gt;" FontWeight="Bold" Click="MoveButton_Click" Tag="12" />
+            </Grid>
+
+            <!--요일 표시-->
+            <StatusBar Grid.Row="1" ItemsSource="{Binding Source={x:Static local:DatePicker.DayNames}}">
+                <StatusBar.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Rows="1" />
+                    </ItemsPanelTemplate>
+                </StatusBar.ItemsPanel>
+            </StatusBar>
+            
+            <!--날짜-->
+            <Border Grid.Row="2" BorderThickness="0 1 0 1" BorderBrush="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}">
+                <ListBox Name="lstboxMonth" SelectionChanged="lstboxMonth_SelectionChanged">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Name="unigridMonth" Columns="7" Rows="6" IsItemsHost="True" FirstColumn="0"
+                                         Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+            </Border>
+            <Border Background="White" Grid.Row="3" BorderThickness="0 1 0 1" BorderBrush="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}">
+                <StackPanel  Background="White" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" >
+                    <StackPanel Name="pnlTime" Background="White" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" >
+                        <TextBlock Text="시간 :" VerticalAlignment="Center" />
+                        <TextBox Name="txtHour" Text="00" Tag="24" Width="25" TextAlignment="Center" />
+                        <TextBlock Text="시" VerticalAlignment="Center" />
+                        <TextBox Name="txtMinute" Text="00" Tag="59"  Width="25" TextAlignment="Center" />
+                        <TextBlock Text="분" VerticalAlignment="Center" />
+                        <TextBox Name="txtSecond" Text="00" Tag="59"  Width="25" TextAlignment="Center" />
+                        <TextBlock Text="초" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <CheckBox Name="chkboxnull" Grid.Row="4" Margin="30,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                          Checked="chkboxnull_Checked" Unchecked="chkboxnull_Unchecked">
+                        선택 안함
+                    </CheckBox>
+                </StackPanel>
+            </Border>
+            
+            <!-- null 날짜 처리 CheckBox-->
+            <local:ImageButton x:Name="btnOK" Grid.Row="4" Text="선   택" ResIcon16Name="ok" Click="btnOK_Click" />
+        </Grid>          
+    </Border>
+</UserControl>

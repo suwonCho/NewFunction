@@ -1,0 +1,45 @@
+﻿<Window x:Class="function.wpf.test.DataBiding"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:function.wpf.test"
+        xmlns:wpf="clr-namespace:function.wpf;assembly=function.wpf"
+        mc:Ignorable="d"
+        Title="DataBiding" Height="600" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="dgLeft" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Col0" Header="No." Binding="{Binding No}" IsReadOnly="True" Width="40">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="공  정" Binding="{Binding Text}" IsReadOnly="True" Width="150">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txtNo" Text="{Binding SelectedItem[No], ElementName=dgLeft}" 
+                 Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="20,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198"/>
+        <TextBox x:Name="txtText" Text="{Binding SelectedItem[Text], ElementName=dgLeft}"
+                 Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="20,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="198"/>
+
+        <wpf:wucInputBox Text="{Binding SelectedItem[Text], ElementName=dgLeft}"
+            Grid.Column="1" Margin="0,120,0,415"/>
+
+        <wpf:wucInputBox Value="{Binding SelectedItem[Text], ElementName=dgLeft}"
+            Grid.Column="1" Margin="0,170,0,365"/>
+    </Grid>
+</Window>
